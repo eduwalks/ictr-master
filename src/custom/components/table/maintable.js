@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+// import { useHistory } from "react-router-dom";
 import { NavLink } from "react-bootstrap";
 
 // material-ui
@@ -8,6 +9,7 @@ import Chip from '@mui/material/Chip';
 // project imports
 import MainCard from 'components/MainCard';
 import InSpection from "../pop/inspection";
+import Alert from "../pop/alert";
 
 // table data
 function createData1(time, number, part, station, equipname, equipstate, condition) {
@@ -66,9 +68,13 @@ const rows3 = [
 
 export default function MainTable1() {
 
+  // const history = useHistory();
+  // function click() {
+  //     history.push("/equipdetail");
+  // }
+  
   return (
     <>
-      <InSpection></InSpection>
       <MainCard content={false}>
         <div className='more'>
           <Chip label="설비 상태목록" color="info" />
@@ -94,16 +100,17 @@ export default function MainTable1() {
                 <TableRow hover key={row1.name}
                   className={row1.rowclass}
                   // component={Link} to="/equipdetail"
+                  // onClick={click}
                 >
-                  <TableCell component="th" scope="row">{row1.time}</TableCell>
-                  <TableCell align="center">{row1.number}</TableCell>
-                  <TableCell align="center">{row1.part}</TableCell>
-                  <TableCell align="center">{row1.station}</TableCell>
-                  <TableCell align="center">{row1.equipname}</TableCell>
-                  <TableCell align="center">{row1.equipstate}</TableCell>
-                  <TableCell align="center">{row1.condition}</TableCell>
+                  <TableCell component="th" scope="row"><Link to="/equipdetail">{row1.time}</Link></TableCell>
+                  <TableCell align="center"><Link to="/equipdetail">{row1.number}</Link></TableCell>
+                  <TableCell align="center"><Link to="/equipdetail">{row1.part}</Link></TableCell>
+                  <TableCell align="center"><Link to="/equipdetail">{row1.station}</Link></TableCell>
+                  <TableCell align="center"><Link to="/equipdetail">{row1.equipname}</Link></TableCell>
+                  <TableCell align="center"><Link to="/equipdetail">{row1.equipstate}</Link></TableCell>
+                  <TableCell align="center"><Link to="/equipdetail">{row1.condition}</Link></TableCell>
+                  {/* <TableCell align="center" onClick="event.stopPropagation();"> */}
                   <TableCell align="center">
-                    {/* <Button onClick={handleOpen}><span className="material-symbols-outlined" style={{color:"#fff"}}>build</span></Button> */}
                     <InSpection />
                   </TableCell>
                 </TableRow>
@@ -120,7 +127,7 @@ export default function MainTable1() {
         </div>
         {/* table */}
         <TableContainer>
-          <Table sx={{ minWidth: 800 }} aria-label="simple table">
+          <Table sx={{ minWidth: 800 }} aria-label="simple table" className="base_link">
             <TableHead>
               <TableRow>
                 <TableCell>점검일</TableCell>
@@ -135,20 +142,16 @@ export default function MainTable1() {
             </TableHead>
             <TableBody>
               {rows2.map((row2) => (
-                <TableRow hover key={row2.name}
-                  component={Link} to="/alertdetail"
-                >
-                  <TableCell component="th" scope="row">
-                    {row2.time}
-                  </TableCell>
-                  <TableCell align="center">{row2.number}</TableCell>
-                  <TableCell align="center">{row2.part}</TableCell>
-                  <TableCell align="center">{row2.station}</TableCell>
-                  <TableCell align="center">{row2.division}</TableCell>
-                  <TableCell align="center">{row2.equipname}</TableCell>
-                  <TableCell align="center">{row2.cont}</TableCell>
+                <TableRow hover key={row2.name}>
+                  <TableCell component="th" scope="row"><Link to="/alertdetail">{row2.time}</Link></TableCell>
+                  <TableCell align="center"><Link to="/alertdetail">{row2.number}</Link></TableCell>
+                  <TableCell align="center"><Link to="/alertdetail">{row2.part}</Link></TableCell>
+                  <TableCell align="center"><Link to="/alertdetail">{row2.station}</Link></TableCell>
+                  <TableCell align="center"><Link to="/alertdetail">{row2.division}</Link></TableCell>
+                  <TableCell align="center"><Link to="/alertdetail">{row2.equipname}</Link></TableCell>
+                  <TableCell align="center"><Link to="/alertdetail">{row2.cont}</Link></TableCell>
                   <TableCell align="center">
-                    <span className="material-symbols-outlined">content_paste_search</span>
+                    <Alert />
                   </TableCell>
                 </TableRow>
               ))}

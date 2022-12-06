@@ -45,6 +45,17 @@ function App() {
               <>
                 <Router>
                   <Navigationbar />
+                  {/* <Routes>
+                    <Route path='/' element={<Main />} />
+                    <Route path='/equiplist' element={<EquipList />} />
+                    <Route path='/equipdetail' element={<EquipDetail />} />
+                    <Route path='/alertlist' element={<AlertList />} />
+                    <Route path='/alertdetail' element={<AlertDetail />} />
+                    <Route path='/spotlist' element={<SpotList />} />
+                    <Route path='/spotdetail' element={<SpotDetail />} />
+                    <Route path='/partstation' element={<PartStation />} />
+                    <Route path='/page16' element={<Page16 />} />
+                  </Routes> */}
                   <Switch>
                     <Route exact path='/' component={Main}/>
                     <Route path='/equiplist' component={EquipList}/>

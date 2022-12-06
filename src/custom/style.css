@@ -17,13 +17,22 @@ a{text-decoration: none;}
 .part_status_box {margin: 0 10px;}
 .center_table {margin: 10px 0;}
 /* .cal_box {padding: 1%;} */
-.mobile_serach_box .MuiPaper-root, .pop_box .MuiPaper-root{background-color: rgba(30, 30, 30, 1);}
+.mobile_serach_box .MuiPaper-root{background-color: rgba(30, 30, 30, 1);}
 .MuiPaper-root{background-color: rgba(30, 30, 30, 0.3);}
 .MuiMenu-paper{background-color: rgba(30, 30, 30, 1);}
-.css-i9fmh8-MuiBackdrop-root-MuiModal-backdrop{background-color: rgba(30, 30, 30, .8);}
 
 /* 모달창 */
 /* .MuiBackdrop-root{background-color: rgba(0, 0, 0, 0.8);} */
+.pop_box .MuiPaper-root{background-color: rgba(45, 45, 45, .9);}
+.css-i9fmh8-MuiBackdrop-root-MuiModal-backdrop{background-color: rgba(30, 30, 30, .9);}
+.pop_table td{text-align: left;}
+.pop_table .th{text-align: center;background-color: rgba(17, 17, 17, .3);}
+.pop_table .MuiSelect-select, .pop_table .MuiInputBase-input{padding: 8px 10px;}
+.piker{display: flex;justify-content: center;align-items: center;margin:0 auto;width: 90%;}
+.plus{display: flex;align-items: center;}
+.pop_table .MuiSvgIcon-root{fill: #fff;}
+
+.MuiPopperUnstyled-root .MuiPaper-root{background-color: rgba(30, 30, 30, 1);}
 
 /* 테이블 설정 */
 .same_width{height: auto;text-align: center;table-layout: fixed;word-break: break-all;}
@@ -131,10 +140,12 @@ table .pl {padding: 6px 0 6px 10px !important;text-align: center;}
 }
 
 /* 파트별 상태현황 */
-.condition1 th, .condition1 td{color: red;}
-.condition2 th, .condition2 td{color: #348857;}
-.condition3 th, .condition3 td{color: #395DA7;}
-.condition4 th, .condition4 td{color: #724599;}
+.condition1 a, .condition2 a, .condition3 a, .condition4 a, .base_link a{display: block;}
+.base_link a{color: #fff;}
+.condition1 a{color: red;}
+.condition2 a{color: #348857;}
+.condition3 a{color: #395DA7;}
+.condition4 a{color: #724599;}
 
 .part_station button{padding: 0;}
 
