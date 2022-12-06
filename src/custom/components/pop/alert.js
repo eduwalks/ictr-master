@@ -102,7 +102,7 @@ export function Alert() {
 
                   <TableRow>
                     <TableCell className="th">경보일시</TableCell>
-                    <TableCell colspan="3"><TextField id="outlined-basic" sx={{ m: 1, minWidth: '90%' }} /></TableCell>
+                    <TableCell colspan="3" className='pa10'><BasicDatePicker /></TableCell>
                     <TableCell className="th">경보유형</TableCell>
                     <TableCell><TextField id="outlined-basic" sx={{ m: 1, minWidth: '90%' }} /></TableCell>
                   </TableRow>
@@ -130,7 +130,7 @@ export function Alert() {
 
                   <TableRow>
                     <TableCell className="th">경보확인 일시</TableCell>
-                    <TableCell colspan="3"><BasicDatePicker /></TableCell>
+                    <TableCell colspan="3" className='pa10'><BasicDatePicker /></TableCell>
                     <TableCell className="th">경보확인자</TableCell>
                     <TableCell><TextField id="outlined-basic" sx={{ m: 1, minWidth: '90%' }} /></TableCell>
                   </TableRow>

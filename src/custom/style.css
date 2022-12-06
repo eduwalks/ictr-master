@@ -23,7 +23,7 @@ a{text-decoration: none;}
 
 /* 모달창 */
 /* .MuiBackdrop-root{background-color: rgba(0, 0, 0, 0.8);} */
-.pop_box .MuiPaper-root{background-color: rgba(45, 45, 45, .9);}
+.pop_box .MuiPaper-root{background-color: rgba(45, 45, 45, 1);}
 .css-i9fmh8-MuiBackdrop-root-MuiModal-backdrop{background-color: rgba(30, 30, 30, .9);}
 .pop_table td{text-align: left;}
 .pop_table .th{text-align: center;background-color: rgba(17, 17, 17, .3);}
@@ -31,6 +31,7 @@ a{text-decoration: none;}
 .piker{display: flex;justify-content: center;align-items: center;margin:0 auto;width: 90%;}
 .plus{display: flex;align-items: center;}
 .pop_table .MuiSvgIcon-root{fill: #fff;}
+.pop_table td.pa10{padding-left: 9px !important;}
 
 .MuiPopperUnstyled-root .MuiPaper-root{background-color: rgba(30, 30, 30, 1);}
 
