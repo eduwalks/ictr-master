@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+import { NavLink } from "react-bootstrap";
 import { Row, Col } from 'react-bootstrap';
 import MainCard from 'components/MainCard';
 import Chip from '@mui/material/Chip';
@@ -15,12 +17,33 @@ function PartStation () {
   //   return { equipname };
   // }
 
-  function createData3(time, type, division, equipname, cont) {
-    return { time, type, division, equipname, cont };
+  function createData3(time, equipname, alertype, division, cont, check) {
+    let rowclass;
+    if(check == '경보발생') {
+      rowclass='check1';
+    } else if(check == '경보확인') {
+      rowclass='check2';
+    } else if(check == '현장점검') {
+      rowclass='check3';
+    } else {
+      rowclass=''
+    }
+    return { time, equipname, alertype, division, cont, check, rowclass };
   }
 
-  function createData4(time, number, part, station, equipname, namecode, division, analysis) {
-    return { time, number, part, station, equipname, namecode, division, analysis };
+  function createData4(time, division, sort, equipname, inspector, result) {
+    let rowclass;
+    if(result == '대기') {
+      rowclass='result1';
+    } else if(result == '유지보수') {
+      rowclass='result2';
+    } else if(result == '정상') {
+      rowclass='result3';
+    } else {
+      rowclass=''
+    }
+  
+    return { time, division, sort, equipname, inspector, result, rowclass };
   }
 
   const rows1 = [
@@ -47,16 +70,17 @@ function PartStation () {
   // ];
   
   const rows3 = [
-    createData3('2022-06-02 00:00', '진단IoT경보', '결함발생', '좌대합실공조시-1', '직팽식공조기 (SF) 전동기 이상진동'),
-    createData3('2022-06-02 00:00', '진단IoT경보', '결함발생', '좌대합실공조시-1', '직팽식공조기 (SF) 전동기 이상진동'),
-    createData3('2022-06-02 00:00', '진단IoT경보', '결함발생', '좌대합실공조시-1', '직팽식공조기 (SF) 전동기 이상진동'),
-    createData3('2022-06-02 00:00', '진단IoT경보', '결함발생', '좌대합실공조시-1', '직팽식공조기 (SF) 전동기 이상진동')
+    createData3('2022-06-02 00:07', '좌대합실공조시-1', 'IoT경보', '결함발생', '직팽식공조기 (SF) 전동기 이상진동', '경보발생'),
+    createData3('2022-06-02 00:07', '좌대합실공조시-1', 'IoT경보', '결함발생', '직팽식공조기 (SF) 전동기 이상진동', '현장점검'),
+    createData3('2022-06-02 00:07', '좌대합실공조시-1', 'IoT경보', '결함발생', '직팽식공조기 (SF) 전동기 이상진동', '경보발생'),
+    createData3('2022-06-02 00:07', '좌대합실공조시-1', 'IoT경보', '결함발생', '직팽식공조기 (SF) 전동기 이상진동', '경보확인')
   ];
 
   const rows4 = [
-    createData4('2022-06-02 00:00', '1호선', '예술회관', '부평', '우 직팽식공조기', '', '유지보수(교체)', '고장 및 기능장애'),
-    createData4('2022-06-02 00:00', '1호선', '예술회관', '부평', '우 직팽식공조기', '', '유지보수(교체)', '고장 및 기능장애'),
-    createData4('2022-06-02 00:00', '1호선', '예술회관', '부평', '우 직팽식공조기', '', '유지보수(교체)', '고장 및 기능장애')
+    createData4('2022-06-02 00:07', '상시', '공기조화설비', '좌대합실공조시-1', '홍길동', '정상'),
+    createData4('2022-06-02 00:07', '일일', '소방설비', '좌대합실공조시-1', '홍길동', '유지보수'),
+    createData4('2022-06-02 00:07', '상시', '소방설비', '좌대합실공조시-1', '홍길동', '유지보수'),
+    createData4('', '상시', '승강장안전문설비', '좌대합실공조시-1', '', '대기')
   ];
 
   return (
@@ -336,31 +360,35 @@ function PartStation () {
           <MainCard className="center_table" content={false}>
             <div className='more'>
               <Chip label="경보내역" color="error" />
-              <span className='more_btn'>더보기 +</span>
+              <NavLink as={Link} to="/alertlist" className='more_btn'>더보기 +</NavLink>
             </div>
             {/* table */}
             <TableContainer>
-              <Table sx={{ minWidth: 900 }} aria-label="simple table">
+              <Table sx={{ minWidth: 800 }} aria-label="simple table" className="base_link">
                 <TableHead>
                   <TableRow>
-                    <TableCell align="center">일시</TableCell>
-                    <TableCell align="center">유형</TableCell>
-                    <TableCell align="center">분류</TableCell>
+                    <TableCell>일시</TableCell>
                     <TableCell align="center">설비명</TableCell>
+                    <TableCell align="center">경보유형</TableCell>
+                    <TableCell align="center">경보분류</TableCell>
                     <TableCell align="center">내용</TableCell>
+                    <TableCell align="center"></TableCell>
                     <TableCell align="center"></TableCell>
                   </TableRow>
                 </TableHead>
                 <TableBody>
                   {rows3.map((row3) => (
-                    <TableRow hover key={row3.name}>
-                      <TableCell component="th" scope="row">{row3.time}</TableCell>
-                      <TableCell align="center">{row3.type}</TableCell>
-                      <TableCell align="center">{row3.division}</TableCell>
-                      <TableCell align="center">{row3.equipname}</TableCell>
-                      <TableCell align="center">{row3.cont}</TableCell>
+                    <TableRow hover key={row3.name}
+                      className={row3.rowclass}
+                    >
+                      <TableCell component="th" scope="row"><Link to="/alertdetail">{row3.time}</Link></TableCell>
+                      <TableCell align="center"><Link to="/alertdetail">{row3.equipname}</Link></TableCell>
+                      <TableCell align="center"><Link to="/alertdetail">{row3.alertype}</Link></TableCell>
+                      <TableCell align="center"><Link to="/alertdetail">{row3.division}</Link></TableCell>
+                      <TableCell align="center"><Link to="/alertdetail">{row3.cont}</Link></TableCell>
+                      <TableCell align="center"><Link to="/alertdetail">{row3.check}</Link></TableCell>
                       <TableCell align="center">
-                        <span className="material-symbols-outlined">content_paste_search</span>
+                        {/* <Alert /> */}
                       </TableCell>
                     </TableRow>
                   ))}
@@ -371,35 +399,34 @@ function PartStation () {
 
           <MainCard content={false}>
             <div className='more'>
-              <Chip label="최근유지보수 내역" color="success" />
-              <span className='more_btn'>더보기 +</span>
+              <Chip label="현장(상시)점검 내역" color="success" />
+              <NavLink as={Link} to="/SpotList" className='more_btn'>더보기 +</NavLink>
             </div>
             {/* table */}
             <TableContainer>
-              <Table sx={{ minWidth: 900 }} aria-label="simple table">
+              <Table sx={{ minWidth: 800 }} aria-label="simple table">
                 <TableHead>
                   <TableRow>
-                    <TableCell align="center">일시</TableCell>
-                    <TableCell align="center">호선</TableCell>
-                    <TableCell align="center">파트</TableCell>
-                    <TableCell align="center">역사명</TableCell>
-                    <TableCell align="center">설비명</TableCell>
-                    <TableCell align="center">품명</TableCell>
+                    <TableCell>일시</TableCell>
                     <TableCell align="center">구분</TableCell>
-                    <TableCell align="center">분석유형</TableCell>
+                    <TableCell align="center">설비대분류</TableCell>
+                    <TableCell align="center">설비명</TableCell>
+                    <TableCell align="center">점검자</TableCell>
+                    <TableCell align="center">결과</TableCell>
                   </TableRow>
                 </TableHead>
                 <TableBody>
                   {rows4.map((row4) => (
-                    <TableRow hover key={row4.name}>
+                    <TableRow hover key={row4.name}
+                      className={row4.rowclass}
+                      component={Link} to="/spotdetail"
+                    >
                       <TableCell component="th" scope="row">{row4.time}</TableCell>
-                      <TableCell align="center">{row4.number}</TableCell>
-                      <TableCell align="center">{row4.part}</TableCell>
-                      <TableCell align="center">{row4.station}</TableCell>
-                      <TableCell align="center">{row4.equipname}</TableCell>
-                      <TableCell align="center">{row4.namecode}</TableCell>
                       <TableCell align="center">{row4.division}</TableCell>
-                      <TableCell align="center">{row4.analysis}</TableCell>
+                      <TableCell align="center">{row4.sort}</TableCell>
+                      <TableCell align="center">{row4.equipname}</TableCell>
+                      <TableCell align="center">{row4.inspector}</TableCell>
+                      <TableCell align="center">{row4.result}</TableCell>
                     </TableRow>
                   ))}
                 </TableBody>

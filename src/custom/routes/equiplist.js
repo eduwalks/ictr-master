@@ -3,24 +3,39 @@ import { Button, Table, TableBody, TableCell, TableContainer, TableHead, TableRo
 import Paging from 'custom/components/table/paging';
 import DialogSelect from 'custom/components/search/equipsearch';
 
-function EquipList () {
-  function createData(condition, date, number, part, station, equipnum, equipcate, equipname, locate, equipcompo, grade, gate, flaw) {
-    return { condition, date, number, part, station, equipnum, equipcate, equipname, locate, equipcompo, grade, gate, flaw };
+function createData(condition, date, number, part, station, equipnum, equipcate, equipname, locate, equipcompo, grade, gate, flaw) {
+  let rowclass;
+  if(flaw == '불량') {
+    rowclass='flaw1';
+  } else if(flaw == '결함') {
+    rowclass='flaw2';
+  } else if(flaw == '미흡') {
+    rowclass='flaw3';
+  } else if(flaw == '통신') {
+    rowclass='flaw4';
+  } else if(flaw == '보통') {
+    rowclass='flaw5';
+  } else if(flaw == '양호') {
+    rowclass='flaw6';
+  } else {
+    rowclass=''
   }
 
-  const rows = [
-    createData('Active','2022-10-13 07:59','1호선','계산','(124)인천시청','124-L-AHU01-RF1','대합실공조기','좌 대합실공조기','좌측 공조실','RF1(환기부)','A','3C7AAA9223A7'),
-    createData('Active','2022-10-13 07:59','1호선','계산','(124)인천시청','124-L-AHU01-RF1','대합실공조기','좌 대합실공조기','좌측 공조실','RF1(환기부)','A','3C7AAA9223A7'),
-    createData('Active','2022-10-13 07:59','1호선','계산','(124)인천시청','124-L-AHU01-RF1','대합실공조기','좌 대합실공조기','좌측 공조실','RF1(환기부)','A','3C7AAA9223A7'),
-    createData('Active','2022-10-13 07:59','1호선','계산','(124)인천시청','124-L-AHU01-RF1','대합실공조기','좌 대합실공조기','좌측 공조실','RF1(환기부)','A','3C7AAA9223A7'),
-    createData('Active','2022-10-13 07:59','1호선','계산','(124)인천시청','124-L-AHU01-RF1','대합실공조기','좌 대합실공조기','좌측 공조실','RF1(환기부)','A','3C7AAA9223A7'),
-    createData('Active','2022-10-13 07:59','2호선','석남','(124)인천시청','124-L-AHU01-RF1','대합실공조기','좌 대합실공조기','좌측 공조실','RF1(환기부)','A','3C7AAA9223A7'),
-    createData('Active','2022-10-13 07:59','2호선','석남','(124)인천시청','124-L-AHU01-RF1','대합실공조기','좌 대합실공조기','좌측 공조실','RF1(환기부)','A','3C7AAA9223A7'),
-    createData('Active','2022-10-13 07:59','2호선','석남','(124)인천시청','124-L-AHU01-RF1','대합실공조기','좌 대합실공조기','좌측 공조실','RF1(환기부)','A','3C7AAA9223A7'),
-    createData('Active','2022-10-13 07:59','2호선','석남','(124)인천시청','124-L-AHU01-RF1','대합실공조기','좌 대합실공조기','좌측 공조실','RF1(환기부)','A','3C7AAA9223A7'),
-    createData('Active','2022-10-13 07:59','2호선','석남','(124)인천시청','124-L-AHU01-RF1','대합실공조기','좌 대합실공조기','좌측 공조실','RF1(환기부)','A','3C7AAA9223A7'),
-  ];
+  return { condition, date, number, part, station, equipnum, equipcate, equipname, locate, equipcompo, grade, gate, flaw, rowclass };
+}
 
+const rows = [
+  createData('Active','2022-10-13 07:59','1호선','계산','(124)인천시청','124-L-AHU01-RF1','대합실공조기','좌 대합실공조기','좌측 공조실','RF1(환기부)','A','3C7AAA9223A7','양호'),
+  createData('Active','2022-10-13 07:59','1호선','계산','(124)인천시청','124-L-AHU01-RF1','대합실공조기','좌 대합실공조기','좌측 공조실','RF1(환기부)','A','3C7AAA9223A7','보통'),
+  createData('Active','2022-10-13 07:59','1호선','계산','(124)인천시청','124-L-AHU01-RF1','대합실공조기','좌 대합실공조기','좌측 공조실','RF1(환기부)','A','3C7AAA9223A7','양호'),
+  createData('Active','2022-10-13 07:59','1호선','계산','(124)인천시청','124-L-AHU01-RF1','대합실공조기','좌 대합실공조기','좌측 공조실','RF1(환기부)','A','3C7AAA9223A7','양호'),
+  createData('Active','2022-10-13 07:59','1호선','계산','(124)인천시청','124-L-AHU01-RF1','대합실공조기','좌 대합실공조기','좌측 공조실','RF1(환기부)','A','3C7AAA9223A7','통신'),
+  createData('Active','2022-10-13 07:59','2호선','석남','(124)인천시청','124-L-AHU01-RF1','대합실공조기','좌 대합실공조기','좌측 공조실','RF1(환기부)','A','3C7AAA9223A7','미흡'),
+  createData('Active','2022-10-13 07:59','2호선','석남','(124)인천시청','124-L-AHU01-RF1','대합실공조기','좌 대합실공조기','좌측 공조실','RF1(환기부)','A','3C7AAA9223A7','결함'),
+  createData('Active','2022-10-13 07:59','2호선','석남','(124)인천시청','124-L-AHU01-RF1','대합실공조기','좌 대합실공조기','좌측 공조실','RF1(환기부)','A','3C7AAA9223A7','불량')
+];
+
+export function EquipList() {
   return (
     <div className="sub_container">
       <div className='selectbox'>
@@ -62,6 +77,7 @@ function EquipList () {
             {rows.map((row) => (
               <TableRow hover key={row.name}
                 component={Link} to="/equipdetail"
+                className={row.rowclass}
               >
                 <TableCell align="center"><Checkbox size="small" /></TableCell>
                 <TableCell align="center">{row.condition}</TableCell>

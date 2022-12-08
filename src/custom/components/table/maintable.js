@@ -28,12 +28,33 @@ function createData1(time, number, part, station, equipname, equipstate, conditi
   return { time, number, part, station, equipname, equipstate, condition, rowclass };
 }
 
-function createData2(time, number, part, station, division, equipname, cont) {
-  return { time, number, part, station, division, equipname, cont };
+function createData2(time, number, part, station, equipname, alertype, division, cont, check) {
+  let rowclass;
+  if(check == '경보발생') {
+    rowclass='check1';
+  } else if(check == '경보확인') {
+    rowclass='check2';
+  } else if(check == '현장점검') {
+    rowclass='check3';
+  } else {
+    rowclass=''
+  }
+  return { time, number, part, station, equipname, alertype, division, cont, check, rowclass };
 }
 
-function createData3(time, number, part, station, equipname, namecode, division, analysis) {
-  return { time, number, part, station, equipname, namecode, division, analysis };
+function createData3(time, division, number, part, station, sort, equipname, inspector, result) {
+  let rowclass;
+  if(result == '대기') {
+    rowclass='result1';
+  } else if(result == '유지보수') {
+    rowclass='result2';
+  } else if(result == '정상') {
+    rowclass='result3';
+  } else {
+    rowclass=''
+  }
+
+  return { time, division, number, part, station, sort, equipname, inspector, result, rowclass };
 }
 
 const rows1 = [
@@ -48,20 +69,17 @@ const rows1 = [
 ];
 
 const rows2 = [
-  createData2('2022-06-02 00:07', '1호선', '예술회관', '부평', '결함발생', '좌대합실공조시-1', '직팽식공조기 (SF) 전동기 이상진동'),
-  createData2('2022-06-02 00:00', '1호선', '예술회관', '부평', '결함발생', '좌대합실공조시-1', '직팽식공조기 (SF) 전동기 이상진동'),
-  createData2('2022-06-02 00:00', '1호선', '예술회관', '부평', '결함발생', '좌대합실공조시-1', '직팽식공조기 (SF) 전동기 이상진동'),
-  createData2('2022-06-02 00:00', '1호선', '예술회관', '부평', '결함발생', '좌대합실공조시-1', '직팽식공조기 (SF) 전동기 이상진동'),
-  createData2('2022-06-02 00:00', '1호선', '예술회관', '부평', '결함발생', '좌대합실공조시-1', '직팽식공조기 (SF) 전동기 이상진동'),
-  createData2('2022-06-02 00:00', '1호선', '예술회관', '부평', '결함발생', '좌대합실공조시-1', '직팽식공조기 (SF) 전동기 이상진동'),
-  createData2('2022-06-02 00:00', '1호선', '예술회관', '부평', '결함발생', '좌대합실공조시-1', '직팽식공조기 (SF) 전동기 이상진동'),
-  createData2('2022-06-02 00:00', '1호선', '예술회관', '부평', '결함발생', '좌대합실공조시-1', '직팽식공조기 (SF) 전동기 이상진동')
+  createData2('2022-06-02 00:07', '1호선', '예술회관', '부평', '좌대합실공조시-1', 'IoT경보', '결함발생', '직팽식공조기 (SF) 전동기 이상진동', '경보발생'),
+  createData2('2022-06-02 00:07', '1호선', '예술회관', '부평', '좌대합실공조시-1', 'IoT경보', '결함발생', '직팽식공조기 (SF) 전동기 이상진동', '현장점검'),
+  createData2('2022-06-02 00:07', '1호선', '예술회관', '부평', '좌대합실공조시-1', 'IoT경보', '결함발생', '직팽식공조기 (SF) 전동기 이상진동', '경보발생'),
+  createData2('2022-06-02 00:07', '1호선', '예술회관', '부평', '좌대합실공조시-1', 'IoT경보', '결함발생', '직팽식공조기 (SF) 전동기 이상진동', '경보확인'),
 ];
 
 const rows3 = [
-  createData3('2022-06-02 00:07', '1호선', '예술회관', '부평', '우 직팽식공조기', '', '유지보수(교체)', '고장 및 기능장애'),
-  createData3('2022-06-02 00:00', '1호선', '예술회관', '부평', '우 직팽식공조기', '', '유지보수(교체)', '고장 및 기능장애'),
-  createData3('2022-06-02 00:00', '1호선', '예술회관', '부평', '우 직팽식공조기', '', '유지보수(교체)', '고장 및 기능장애')
+  createData3('2022-06-02 00:07', '상시', '1호선', '예술회관', '부평', '공기조화설비', '좌대합실공조시-1', '홍길동', '정상'),
+  createData3('2022-06-02 00:07', '일일', '1호선', '예술회관', '부평', '소방설비', '좌대합실공조시-1', '홍길동', '유지보수'),
+  createData3('2022-06-02 00:07', '상시', '1호선', '예술회관', '부평', '소방설비', '좌대합실공조시-1', '홍길동', '유지보수'),
+  createData3('', '상시', '1호선', '예술회관', '부평', '승강장안전문설비', '좌대합실공조시-1', '', '대기')
 ];
 
 // ==============================|| TABLE - BASIC ||============================== //
@@ -130,26 +148,32 @@ export default function MainTable1() {
           <Table sx={{ minWidth: 800 }} aria-label="simple table" className="base_link">
             <TableHead>
               <TableRow>
-                <TableCell>점검일</TableCell>
+                <TableCell>일시</TableCell>
                 <TableCell align="center">호선</TableCell>
                 <TableCell align="center">파트</TableCell>
                 <TableCell align="center">역사명</TableCell>
                 <TableCell align="center">설비명</TableCell>
-                <TableCell align="center">설비상태</TableCell>
+                <TableCell align="center">경보유형</TableCell>
+                <TableCell align="center">경보분류</TableCell>
+                <TableCell align="center">내용</TableCell>
                 <TableCell align="center">상태</TableCell>
                 <TableCell align="center"></TableCell>
               </TableRow>
             </TableHead>
             <TableBody>
               {rows2.map((row2) => (
-                <TableRow hover key={row2.name}>
+                <TableRow hover key={row2.name}
+                  className={row2.rowclass}
+                >
                   <TableCell component="th" scope="row"><Link to="/alertdetail">{row2.time}</Link></TableCell>
                   <TableCell align="center"><Link to="/alertdetail">{row2.number}</Link></TableCell>
                   <TableCell align="center"><Link to="/alertdetail">{row2.part}</Link></TableCell>
                   <TableCell align="center"><Link to="/alertdetail">{row2.station}</Link></TableCell>
-                  <TableCell align="center"><Link to="/alertdetail">{row2.division}</Link></TableCell>
                   <TableCell align="center"><Link to="/alertdetail">{row2.equipname}</Link></TableCell>
+                  <TableCell align="center"><Link to="/alertdetail">{row2.alertype}</Link></TableCell>
+                  <TableCell align="center"><Link to="/alertdetail">{row2.division}</Link></TableCell>
                   <TableCell align="center"><Link to="/alertdetail">{row2.cont}</Link></TableCell>
+                  <TableCell align="center"><Link to="/alertdetail">{row2.check}</Link></TableCell>
                   <TableCell align="center">
                     <Alert />
                   </TableCell>
@@ -162,7 +186,7 @@ export default function MainTable1() {
 
       <MainCard content={false}>
         <div className='more'>
-          <Chip label="최근유지보수 내역" color="success" />
+          <Chip label="현장(상시)점검 내역" color="success" />
           <NavLink as={Link} to="/SpotList" className='more_btn'>더보기 +</NavLink>
         </div>
         {/* table */}
@@ -170,31 +194,32 @@ export default function MainTable1() {
           <Table sx={{ minWidth: 800 }} aria-label="simple table">
             <TableHead>
               <TableRow>
-                <TableCell>점검일</TableCell>
+                <TableCell>일시</TableCell>
+                <TableCell align="center">구분</TableCell>
                 <TableCell align="center">호선</TableCell>
                 <TableCell align="center">파트</TableCell>
                 <TableCell align="center">역사명</TableCell>
+                <TableCell align="center">설비대분류</TableCell>
                 <TableCell align="center">설비명</TableCell>
-                <TableCell align="center">품명</TableCell>
-                <TableCell align="center">구분</TableCell>
-                <TableCell align="center">분석유형</TableCell>
+                <TableCell align="center">점검자</TableCell>
+                <TableCell align="center">결과</TableCell>
               </TableRow>
             </TableHead>
             <TableBody>
               {rows3.map((row3) => (
                 <TableRow hover key={row3.name}
-                component={Link} to="/spotdetail"
+                  className={row3.rowclass}
+                  component={Link} to="/spotdetail"
                 >
-                  <TableCell component="th" scope="row">
-                    {row3.time}
-                  </TableCell>
+                  <TableCell component="th" scope="row">{row3.time}</TableCell>
+                  <TableCell align="center">{row3.division}</TableCell>
                   <TableCell align="center">{row3.number}</TableCell>
                   <TableCell align="center">{row3.part}</TableCell>
                   <TableCell align="center">{row3.station}</TableCell>
+                  <TableCell align="center">{row3.sort}</TableCell>
                   <TableCell align="center">{row3.equipname}</TableCell>
-                  <TableCell align="center">{row3.namecode}</TableCell>
-                  <TableCell align="center">{row3.division}</TableCell>
-                  <TableCell align="center">{row3.analysis}</TableCell>
+                  <TableCell align="center">{row3.inspector}</TableCell>
+                  <TableCell align="center">{row3.result}</TableCell>
                 </TableRow>
               ))}
             </TableBody>

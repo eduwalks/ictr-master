@@ -11,7 +11,7 @@ a{text-decoration: none;}
 .navbar-nav .css-8qacrl-MuiButtonBase-root-MuiIconButton-root{color: grey;}
 .navbar-nav .css-1lywovb-MuiButtonBase-root-MuiIconButton-root{color: #e7c748;}
 
-/* 레아웃 영역 */
+/* 레이아웃 영역 */
 .main_container, .sub_container{padding: 10px;height:100%;box-sizing: border-box;}
 .main_left, .sub_left {padding-right: 10px;}
 .part_status_box {margin: 0 10px;}
@@ -20,6 +20,10 @@ a{text-decoration: none;}
 .mobile_serach_box .MuiPaper-root{background-color: rgba(30, 30, 30, 1);}
 .MuiPaper-root{background-color: rgba(30, 30, 30, 0.3);}
 .MuiMenu-paper{background-color: rgba(30, 30, 30, 1);}
+
+/* 차트 영역 */
+.apexcharts-legend-text, .apexcharts-canvas text{color: #fff !important;fill: #fff;}
+.apexcharts-tooltip{color: #000 !important;fill: #000;}
 
 /* 모달창 */
 /* .MuiBackdrop-root{background-color: rgba(0, 0, 0, 0.8);} */
@@ -144,11 +148,29 @@ table .pl {padding: 6px 0 6px 10px !important;text-align: center;}
 .condition1 a, .condition2 a, .condition3 a, .condition4 a, .base_link a{display: block;}
 .base_link a{color: #fff;}
 .condition1 a{color: red;}
-.condition2 a{color: #348857;}
-.condition3 a{color: #395DA7;}
-.condition4 a{color: #724599;}
+.condition2 a{color: #ef710b;}
+.condition3 a{color: #e7c748;}
+.condition4 a{color: #b2b2b2;}
+
+.flaw1 a, .flaw1 th, .flaw1 td{color: red;}
+.flaw2 a, .flaw2 th, .flaw2 td{color: #ef710b;}
+.flaw3 a, .flaw3 th, .flaw3 td{color: #e7c748;}
+.flaw4 a, .flaw4 th, .flaw4 td{color: #b2b2b2;}
+.flaw5 a, .flaw5 th, .flaw5 td{color: #2666ae;}
+.flaw6 a, .flaw6 th, .flaw6 td{color: #308a2a;}
+
+.check1 a, .check1 th, .check1 td{color: red;}
+.check2 a, .check2 th, .check2 td{color: #ef710b;}
+.check3 a, .check3 th, .check3 td{color: #b2b2b2;}
+
+.result1 th, .result1 td{color: red;}
+.result2 th, .result2 td{color: #308a2a;}
+.result3 th, .result3 td{color: #2666ae;}
+.result4 th, .result4 td{color: #ef710b;}
 
 .part_station button{padding: 0;}
+
+.part_status_box a:hover{color: #fff;}
 
 .part_status {
   margin: 0 auto;

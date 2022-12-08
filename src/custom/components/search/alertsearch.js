@@ -64,6 +64,22 @@ export default function DialogSelect() {
         <Box component="form">
           <div>
             <FormControl sx={{ m: 1, minWidth: 120 }}>
+              <InputLabel htmlFor="grouped-select">상태</InputLabel>
+              <Select defaultValue="" id="grouped-select" label="상태">
+                {/* <MenuItem value="">None</MenuItem> */}
+                <MenuItem value={1}></MenuItem>
+              </Select>
+            </FormControl>
+
+            <FormControl sx={{ m: 1, minWidth: 120 }}>
+              <InputLabel htmlFor="grouped-select">후속조치</InputLabel>
+              <Select defaultValue="" id="grouped-select" label="후속조치">
+                {/* <MenuItem value="">None</MenuItem> */}
+                <MenuItem value={1}></MenuItem>
+              </Select>
+            </FormControl>
+
+            <FormControl sx={{ m: 1, minWidth: 120 }}>
               <InputLabel htmlFor="grouped-select">호선</InputLabel>
               <Select defaultValue="" id="grouped-select" label="호선">
                 {/* <MenuItem value="">None</MenuItem> */}
@@ -107,6 +123,14 @@ export default function DialogSelect() {
                 <MenuItem value={2}>예술회관</MenuItem>
               </Select>
             </FormControl>
+
+            <FormControl sx={{ m: 1, minWidth: 120 }}>
+              <InputLabel htmlFor="grouped-select">설비분류</InputLabel>
+              <Select defaultValue="" id="grouped-select" label="설비분류">
+                <MenuItem value={1}>계산</MenuItem>
+                <MenuItem value={2}>예술회관</MenuItem>
+              </Select>
+            </FormControl>
             
             <div style={{display:"inline-block"}}>
               <FormControl sx={{ m: 1, minWidth: 120 }}>
@@ -136,6 +160,22 @@ export default function DialogSelect() {
           <DialogContent>
             <Box component="form">
               <div>
+                <FormControl sx={{ m: 1, minWidth: 120 }}>
+                  <InputLabel htmlFor="grouped-select">상태</InputLabel>
+                  <Select defaultValue="" id="grouped-select" label="상태">
+                    {/* <MenuItem value="">None</MenuItem> */}
+                    <MenuItem value={1}></MenuItem>
+                  </Select>
+                </FormControl>
+
+                <FormControl sx={{ m: 1, minWidth: 120 }}>
+                  <InputLabel htmlFor="grouped-select">후속조치</InputLabel>
+                  <Select defaultValue="" id="grouped-select" label="후속조치">
+                    {/* <MenuItem value="">None</MenuItem> */}
+                    <MenuItem value={1}></MenuItem>
+                  </Select>
+                </FormControl>
+
                 <FormControl sx={{ m: 1, minWidth: 120 }}>
                   <InputLabel htmlFor="grouped-select">호선</InputLabel>
                   <Select defaultValue="" id="grouped-select" label="호선">
@@ -180,6 +220,14 @@ export default function DialogSelect() {
                     <MenuItem value={2}>예술회관</MenuItem>
                   </Select>
                 </FormControl>
+
+                <FormControl sx={{ m: 1, minWidth: 120 }}>
+                  <InputLabel htmlFor="grouped-select">설비분류</InputLabel>
+                  <Select defaultValue="" id="grouped-select" label="설비분류">
+                    <MenuItem value={1}>계산</MenuItem>
+                    <MenuItem value={2}>예술회관</MenuItem>
+                  </Select>
+                </FormControl>
                 
                 <div style={{display:"inline-block"}}>
                   <FormControl sx={{ m: 1, minWidth: 120 }}>
@@ -193,6 +241,8 @@ export default function DialogSelect() {
                   <FormControl sx={{ m: 1 }} variant="standard">
                     <BootstrapInput id="demo-customized-textbox" />
                   </FormControl>
+
+                  <Button variant="contained" style={{padding:"8px 15px"}}><span className="material-symbols-outlined">search</span>검색</Button>
                 </div>
               </div>
             </Box>

@@ -1,8 +1,10 @@
 import React from 'react'
 import ReactPlayer from 'react-player'
+import { Link } from "react-router-dom";
+import { NavLink } from "react-bootstrap";
+import { Row, Col } from 'react-bootstrap';
 
 import MainCard from 'components/MainCard';
-import { Row, Col } from 'react-bootstrap';
 import { Button, Table, TableBody, TableCell, TableContainer, TableHead, TableRow } from '@mui/material';
 import Chip from '@mui/material/Chip';
 import ChartTabs from 'custom/components/tabs/ChartTabs';
@@ -10,26 +12,47 @@ import Video from 'custom/video/1.mp4'
 
 function EquipDetail () {
 
-  function createData1(time, division, equipcompo, cont, condition) {
-    return { time, division, equipcompo, cont, condition };
+  function createData1(check, time, alertype, division, cont) {
+    let rowclass;
+    if(check == '경보발생') {
+      rowclass='check1';
+    } else if(check == '경보확인') {
+      rowclass='check2';
+    } else if(check == '현장점검') {
+      rowclass='check3';
+    } else {
+      rowclass=''
+    }
+    return { check, time, alertype, division, cont, rowclass };
   }
 
-  function createData2(measure, namecode, maintenance, worker, date, condition) {
-    return { measure, namecode, maintenance, worker, date, condition };
+  function createData2(result, time, division, inspector) {
+    let rowclass;
+    if(result == '대기') {
+      rowclass='result1';
+    } else if(result == '유지보수') {
+      rowclass='result2';
+    } else if(result == '정상') {
+      rowclass='result3';
+    } else {
+      rowclass=''
+    }
+  
+    return { result, time, division, inspector, rowclass };
   }
 
   const rows1 = [
-    createData1('2022-06-02 00:00', '결함발생', 'RF1(환기부)', '직팽식공조기 (SF) 전동기 이상진동', '경보확인'),
-    createData1('2022-06-02 00:00', '결함발생', 'RF1(환기부)', '직팽식공조기 (SF) 전동기 이상진동', '경보확인'),
-    createData1('2022-06-02 00:00', '결함발생', 'RF1(환기부)', '직팽식공조기 (SF) 전동기 이상진동', '경보'),
-    createData1('2022-06-02 00:00', '결함발생', 'RF1(환기부)', '직팽식공조기 (SF) 전동기 이상진동', '경보')
+    createData1('경보발생', '2022-06-02 00:07', 'IoT경보', '결함발생', '직팽식공조기 (SF) 전동기 이상진동'),
+    createData1('현장점검', '2022-06-02 00:07', 'IoT경보', '결함발생', '직팽식공조기 (SF) 전동기 이상진동'),
+    createData1('경보발생', '2022-06-02 00:07', 'IoT경보', '결함발생', '직팽식공조기 (SF) 전동기 이상진동'),
+    createData1('경보확인', '2022-06-02 00:07', 'IoT경보', '결함발생', '직팽식공조기 (SF) 전동기 이상진동'),
   ];
 
   const rows2 = [
-    createData2('유지보수(교체)', 'V-BELT', '고장 및 기능장애', '홍길동', '2022-11-01', '완료'),
-    createData2('단순고장장애', '', '', '', '2022-11-01', '확인'),
-    createData2('현장(상시)점검', '', '', '', '', '대기'),
-    createData2('현장(상시)점검', '', '', '', '', '대기')
+    createData2('정상', '2022-06-02 00:07', '상시', '홍길동'),
+    createData2('유지보수', '2022-06-02 00:07', '일일', '홍길동'),
+    createData2('유지보수', '2022-06-02 00:07', '상시', '홍길동'),
+    createData2('대기', '', '상시', '')
   ];
 
   return (
@@ -74,28 +97,34 @@ function EquipDetail () {
           </MainCard>
 
           <MainCard className="center_table" content={false}>
-            <Chip label="경보내역" color="error" />
+            <div className='more'>
+              <Chip label="경보내역" color="error" />
+              <NavLink as={Link} to="/alertlist" className='more_btn'>더보기 +</NavLink>
+            </div>
             {/* table */}
             <TableContainer>
-              <Table sx={{ minWidth: 600 }} aria-label="simple table">
+              <Table sx={{ minWidth: 800 }} aria-label="simple table" className="base_link">
                 <TableHead>
                   <TableRow>
-                    <TableCell align="center">일시</TableCell>
-                    <TableCell align="center">경보분류</TableCell>
-                    <TableCell align="center">설비구성부</TableCell>
-                    <TableCell align="center">내용</TableCell>
                     <TableCell align="center">상태</TableCell>
-                    <TableCell align="center"></TableCell>
+                    <TableCell>일시</TableCell>
+                    <TableCell align="center">경보유형</TableCell>
+                    <TableCell align="center">경보분류</TableCell>
+                    <TableCell align="center">내용</TableCell>
+                    
                   </TableRow>
                 </TableHead>
                 <TableBody>
                   {rows1.map((row1) => (
-                    <TableRow hover key={row1.name}>
-                      <TableCell component="th" scope="row">{row1.time}</TableCell>
-                      <TableCell align="center">{row1.division}</TableCell>
-                      <TableCell align="center">{row1.equipcompo}</TableCell>
-                      <TableCell align="center">{row1.cont}</TableCell>
-                      <TableCell align="center">{row1.condition}</TableCell>
+                    <TableRow hover key={row1.name}
+                      className={row1.rowclass}
+                    >
+                      <TableCell component="th" scope="row"><Link to="/alertdetail">{row1.time}</Link></TableCell>
+                      <TableCell align="center"><Link to="/alertdetail">{row1.check}</Link></TableCell>
+                      <TableCell align="center"><Link to="/alertdetail">{row1.alertype}</Link></TableCell>
+                      <TableCell align="center"><Link to="/alertdetail">{row1.division}</Link></TableCell>
+                      <TableCell align="center"><Link to="/alertdetail">{row1.cont}</Link></TableCell>
+                      
                     </TableRow>
                   ))}
                 </TableBody>
@@ -104,30 +133,31 @@ function EquipDetail () {
           </MainCard>
 
           <MainCard content={false}>
-            <Chip label="현장(상시)점검 내역" color="success" />
+            <div className='more'>
+              <Chip label="현장(상시)점검 내역" color="success" />
+              <NavLink as={Link} to="/SpotList" className='more_btn'>더보기 +</NavLink>
+            </div>
             {/* table */}
             <TableContainer>
-              <Table sx={{ minWidth: 600 }} aria-label="simple table">
+              <Table sx={{ minWidth: 800 }} aria-label="simple table">
                 <TableHead>
                   <TableRow>
-                    <TableCell align="center">조치유형</TableCell>
-                    <TableCell align="center">품명</TableCell>
-                    <TableCell align="center">고장(유지보수)원인</TableCell>
-                    <TableCell align="center">작업자</TableCell>
-                    <TableCell align="center">점검일</TableCell>
-                    <TableCell align="center">상태</TableCell>
-                    <TableCell align="center"></TableCell>
+                    <TableCell align="center">결과</TableCell>
+                    <TableCell>일시</TableCell>
+                    <TableCell align="center">구분</TableCell>
+                    <TableCell align="center">점검자</TableCell>
                   </TableRow>
                 </TableHead>
                 <TableBody>
                   {rows2.map((row2) => (
-                    <TableRow hover key={row2.name}>
-                      <TableCell component="th" scope="row">{row2.measure}</TableCell>
-                      <TableCell align="center">{row2.namecode}</TableCell>
-                      <TableCell align="center">{row2.maintenance}</TableCell>
-                      <TableCell align="center">{row2.worker}</TableCell>
-                      <TableCell align="center">{row2.date}</TableCell>
-                      <TableCell align="center">{row2.condition}</TableCell>
+                    <TableRow hover key={row2.name}
+                      className={row2.rowclass}
+                      component={Link} to="/spotdetail"
+                    >
+                      <TableCell component="th" scope="row">{row2.result}</TableCell>
+                      <TableCell align="center">{row2.time}</TableCell>
+                      <TableCell align="center">{row2.division}</TableCell>
+                      <TableCell align="center">{row2.inspector}</TableCell>
                     </TableRow>
                   ))}
                 </TableBody>

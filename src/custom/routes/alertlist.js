@@ -4,21 +4,30 @@ import Paging from 'custom/components/table/paging';
 import DialogSelect from 'custom/components/search/alertsearch';
 
 function AlertList () {
-  function createData(condition, date, alertype, alertcompo, measure, equipnum, number, part, station, equipcompo, equipname) {
-    return { condition, date, alertype, alertcompo, measure, equipnum, number, part, station, equipcompo, equipname };
+  function createData(check, date, measure, alertdate, alertype, alertcompo, equipnum, number, part, station, equipcompo, equipname) {
+    let rowclass;
+    if(check == '경보발생') {
+      rowclass='check1';
+    } else if(check == '경보확인') {
+      rowclass='check2';
+    } else if(check == '현장점검') {
+      rowclass='check3';
+    } else {
+      rowclass=''
+    }
+
+    return { check, date, measure, alertdate, alertype, alertcompo, equipnum, number, part, station, equipcompo, equipname, rowclass };
   }
 
   const rows = [
-    createData('경보확인','2022-10-13 07:59','진단IoT경보','결함발생','현장확인(필요)','118-R-PAC','1호선','계산','부평구청','직팽식공조기','우 직팽식공조기'),
-    createData('경보확인','2022-10-13 07:59','진단IoT경보','결함발생','현장확인(필요)','118-R-PAC','1호선','계산','부평구청','직팽식공조기','우 직팽식공조기'),
-    createData('경보확인','2022-10-13 07:59','진단IoT경보','결함발생','현장확인(필요)','118-R-PAC','1호선','계산','부평구청','직팽식공조기','우 직팽식공조기'),
-    createData('경보확인','2022-10-13 07:59','진단IoT경보','결함발생','현장확인(필요)','118-R-PAC','1호선','계산','부평구청','직팽식공조기','우 직팽식공조기'),
-    createData('경보확인','2022-10-13 07:59','진단IoT경보','결함발생','현장확인(필요)','118-R-PAC','1호선','계산','부평구청','직팽식공조기','우 직팽식공조기'),
-    createData('경보확인','2022-10-13 07:59','진단IoT경보','결함발생','현장확인(필요)','118-R-PAC','1호선','계산','부평구청','직팽식공조기','우 직팽식공조기'),
-    createData('경보확인','2022-10-13 07:59','진단IoT경보','결함발생','현장확인(필요)','118-R-PAC','1호선','계산','부평구청','직팽식공조기','우 직팽식공조기'),
-    createData('경보확인','2022-10-13 07:59','진단IoT경보','결함발생','현장확인(필요)','118-R-PAC','1호선','계산','부평구청','직팽식공조기','우 직팽식공조기'),
-    createData('경보확인','2022-10-13 07:59','진단IoT경보','결함발생','현장확인(필요)','118-R-PAC','1호선','계산','부평구청','직팽식공조기','우 직팽식공조기'),
-    createData('경보확인','2022-10-13 07:59','진단IoT경보','결함발생','현장확인(필요)','118-R-PAC','1호선','계산','부평구청','직팽식공조기','우 직팽식공조기')
+    createData('경보확인','2022-10-13 07:59','','2022-10-13 07:59','진단IoT경보','결함발생','118-R-PAC','1호선','계산','부평구청','직팽식공조기','우 직팽식공조기'),
+    createData('현장점검','2022-10-13 07:59','유지보수','2022-10-13 07:59','진단IoT경보','결함발생','118-R-PAC','1호선','계산','부평구청','직팽식공조기','우 직팽식공조기'),
+    createData('경보확인','2022-10-13 07:59','','2022-10-13 07:59','진단IoT경보','결함발생','118-R-PAC','1호선','계산','부평구청','직팽식공조기','우 직팽식공조기'),
+    createData('경보확인','2022-10-13 07:59','','2022-10-13 07:59','진단IoT경보','결함발생','118-R-PAC','1호선','계산','부평구청','직팽식공조기','우 직팽식공조기'),
+    createData('현장점검','2022-10-13 07:59','정상','2022-10-13 07:59','진단IoT경보','결함발생','118-R-PAC','1호선','계산','부평구청','직팽식공조기','우 직팽식공조기'),
+    createData('경보발생','','','2022-10-13 07:59','진단IoT경보','결함발생','118-R-PAC','1호선','계산','부평구청','직팽식공조기','우 직팽식공조기'),
+    createData('경보발생','','','2022-10-13 07:59','진단IoT경보','결함발생','118-R-PAC','1호선','계산','부평구청','직팽식공조기','우 직팽식공조기'),
+    createData('경보발생','','','2022-10-13 07:59','진단IoT경보','결함발생','118-R-PAC','1호선','계산','부평구청','직팽식공조기','우 직팽식공조기')
   ];
 
   return (
@@ -32,10 +41,11 @@ function AlertList () {
           <TableHead>
             <TableRow>
               <TableCell align="center">상태</TableCell>
+              <TableCell align="center">경보확인일시</TableCell>
+              <TableCell align="center">후속조치</TableCell>
               <TableCell align="center">경보일시</TableCell>
               <TableCell align="center">경보유형</TableCell>
               <TableCell align="center">경보분류</TableCell>
-              <TableCell align="center">후속조치유형</TableCell>
               <TableCell align="center">설비번호</TableCell>
               <TableCell align="center">호선</TableCell>
               <TableCell align="center">파트</TableCell>
@@ -49,12 +59,14 @@ function AlertList () {
             {rows.map((row) => (
               <TableRow hover key={row.name}
                 component={Link} to="/alertdetail"
+                className={row.rowclass}
               >
-                <TableCell align="center">{row.condition}</TableCell>
+                <TableCell align="center">{row.check}</TableCell>
                 <TableCell align="center">{row.date}</TableCell>
+                <TableCell align="center">{row.measure}</TableCell>
+                <TableCell align="center">{row.alertdate}</TableCell>
                 <TableCell align="center">{row.alertype}</TableCell>
                 <TableCell align="center">{row.alertcompo}</TableCell>
-                <TableCell align="center">{row.measure}</TableCell>
                 <TableCell align="center">{row.equipnum}</TableCell>
                 <TableCell align="center">{row.number}</TableCell>
                 <TableCell align="center">{row.part}</TableCell>
