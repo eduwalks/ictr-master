@@ -77,7 +77,7 @@ class ChartTabCont2 extends Component {
 
         <div className="mixed-chart">
         <MainCard style={{marginTop:"10px"}} content={false}>
-            <Chip label="진동량 트렌드 그래프 (전동기)" color="default" />
+            <Chip label="진동량 트렌드 그래프 (송풍기)" color="default" />
             <Chart
               options={this.state1.options}
               series={this.state1.series}
