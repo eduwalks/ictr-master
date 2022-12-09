@@ -1,4 +1,4 @@
-import Logo from 'logo.svg'
+import Logo from 'logo1.svg'
 import { Nav, Navbar, NavLink } from "react-bootstrap";
 import { Button } from '@mui/material';
 import { Link } from "react-router-dom";
@@ -8,23 +8,23 @@ import TodayAll from './time';
 const Navigationbar = () => {
 
   return (
-    <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
-      <Navbar.Brand eventKey="1" as={Link} to="/"><img src={Logo} alt="로고" /></Navbar.Brand>
+    <Navbar collapseOnSelect expand="lg" bg="light" variant="light">
+      <Navbar.Brand eventKey="1" as={Link} to="/maintenance"><img src={Logo} alt="로고" /></Navbar.Brand>
       <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
         <Nav>
-          <NavLink eventKey="2" as={Link} to="/">대시보드</NavLink>
-          <NavLink eventKey="3" as={Link} to="/equiplist">설비목록</NavLink>
-          <NavLink eventKey="4" as={Link} to="/alertlist">경보목록</NavLink>
-          <NavLink eventKey="5" as={Link} to="/spotlist">현장(상시)점검내역</NavLink>
-          <NavLink eventKey="6" as={Link} to="/test">통계/보고서</NavLink>
-          <NavLink eventKey="7" as={Link} to="/test">설정</NavLink>
+          <NavLink eventKey="2" as={Link} to="/maintenance">대시보드</NavLink>
+          <NavLink eventKey="3" as={Link} to="/maintenance">설비목록</NavLink>
+          <NavLink eventKey="4" as={Link} to="/maintenance">점검목록</NavLink>
+          <NavLink eventKey="5" as={Link} to="/maintenance">유지보수관리</NavLink>
+          <NavLink eventKey="6" as={Link} to="/maintenance">통계/보고서</NavLink>
+          <NavLink eventKey="7" as={Link} to="/maintenance">설정</NavLink>
         </Nav>
         <Nav>
-          <TodayAll />
+          <TodayAll style={{color:"#707071"}} />
         </Nav>
         <Nav style={{alignItems:"center",color:"#fff",fontSize:"1rem"}}>
-          <NavLink eventKey="8" as={Link} to="/" style={{alignItems:"center",color:"#fff",fontSize:"1rem"}}>
+          <NavLink eventKey="8" as={Link} to="/" style={{alignItems:"center",fontSize:"1rem"}}>
             <div style={{display:"flex", alignItems:"center"}}>
               <span className="material-symbols-outlined">account_circle</span>
               <span style={{padding:"0 7px"}}>홍길동</span>
@@ -32,7 +32,7 @@ const Navigationbar = () => {
             </div>
           </NavLink>
           <NavLink eventKey="9" as={Link} to="/"><Button variant="contained">로그아웃</Button></NavLink>
-          <NavLink eventKey="10" as={Link} to="/maintenance"><Button variant="contained">유지보수관리</Button></NavLink>
+          <NavLink eventKey="10" as={Link} to="/"><Button variant="contained">모니터링</Button></NavLink>
           {/* <Customization /> */}
         </Nav>
       </Navbar.Collapse>     

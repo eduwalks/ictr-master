@@ -1,11 +1,14 @@
 *{margin: 0;padding: 0;box-sizing: border-box;}
 html, body{margin: 0;}
-body{min-height: 100vh;background: url('img/bg.png');background-size: cover;}
+.monitering{min-height: 100vh;background: url('img/bg.png');background-size: cover;}
+.maintenance{min-height: 100vh;background: #fff;}
 a{text-decoration: none;}
 
 /* 로고 영역 */
 .navbar-brand{width: 200px;cursor: pointer;}
+.maintenance .navbar-brand{width: 320px;cursor: pointer;}
 .navbar{padding: 10px;}
+.maintenance .navbar h6{color: grey !important;}
 .navbar-nav .MuiBox-root{padding: 0; padding-left: 9px;}
 .navbar-expand-sm .navbar-collapse{justify-content: space-between;}
 .navbar-nav .css-8qacrl-MuiButtonBase-root-MuiIconButton-root{color: grey;}

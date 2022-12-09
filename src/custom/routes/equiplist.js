@@ -1,5 +1,7 @@
 import { Link } from 'react-router-dom';
 import { Button, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Checkbox } from '@mui/material';
+
+import Navigationbar from 'custom/components/navigationbar';
 import Paging from 'custom/components/table/paging';
 import DialogSelect from 'custom/components/search/equipsearch';
 
@@ -37,73 +39,76 @@ const rows = [
 
 export function EquipList() {
   return (
-    <div className="sub_container">
-      <div className='selectbox'>
-        <DialogSelect></DialogSelect>
-      </div>
+    <div className="monitering">
+      <Navigationbar />
+      <div className="sub_container">
+        <div className='selectbox'>
+          <DialogSelect></DialogSelect>
+        </div>
 
-      <ul className='condition' style={{marginTop:"px"}}>
-        <li className='sum'>합계: 00</li>
-        <li className='fine'>양호: 00</li>
-        <li className='normal'>보통: 00</li>
-        <li className='communi'>통신: 00</li>
-        <li className='insuff'>미흡: 00</li>
-        <li className='error'>결함: 00</li>
-        <li className='bad'>불량: 00</li>
-      </ul>
+        <ul className='condition' style={{marginTop:"px"}}>
+          <li className='sum'>합계: 00</li>
+          <li className='fine'>양호: 00</li>
+          <li className='normal'>보통: 00</li>
+          <li className='communi'>통신: 00</li>
+          <li className='insuff'>미흡: 00</li>
+          <li className='error'>결함: 00</li>
+          <li className='bad'>불량: 00</li>
+        </ul>
 
-      <TableContainer>
-        <Table sx={{ minWidth: 1250 }} aria-label="simple table">
-          <TableHead>
-            <TableRow>
-              <TableCell align="center">선택</TableCell>
-              <TableCell align="center">상태</TableCell>
-              <TableCell align="center">최근진단</TableCell>
-              <TableCell align="center">호선</TableCell>
-              <TableCell align="center">파트</TableCell>
-              <TableCell align="center">역사명</TableCell>
-              <TableCell align="center">설비번호</TableCell>
-              <TableCell align="center">설비분류</TableCell>
-              <TableCell align="center">설비명</TableCell>
-              <TableCell align="center">위치</TableCell>
-              <TableCell align="center">설비구성부</TableCell>
-              <TableCell align="center">등급</TableCell>
-              <TableCell align="center">게이트웹이</TableCell>
-              <TableCell align="center">결함여부</TableCell>
-              <TableCell align="center"></TableCell>
-            </TableRow>
-          </TableHead>
-          <TableBody>
-            {rows.map((row) => (
-              <TableRow hover key={row.name}
-                component={Link} to="/equipdetail"
-                className={row.rowclass}
-              >
-                <TableCell align="center"><Checkbox size="small" /></TableCell>
-                <TableCell align="center">{row.condition}</TableCell>
-                <TableCell align="center">{row.date}</TableCell>
-                <TableCell align="center">{row.number}</TableCell>
-                <TableCell align="center">{row.part}</TableCell>
-                <TableCell align="center">{row.station}</TableCell>
-                <TableCell align="center">{row.equipnum}</TableCell>
-                <TableCell align="center">{row.equipcate}</TableCell>
-                <TableCell align="center">{row.equipname}</TableCell>
-                <TableCell align="center">{row.locate}</TableCell>
-                <TableCell align="center">{row.equipcompo}</TableCell>
-                <TableCell align="center">{row.grade}</TableCell>
-                <TableCell align="center">{row.gate}</TableCell>
-                <TableCell align="center">{row.flaw}</TableCell>
-                <TableCell align="center">
-                  <span className="material-symbols-outlined">build</span>
-                </TableCell>
+        <TableContainer>
+          <Table sx={{ minWidth: 1250 }} aria-label="simple table">
+            <TableHead>
+              <TableRow>
+                <TableCell align="center">선택</TableCell>
+                <TableCell align="center">상태</TableCell>
+                <TableCell align="center">최근진단</TableCell>
+                <TableCell align="center">호선</TableCell>
+                <TableCell align="center">파트</TableCell>
+                <TableCell align="center">역사명</TableCell>
+                <TableCell align="center">설비번호</TableCell>
+                <TableCell align="center">설비분류</TableCell>
+                <TableCell align="center">설비명</TableCell>
+                <TableCell align="center">위치</TableCell>
+                <TableCell align="center">설비구성부</TableCell>
+                <TableCell align="center">등급</TableCell>
+                <TableCell align="center">게이트웹이</TableCell>
+                <TableCell align="center">결함여부</TableCell>
+                <TableCell align="center"></TableCell>
               </TableRow>
-            ))}
-          </TableBody>
-        </Table>
-      </TableContainer>
+            </TableHead>
+            <TableBody>
+              {rows.map((row) => (
+                <TableRow hover key={row.name}
+                  component={Link} to="/equipdetail"
+                  className={row.rowclass}
+                >
+                  <TableCell align="center"><Checkbox size="small" /></TableCell>
+                  <TableCell align="center">{row.condition}</TableCell>
+                  <TableCell align="center">{row.date}</TableCell>
+                  <TableCell align="center">{row.number}</TableCell>
+                  <TableCell align="center">{row.part}</TableCell>
+                  <TableCell align="center">{row.station}</TableCell>
+                  <TableCell align="center">{row.equipnum}</TableCell>
+                  <TableCell align="center">{row.equipcate}</TableCell>
+                  <TableCell align="center">{row.equipname}</TableCell>
+                  <TableCell align="center">{row.locate}</TableCell>
+                  <TableCell align="center">{row.equipcompo}</TableCell>
+                  <TableCell align="center">{row.grade}</TableCell>
+                  <TableCell align="center">{row.gate}</TableCell>
+                  <TableCell align="center">{row.flaw}</TableCell>
+                  <TableCell align="center">
+                    <span className="material-symbols-outlined">build</span>
+                  </TableCell>
+                </TableRow>
+              ))}
+            </TableBody>
+          </Table>
+        </TableContainer>
 
-      <div className="btn_right"><Button variant="contained">진단 실행</Button></div>
-      <Paging />
+        <div className="btn_right"><Button variant="contained">진단 실행</Button></div>
+        <Paging />
+      </div>
     </div>
   )
 }

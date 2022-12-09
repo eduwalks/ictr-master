@@ -14,12 +14,11 @@ import { FirebaseProvider as AuthProvider } from 'contexts/FirebaseContext';
 
 // project imports
 // import { Routes, Route, useNavigate } from 'react-router-dom'
-import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
+import {BrowserRouter as Router, Route} from 'react-router-dom';
 import 'custom/style.css'
 // import Customization from 'layout/MainLayout/Header/HeaderContent/Customization';
 // import { Nav, Navbar } from 'react-bootstrap';
 // import Logo from './logo.svg'
-import Navigationbar from 'custom/components/navigationbar';
 import Main from 'custom/pages/main';
 import EquipList from 'custom/routes/equiplist';
 import EquipDetail from 'custom/routes/equipdetail';
@@ -28,7 +27,8 @@ import AlertDetail from 'custom/routes/alertdetail';
 import SpotList from 'custom/routes/spotlist';
 import SpotDetail from 'custom/routes/spotdetail';
 import PartStation from 'custom/routes/partstation';
-import Page16 from 'custom/routes/Page16';
+import MainTenance from 'custom/routes/maintenance';
+
 
 // ==============================|| APP - THEME, ROUTER, LOCAL  ||============================== //
 
@@ -44,7 +44,6 @@ function App() {
             <AuthProvider>
               <>
                 <Router>
-                  <Navigationbar />
                   {/* <Routes>
                     <Route path='/' element={<Main />} />
                     <Route path='/equiplist' element={<EquipList />} />
@@ -56,7 +55,7 @@ function App() {
                     <Route path='/partstation' element={<PartStation />} />
                     <Route path='/page16' element={<Page16 />} />
                   </Routes> */}
-                  <Switch>
+                  {/* <Switch> */}
                     <Route exact path='/' component={Main}/>
                     <Route path='/equiplist' component={EquipList}/>
                     <Route path='/equipdetail' component={EquipDetail}/>
@@ -65,8 +64,8 @@ function App() {
                     <Route path='/spotlist' component={SpotList}/>
                     <Route path='/spotdetail' component={SpotDetail}/>
                     <Route path='/partstation' component={PartStation}/>
-                    <Route path='/page16' component={Page16}/>
-                  </Switch>
+                    <Route path='/maintenance' component={MainTenance}/>
+                  {/* </Switch> */}
                 </Router>
               </>
             </AuthProvider>
