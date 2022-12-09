@@ -25,6 +25,12 @@ a{text-decoration: none;}
 .apexcharts-legend-text, .apexcharts-canvas text{color: #fff !important;fill: #fff;}
 .apexcharts-tooltip{color: #000 !important;fill: #000;}
 
+.charts_box .apexcharts-datalabel-label{fill:#000;}
+.charts_box > div:nth-child(1) .apexcharts-datalabel-value{fill:red;}
+.charts_box > div:nth-child(2) .apexcharts-datalabel-value{fill:#ef710b;}
+.charts_box > div:nth-child(3) .apexcharts-datalabel-value{fill:#e7c748;}
+.charts_box > div:nth-child(4) .apexcharts-datalabel-value{fill:#b2b2b2;}
+
 /* 모달창 */
 /* .MuiBackdrop-root{background-color: rgba(0, 0, 0, 0.8);} */
 .pop_box .MuiPaper-root{background-color: rgba(45, 45, 45, 1);}

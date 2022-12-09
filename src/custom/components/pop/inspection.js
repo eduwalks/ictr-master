@@ -329,11 +329,11 @@ export function InSpection() {
                   </TableRow>
 
                   <TableRow>
-                    <TableCell className="th">확인</TableCell>
+                    <TableCell className="th">비용</TableCell>
+                    <TableCell><TextField id="outlined-basic" sx={{ m: 1, minWidth: '90%' }} /></TableCell>
+                    <TableCell className="th">확인여부</TableCell>
                     <TableCell><TextField id="outlined-basic" sx={{ m: 1, minWidth: '90%' }} /></TableCell>
                     <TableCell className="th">확인자</TableCell>
-                    <TableCell><TextField id="outlined-basic" sx={{ m: 1, minWidth: '90%' }} /></TableCell>
-                    <TableCell className="th">확인일</TableCell>
                     <TableCell><div className="piker"><BasicDatePicker /></div></TableCell>
                   </TableRow>
 

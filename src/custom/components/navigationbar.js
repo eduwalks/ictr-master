@@ -24,8 +24,15 @@ const Navigationbar = () => {
           <TodayAll />
         </Nav>
         <Nav style={{alignItems:"center",color:"#fff",fontSize:"1rem"}}>
-          <span className="material-symbols-outlined">person</span><span>홍길동</span>&nbsp;&nbsp;
-          <Button variant="contained">로그아웃</Button>
+          <NavLink eventKey="8" as={Link} to="/" style={{alignItems:"center",color:"#fff",fontSize:"1rem"}}>
+            <div style={{display:"flex", alignItems:"center"}}>
+              <span className="material-symbols-outlined">account_circle</span>
+              <span style={{padding:"0 7px"}}>홍길동</span>
+              <span className="material-symbols-outlined">settings</span>
+            </div>
+          </NavLink>
+          <NavLink eventKey="9" as={Link} to="/"><Button variant="contained">로그아웃</Button></NavLink>
+          <NavLink eventKey="10" as={Link} to="/"><Button variant="contained">유지보수관리</Button></NavLink>
           {/* <Customization /> */}
         </Nav>
       </Navbar.Collapse>     

@@ -8,6 +8,7 @@ import { Button, Table, TableBody, TableCell, TableContainer, TableHead, TableRo
 import Chip from '@mui/material/Chip';
 import Video from 'custom/video/1.mp4'
 import ChartTabCont from 'custom/components/chart/ChartTabCont';
+import Paging from 'custom/components/table/paging';
 
 function AlertDetail () {
   function createData1(check, date, measure, alertdate, alertype, alertcompo) {
@@ -349,6 +350,7 @@ function AlertDetail () {
                 </TableBody>
               </Table>
             </TableContainer>
+            <Paging />
           </MainCard>
         </Col>
 

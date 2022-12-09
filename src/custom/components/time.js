@@ -23,7 +23,7 @@ function TodayAll () {
 
   return (
     <>
-      <h6 style={{color:"#fff"}}>{year}<span>-</span>{month}<span>-</span>{date} {timer}</h6>
+      <h6 style={{color:"#fff",marginTop:"5px"}}>{year}<span>-</span>{month}<span>-</span>{date} {timer}</h6>
     </>
   )
 }
