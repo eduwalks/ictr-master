@@ -28,6 +28,12 @@ import SpotList from 'custom/routes/spotlist';
 import SpotDetail from 'custom/routes/spotdetail';
 import PartStation from 'custom/routes/partstation';
 import MainTenance from 'custom/routes/maintenance';
+import Page16 from 'custom/routes/Page16';
+import Page21 from 'custom/routes/page21';
+import MroEquiplist from 'custom/routes/mro_equiplist';
+import MroChecklist from 'custom/routes/mro_checklist';
+import MroList from 'custom/routes/mro_list';
+import MroCheckDetail from 'custom/routes/mro_checkdetail';
 
 
 // ==============================|| APP - THEME, ROUTER, LOCAL  ||============================== //
@@ -65,6 +71,12 @@ function App() {
                     <Route path='/spotdetail' component={SpotDetail}/>
                     <Route path='/partstation' component={PartStation}/>
                     <Route path='/maintenance' component={MainTenance}/>
+                    <Route path='/page16' component={Page16}/>
+                    <Route path='/page21' component={Page21}/>
+                    <Route path='/mro_equiplist' component={MroEquiplist}/>
+                    <Route path='/mro_checklist' component={MroChecklist}/>
+                    <Route path='/mro_checkdetail' component={MroCheckDetail}/>
+                    <Route path='/mro_list' component={MroList}/>
                   {/* </Switch> */}
                 </Router>
               </>

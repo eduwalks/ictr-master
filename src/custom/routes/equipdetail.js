@@ -106,7 +106,7 @@ function EquipDetail () {
               </div>
               {/* table */}
               <TableContainer>
-                <Table sx={{ minWidth: 800 }} aria-label="simple table" className="base_link">
+                <Table sx={{ minWidth: 500 }} aria-label="simple table" className="base_link">
                   <TableHead>
                     <TableRow>
                       <TableCell align="center">상태</TableCell>
@@ -142,7 +142,7 @@ function EquipDetail () {
               </div>
               {/* table */}
               <TableContainer>
-                <Table sx={{ minWidth: 800 }} aria-label="simple table">
+                <Table sx={{ minWidth: 500 }} aria-label="simple table">
                   <TableHead>
                     <TableRow>
                       <TableCell align="center">결과</TableCell>

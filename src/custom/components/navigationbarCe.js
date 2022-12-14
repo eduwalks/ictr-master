@@ -14,11 +14,11 @@ const Navigationbar = () => {
         <Navbar.Collapse id="responsive-navbar-nav">
         <Nav>
           <NavLink eventKey="2" as={Link} to="/maintenance">대시보드</NavLink>
-          <NavLink eventKey="3" as={Link} to="/maintenance">설비목록</NavLink>
-          <NavLink eventKey="4" as={Link} to="/maintenance">점검목록</NavLink>
-          <NavLink eventKey="5" as={Link} to="/maintenance">유지보수관리</NavLink>
-          <NavLink eventKey="6" as={Link} to="/maintenance">통계/보고서</NavLink>
-          <NavLink eventKey="7" as={Link} to="/maintenance">설정</NavLink>
+          <NavLink eventKey="3" as={Link} to="/mro_equiplist">설비목록</NavLink>
+          <NavLink eventKey="4" as={Link} to="/mro_checklist">점검목록</NavLink>
+          <NavLink eventKey="5" as={Link} to="/mro_list">유지보수목록</NavLink>
+          <NavLink eventKey="6" as={Link} to="/4">통계/보고서</NavLink>
+          <NavLink eventKey="7" as={Link} to="/5">설정</NavLink>
         </Nav>
         <Nav>
           <TodayAll style={{color:"#707071"}} />

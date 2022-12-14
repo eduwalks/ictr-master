@@ -1,11 +1,27 @@
-import React from 'react'
+import React from "react";
+import { ThemeProvider, createTheme } from '@mui/material/styles';
+import CssBaseline from '@mui/material/CssBaseline';
 
-function Test () {
+// import {
+//   AppBar,
+//   CssBaseline,
+//   Typography,
+//   createMuiTheme
+// } from "@material-ui/core";
 
+const theme = createTheme({
+  palette: {
+    mode: "dark",
+  }
+});
+
+const Test = () => {
   return (
-    <div className="sub_container">
-    </div>
-  )
-}
+    <ThemeProvider theme={theme}>
+      <CssBaseline />
+      11
+    </ThemeProvider>
+  );
+};
 
 export default Test;
