@@ -1,4 +1,6 @@
 import * as React from 'react';
+import { ThemeProvider, createTheme } from '@mui/material/styles';
+import CssBaseline from '@mui/material/CssBaseline';
 import { styled } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
@@ -7,6 +9,12 @@ import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 import InputBase from '@mui/material/InputBase';
+
+const themec = createTheme({
+  palette: {
+    mode: "light",
+  }
+});
 
 const BootstrapInput = styled(InputBase)(({ theme }) => ({
   'label + &': {
@@ -44,15 +52,16 @@ const BootstrapInput = styled(InputBase)(({ theme }) => ({
 export default function DialogSelect() {
   return (
     <>
-      <div>
+      <ThemeProvider theme={themec}>
+        <CssBaseline />
         <Box component="form" /*style={{display:"flex", alignItems:"center"}}*/>
           <div>
-            <div>
+            <div className="lightsearch">
               <FormControl sx={{ m: 1, minWidth: 120 }}>
                 <InputLabel htmlFor="grouped-select">운용상태</InputLabel>
-                <Select defaultValue="" id="grouped-select" className="sub_container_ce_in" label="운용상태">
+                <Select defaultValue="" id="grouped-select" className="sub_container_ce_in lightsearch" label="운용상태">
                   {/* <MenuItem value="">None</MenuItem> */}
-                  <MenuItem value={1}>1호선</MenuItem>
+                  <MenuItem className="lightsearch" value={1}>1호선</MenuItem>
                   <MenuItem value={2}>2호선</MenuItem>
                 </Select>
               </FormControl>
@@ -103,7 +112,7 @@ export default function DialogSelect() {
             </div>
           </div>
         </Box>
-      </div>
+      </ThemeProvider>
     </>
   );
 }

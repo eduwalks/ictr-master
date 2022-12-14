@@ -4,6 +4,43 @@ html, body{margin: 0;}
 .maintenance{min-height: 100vh;background: #fff;}
 a{text-decoration: none;}
 
+/* 색상초기화 */
+.monitering tr a, .monitering th, .monitering td{color: #fff !important;}
+.monitering .css-8a8flf-MuiPaper-root-MuiCard-root{background-color: rgba(71, 71, 71, 0.3);}
+
+.monitering .condition1 a, .monitering .condition2 a, .monitering .condition3 a, 
+.monitering .condition4 a, .monitering .condition5 a, .monitering .condition6 a
+{display: block;border-radius:4px;width: 70px;margin: 0 auto;}
+
+.monitering .condition1 a{background-color: red;}
+.monitering .condition2 a{background-color: #ef710b;}
+.monitering .condition3 a{background-color: #e7c748;}
+.monitering .condition4 a{background-color: #b2b2b2;}
+.monitering .condition5 a{background-color: #308a2a;}
+.monitering .condition6 a{background-color: #2666ae;}
+
+.monitering thead {
+  background-color: #000;
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.sub_container_ce .maintlist_table tr a, .sub_container_ce .maintlist_table td{color: #000 !important;}
+
+.sub_container_ce .MuiTable-root .condition1 a, .sub_container_ce .MuiTable-root .condition2 a, .sub_container_ce .MuiTable-root .condition3 a, 
+.sub_container_ce .MuiTable-root .condition4 a, .sub_container_ce .MuiTable-root .condition5 a, .sub_container_ce .MuiTable-root .condition6 a
+{display: block;border-radius:4px;width: 70px;margin: 0 auto; color: #fff !important;}
+
+.sub_container_ce .condition1 a{background-color: red;}
+.sub_container_ce .condition2 a{background-color: #ef710b;}
+.sub_container_ce .condition3 a{background-color: #e7c748;}
+.sub_container_ce .condition4 a{background-color: #b2b2b2;}
+.sub_container_ce .condition5 a{background-color: #308a2a;}
+.sub_container_ce .condition6 a{background-color: #2666ae;}
+
+.sub_container_ce .part_status th a{color: #fff !important;}
+.sub_container_ce .part_status td a, .mro_table td a{color: #000 !important;}
+
 /* 로고 영역 */
 .navbar-brand{width: 200px;cursor: pointer;}
 .maintenance .navbar-brand{width: 320px;cursor: pointer;}
@@ -21,8 +58,8 @@ a{text-decoration: none;}
 .center_table {margin: 10px 0;}
 /* .cal_box {padding: 1%;} */
 .mobile_serach_box .MuiPaper-root{background-color: rgba(30, 30, 30, 1);}
-.MuiPaper-root{background-color: rgba(30, 30, 30, 0.3);}
-.MuiMenu-paper{background-color: rgba(30, 30, 30, 1);}
+/* .MuiPaper-root{background-color: rgba(30, 30, 30, 1);} */
+/* .MuiMenu-paper{background-color: rgba(30, 30, 30, 1);} */
 
 /* 차트 영역 */
 .apexcharts-legend-text, .apexcharts-canvas text{color: #fff !important;fill: #fff;}
@@ -107,7 +144,7 @@ display: flex;align-items: center;justify-content: center;border-radius: 5px;}
   padding: 6px 0 !important;
   text-align: center;
 }
-table .th {background-color: #111111;}
+table .th {background-color: #000;}
 table .pl {padding: 6px 0 6px 10px !important;text-align: center;}
 
 /* 차트탭 */
@@ -307,6 +344,10 @@ table .pl {padding: 6px 0 6px 10px !important;text-align: center;}
 .sub_container_ce .td_red .MuiTableCell-body{color: red;}
 .sub_container_ce .td_red .th{background-color: #f9e6e6;}
 
+.lightsearch {
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
 .part_status .train1_in{border: 2px solid #759cce;}
 .part_status .train2_in{border: 2px solid #f5a251;}
 
@@ -336,6 +377,12 @@ table .pl {padding: 6px 0 6px 10px !important;text-align: center;}
   color: #000 !important;
   fill: #000;
 }
+
+.sub_container_ce h3{font-size: 1.4rem;}
+
+.sub_container_ce .pagination .page-link{border: var(--bs-pagination-border-width) solid var(--bs-pagination-border-color);background-color: #fff;color: #000;}
+.sub_container_ce .active>.page-link, .sub_container_ce .page-link.active {background-color: #2666AE;color: #fff;}
+
 
 /* .sub_container_ce .MuiInputBase-input{background-color: #fff;}
 .sub_container_ce .MuiOutlinedInput-notchedOutline{background-color: #fff;border: 1px solid #ced4da;box-shadow:none;color:#000;} */

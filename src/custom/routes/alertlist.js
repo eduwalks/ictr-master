@@ -9,11 +9,11 @@ function AlertList () {
   function createData(check, date, measure, alertdate, alertype, alertcompo, equipnum, number, part, station, equipcompo, equipname) {
     let rowclass;
     if(check == '경보발생') {
-      rowclass='check1';
+      rowclass='condition1';
     } else if(check == '경보확인') {
-      rowclass='check2';
+      rowclass='condition2';
     } else if(check == '현장점검') {
-      rowclass='check3';
+      rowclass='condition4';
     } else {
       rowclass=''
     }
@@ -62,21 +62,20 @@ function AlertList () {
             <TableBody>
               {rows.map((row) => (
                 <TableRow hover key={row.name}
-                  component={Link} to="/alertdetail"
-                  className={row.rowclass}
+                  // component={Link} to="/alertdetail"
                 >
-                  <TableCell align="center">{row.check}</TableCell>
-                  <TableCell align="center">{row.date}</TableCell>
-                  <TableCell align="center">{row.measure}</TableCell>
-                  <TableCell align="center">{row.alertdate}</TableCell>
-                  <TableCell align="center">{row.alertype}</TableCell>
-                  <TableCell align="center">{row.alertcompo}</TableCell>
-                  <TableCell align="center">{row.equipnum}</TableCell>
-                  <TableCell align="center">{row.number}</TableCell>
-                  <TableCell align="center">{row.part}</TableCell>
-                  <TableCell align="center">{row.station}</TableCell>
-                  <TableCell align="center">{row.equipcompo}</TableCell>
-                  <TableCell align="center">{row.equipname}</TableCell>
+                  <TableCell align="center" className={row.rowclass}><Link to="/equipdetail">{row.check}</Link></TableCell>
+                  <TableCell align="center"><Link to="/equipdetail">{row.date}</Link></TableCell>
+                  <TableCell align="center"><Link to="/equipdetail">{row.measure}</Link></TableCell>
+                  <TableCell align="center"><Link to="/equipdetail">{row.alertdate}</Link></TableCell>
+                  <TableCell align="center"><Link to="/equipdetail">{row.alertype}</Link></TableCell>
+                  <TableCell align="center"><Link to="/equipdetail">{row.alertcompo}</Link></TableCell>
+                  <TableCell align="center"><Link to="/equipdetail">{row.equipnum}</Link></TableCell>
+                  <TableCell align="center"><Link to="/equipdetail">{row.number}</Link></TableCell>
+                  <TableCell align="center"><Link to="/equipdetail">{row.part}</Link></TableCell>
+                  <TableCell align="center"><Link to="/equipdetail">{row.station}</Link></TableCell>
+                  <TableCell align="center"><Link to="/equipdetail">{row.equipcompo}</Link></TableCell>
+                  <TableCell align="center"><Link to="/equipdetail">{row.equipname}</Link></TableCell>
                   <TableCell align="center">
                     <span className="material-symbols-outlined">content_paste_search</span>
                     <span className="material-symbols-outlined">build</span>

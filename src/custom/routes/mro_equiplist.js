@@ -117,7 +117,7 @@ function MroEquiplist () {
           
             <br/>
             <TableContainer>
-              <Table sx={{ minWidth: 800 }} aria-label="simple table">
+              <Table sx={{ minWidth: 800 }} aria-label="simple table" className="mro_table">
                 <TableHead>
                   <TableRow>
                     <TableCell className="blue_th" align="center">No.</TableCell>
@@ -141,7 +141,6 @@ function MroEquiplist () {
                 <TableBody>
                   {rows.map((row) => (
                     <TableRow hover key={row.name}
-                      className={row.rowclass}
                       // component={Link} to="/equipdetail"
                       // onClick={click}
                     >
@@ -159,7 +158,7 @@ function MroEquiplist () {
                       <TableCell><Link to="/mro_stationstate">{row.data12}</Link></TableCell>
                       <TableCell><Link to="/mro_stationstate">{row.data13}</Link></TableCell>
                       <TableCell><Link to="/mro_stationstate">{row.data14}</Link></TableCell>
-                      <TableCell><Link to="/mro_stationstate">{row.data15}</Link></TableCell>
+                      <TableCell className={row.rowclass}><Link to="/mro_stationstate">{row.data15}</Link></TableCell>
                       <TableCell align="center"><span className="material-symbols-outlined" style={{color:"#000"}}>build</span></TableCell>
                     </TableRow>
                   ))}

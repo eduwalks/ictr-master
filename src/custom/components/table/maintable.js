@@ -31,11 +31,11 @@ function createData1(time, number, part, station, equipname, equipstate, conditi
 function createData2(time, number, part, station, equipname, alertype, division, cont, check) {
   let rowclass;
   if(check == '경보발생') {
-    rowclass='check1';
+    rowclass='condition1';
   } else if(check == '경보확인') {
-    rowclass='check2';
+    rowclass='condition2';
   } else if(check == '현장점검') {
-    rowclass='check3';
+    rowclass='condition4';
   } else {
     rowclass=''
   }
@@ -45,11 +45,11 @@ function createData2(time, number, part, station, equipname, alertype, division,
 function createData3(time, division, number, part, station, sort, equipname, inspector, result) {
   let rowclass;
   if(result == '대기') {
-    rowclass='result1';
+    rowclass='condition1';
   } else if(result == '유지보수') {
-    rowclass='result2';
+    rowclass='condition3';
   } else if(result == '정상') {
-    rowclass='result3';
+    rowclass='condition6';
   } else {
     rowclass=''
   }
@@ -96,7 +96,7 @@ export default function MainTable1() {
       <MainCard content={false}>
         <div className='more'>
           <Chip label="설비 상태목록" color="info" />
-          <NavLink as={Link} to="/EquipList" className='more_btn'>더보기 +</NavLink>
+          <NavLink as={Link} to="/equipList" className='more_btn'>더보기 +</NavLink>
         </div>
         {/* table */}
         <TableContainer>
@@ -116,7 +116,6 @@ export default function MainTable1() {
             <TableBody>
               {rows1.map((row1) => (
                 <TableRow hover key={row1.name}
-                  className={row1.rowclass}
                   // component={Link} to="/equipdetail"
                   // onClick={click}
                 >
@@ -126,7 +125,7 @@ export default function MainTable1() {
                   <TableCell align="center"><Link to="/equipdetail">{row1.station}</Link></TableCell>
                   <TableCell align="center"><Link to="/equipdetail">{row1.equipname}</Link></TableCell>
                   <TableCell align="center"><Link to="/equipdetail">{row1.equipstate}</Link></TableCell>
-                  <TableCell align="center"><Link to="/equipdetail">{row1.condition}</Link></TableCell>
+                  <TableCell align="center" className={row1.rowclass}><Link to="/equipdetail">{row1.condition}</Link></TableCell>
                   {/* <TableCell align="center" onClick="event.stopPropagation();"> */}
                   <TableCell align="center">
                     <InSpection />
@@ -163,7 +162,6 @@ export default function MainTable1() {
             <TableBody>
               {rows2.map((row2) => (
                 <TableRow hover key={row2.name}
-                  className={row2.rowclass}
                 >
                   <TableCell component="th" scope="row"><Link to="/alertdetail">{row2.time}</Link></TableCell>
                   <TableCell align="center"><Link to="/alertdetail">{row2.number}</Link></TableCell>
@@ -173,7 +171,7 @@ export default function MainTable1() {
                   <TableCell align="center"><Link to="/alertdetail">{row2.alertype}</Link></TableCell>
                   <TableCell align="center"><Link to="/alertdetail">{row2.division}</Link></TableCell>
                   <TableCell align="center"><Link to="/alertdetail">{row2.cont}</Link></TableCell>
-                  <TableCell align="center"><Link to="/alertdetail">{row2.check}</Link></TableCell>
+                  <TableCell align="center" className={row2.rowclass}><Link to="/alertdetail">{row2.check}</Link></TableCell>
                   <TableCell align="center">
                     <Alert />
                   </TableCell>
@@ -207,19 +205,16 @@ export default function MainTable1() {
             </TableHead>
             <TableBody>
               {rows3.map((row3) => (
-                <TableRow hover key={row3.name}
-                  className={row3.rowclass}
-                  component={Link} to="/spotdetail"
-                >
-                  <TableCell component="th" scope="row">{row3.time}</TableCell>
-                  <TableCell align="center">{row3.division}</TableCell>
-                  <TableCell align="center">{row3.number}</TableCell>
-                  <TableCell align="center">{row3.part}</TableCell>
-                  <TableCell align="center">{row3.station}</TableCell>
-                  <TableCell align="center">{row3.sort}</TableCell>
-                  <TableCell align="center">{row3.equipname}</TableCell>
-                  <TableCell align="center">{row3.inspector}</TableCell>
-                  <TableCell align="center">{row3.result}</TableCell>
+                <TableRow hover key={row3.name}>
+                  <TableCell component="th" scope="row"><Link to="/spotdetail">{row3.time}</Link></TableCell>
+                  <TableCell align="center"><Link to="/spotdetail">{row3.division}</Link></TableCell>
+                  <TableCell align="center"><Link to="/spotdetail">{row3.number}</Link></TableCell>
+                  <TableCell align="center"><Link to="/spotdetail">{row3.part}</Link></TableCell>
+                  <TableCell align="center"><Link to="/spotdetail">{row3.station}</Link></TableCell>
+                  <TableCell align="center"><Link to="/spotdetail">{row3.sort}</Link></TableCell>
+                  <TableCell align="center"><Link to="/spotdetail">{row3.equipname}</Link></TableCell>
+                  <TableCell align="center"><Link to="/spotdetail">{row3.inspector}</Link></TableCell>
+                  <TableCell align="center" className={row3.rowclass}><Link to="/spotdetail">{row3.result}</Link></TableCell>
                 </TableRow>
               ))}
             </TableBody>

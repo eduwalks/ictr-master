@@ -115,7 +115,7 @@ function MroList () {
           
             <br/>
             <TableContainer>
-              <Table sx={{ minWidth: 800 }} aria-label="simple table">
+              <Table sx={{ minWidth: 800 }} aria-label="simple table" className="mro_table">
                 <TableHead>
                   <TableRow>
                     <TableCell className="blue_th" align="center">구분</TableCell>
@@ -138,7 +138,6 @@ function MroList () {
                 <TableBody>
                   {rows.map((row) => (
                     <TableRow hover key={row.name}
-                      className={row.rowclass}
                       // component={Link} to="/equipdetail"
                       // onClick={click}
                     >
@@ -156,7 +155,7 @@ function MroList () {
                       <TableCell><Link to="/mro_checkdetail">{row.data12}</Link></TableCell>
                       <TableCell><Link to="/mro_checkdetail">{row.data13}</Link></TableCell>
                       <TableCell><Link to="/mro_checkdetail">{row.data14}</Link></TableCell>
-                      <TableCell><Link to="/mro_checkdetail">{row.data15}</Link></TableCell>
+                      <TableCell className={row.rowclass}><Link to="/mro_checkdetail">{row.data15}</Link></TableCell>
                     </TableRow>
                   ))}
                 </TableBody>

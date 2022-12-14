@@ -10,13 +10,13 @@ function SpotList () {
   function createData(result, date, division, equipnum, number, part, station, equipcompo1, equipcompo2, equipname, inspector) {
     let rowclass;
     if(result == '대기') {
-      rowclass='result1';
+      rowclass='condition1';
     } else if(result == '유지보수') {
-      rowclass='result2';
+      rowclass='condition5';
     } else if(result == '정상') {
-      rowclass='result3';
+      rowclass='condition6';
     } else if(result == '주의관찰') {
-      rowclass='result4';
+      rowclass='condition2';
     } else {
       rowclass=''
     }
@@ -71,20 +71,19 @@ function SpotList () {
             <TableBody>
               {rows.map((row) => (
                 <TableRow hover key={row.name}
-                  component={Link} to="/spotdetail"
-                  className={row.rowclass}
+                  // component={Link} to="/spotdetail"
                 >
-                  <TableCell align="center">{row.result}</TableCell>
-                  <TableCell align="center">{row.date}</TableCell>
-                  <TableCell align="center">{row.division}</TableCell>
-                  <TableCell align="center">{row.equipnum}</TableCell>
-                  <TableCell align="center">{row.number}</TableCell>
-                  <TableCell align="center">{row.part}</TableCell>
-                  <TableCell align="center">{row.station}</TableCell>
-                  <TableCell align="center">{row.equipcompo1}</TableCell>
-                  <TableCell align="center">{row.equipcompo2}</TableCell>
-                  <TableCell align="center">{row.equipname}</TableCell>
-                  <TableCell align="center">{row.inspector}</TableCell>
+                  <TableCell align="center" className={row.rowclass}><Link to="/spotdetail">{row.result}</Link></TableCell>
+                  <TableCell align="center"><Link to="/spotdetail">{row.date}</Link></TableCell>
+                  <TableCell align="center"><Link to="/spotdetail">{row.division}</Link></TableCell>
+                  <TableCell align="center"><Link to="/spotdetail">{row.equipnum}</Link></TableCell>
+                  <TableCell align="center"><Link to="/spotdetail">{row.number}</Link></TableCell>
+                  <TableCell align="center"><Link to="/spotdetail">{row.part}</Link></TableCell>
+                  <TableCell align="center"><Link to="/spotdetail">{row.station}</Link></TableCell>
+                  <TableCell align="center"><Link to="/spotdetail">{row.equipcompo1}</Link></TableCell>
+                  <TableCell align="center"><Link to="/spotdetail">{row.equipcompo2}</Link></TableCell>
+                  <TableCell align="center"><Link to="/spotdetail">{row.equipname}</Link></TableCell>
+                  <TableCell align="center"><Link to="/spotdetail">{row.inspector}</Link></TableCell>
 
                 </TableRow>
               ))}

@@ -117,7 +117,7 @@ function MroChecklist () {
           
             <br/>
             <TableContainer>
-              <Table sx={{ minWidth: 800 }} aria-label="simple table">
+              <Table sx={{ minWidth: 800 }} aria-label="simple table" className="mro_table">
                 <TableHead>
                   <TableRow>
                     <TableCell className="blue_th" align="center">No.</TableCell>
@@ -139,12 +139,11 @@ function MroChecklist () {
                 <TableBody>
                   {rows.map((row) => (
                     <TableRow hover key={row.name}
-                      className={row.rowclass}
                       // component={Link} to="/equipdetail"
                       // onClick={click}
                     >
                       <TableCell><Link to="/mro_checkdetail">{row.data1}</Link></TableCell>
-                      <TableCell><Link to="/mro_checkdetail">{row.data2}</Link></TableCell>
+                      <TableCell className={row.rowclass}><Link to="/mro_checkdetail">{row.data2}</Link></TableCell>
                       <TableCell><Link to="/mro_checkdetail">{row.data3}</Link></TableCell>
                       <TableCell><Link to="/mro_checkdetail">{row.data4}</Link></TableCell>
                       <TableCell><Link to="/mro_checkdetail">{row.data5}</Link></TableCell>

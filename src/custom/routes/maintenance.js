@@ -1,5 +1,6 @@
-import Navigationbar from "custom/components/navigationbarCe";
+import { Link } from "react-router-dom";
 import { Row, Col, NavLink } from 'react-bootstrap';
+import Navigationbar from "custom/components/navigationbarCe";
 import { Button, Table, TableBody, TableCell, TableContainer, TableHead, TableRow } from '@mui/material';
 
 import Chip from '@mui/material/Chip';
@@ -25,11 +26,11 @@ function createData1(division, number, part, station, sort, equipname, equipnum,
 function createData2(time, division, number, part, station, sort, equipname, result) {
   let rowclass;
   if(result == '주의관찰') {
-    rowclass='result1';
+    rowclass='condition3';
   } else if(result == '유지보수') {
-    rowclass='result2';
+    rowclass='condition5';
   } else if(result == '정상') {
-    rowclass='result3';
+    rowclass='condition6';
   } else {
     rowclass=''
   }
@@ -84,50 +85,50 @@ function MainTenance () {
                   <TableHead>
                     <TableRow>
                       <TableCell style={{backgroundColor:"#f5f5f5",borderRadius:"0"}}></TableCell>
-                      <TableCell className="train1" align="center">계산</TableCell>
-                      <TableCell className="train1" align="center">예술회관</TableCell>
-                      <TableCell className="train1" align="center">동막</TableCell>
-                      <TableCell className="train2" align="center">검암</TableCell>
-                      <TableCell className="train2" align="center">가재울</TableCell>
-                      <TableCell className="train2" align="center">인천시청</TableCell>
+                      <TableCell className="train1" align="center"><Link to="/mro_partstate">계산</Link></TableCell>
+                      <TableCell className="train1" align="center"><Link to="/mro_partstate">예술회관</Link></TableCell>
+                      <TableCell className="train1" align="center"><Link to="/mro_partstate">동막</Link></TableCell>
+                      <TableCell className="train2" align="center"><Link to="/mro_partstate">검암</Link></TableCell>
+                      <TableCell className="train2" align="center"><Link to="/mro_partstate">가재울</Link></TableCell>
+                      <TableCell className="train2" align="center"><Link to="/mro_partstate">인천시청</Link></TableCell>
                     </TableRow>
                   </TableHead>
                   <TableBody>
                     <TableRow className="bad">
                       <th>상시점검</th>
-                      <td>0/0</td>
-                      <td>0/0</td>
-                      <td>0/0</td>
-                      <td>0/0</td>
-                      <td>0/0</td>
-                      <td>0/0</td>
+                      <td><Link to="/mro_partstate">0/0</Link></td>
+                      <td><Link to="/mro_partstate">0/0</Link></td>
+                      <td><Link to="/mro_partstate">0/0</Link></td>
+                      <td><Link to="/mro_partstate">0/0</Link></td>
+                      <td><Link to="/mro_partstate">0/0</Link></td>
+                      <td><Link to="/mro_partstate">0/0</Link></td>
                     </TableRow>
                     <TableRow className="error">
                       <th>경과</th>
-                      <td>0/0</td>
-                      <td>0/0</td>
-                      <td>0/0</td>
-                      <td>0/0</td>
-                      <td>0/0</td>
-                      <td>0/0</td>
+                      <td><Link to="/mro_partstate">0/0</Link></td>
+                      <td><Link to="/mro_partstate">0/0</Link></td>
+                      <td><Link to="/mro_partstate">0/0</Link></td>
+                      <td><Link to="/mro_partstate">0/0</Link></td>
+                      <td><Link to="/mro_partstate">0/0</Link></td>
+                      <td><Link to="/mro_partstate">0/0</Link></td>
                     </TableRow>
                     <TableRow className="insuff">
                       <th>임박</th>
-                      <td>0/0</td>
-                      <td>0/0</td>
-                      <td>0/0</td>
-                      <td>0/0</td>
-                      <td>0/0</td>
-                      <td>0/0</td>
+                      <td><Link to="/mro_partstate">0/0</Link></td>
+                      <td><Link to="/mro_partstate">0/0</Link></td>
+                      <td><Link to="/mro_partstate">0/0</Link></td>
+                      <td><Link to="/mro_partstate">0/0</Link></td>
+                      <td><Link to="/mro_partstate">0/0</Link></td>
+                      <td><Link to="/mro_partstate">0/0</Link></td>
                     </TableRow>
                     <TableRow className="communi">
                       <th>주의관찰</th>
-                      <td>0/0</td>
-                      <td>0/0</td>
-                      <td>0/0</td>
-                      <td>0/0</td>
-                      <td>0/0</td>
-                      <td>0/0</td>
+                      <td><Link to="/mro_partstate">0/0</Link></td>
+                      <td><Link to="/mro_partstate">0/0</Link></td>
+                      <td><Link to="/mro_partstate">0/0</Link></td>
+                      <td><Link to="/mro_partstate">0/0</Link></td>
+                      <td><Link to="/mro_partstate">0/0</Link></td>
+                      <td><Link to="/mro_partstate">0/0</Link></td>
                     </TableRow>
                   </TableBody>
                 </Table>
@@ -263,7 +264,7 @@ function MainTenance () {
             <MainCard content={false}>
               <div className='more'>
                 <Chip label="점검 대상 목록" style={{backgroundColor:"#257DDC"}} />
-                <NavLink className='more_btn' style={{color:"#000"}}>더보기 +</NavLink>
+                <NavLink as={Link} to="/mro_equiplist" className='more_btn' style={{color:"#000"}}>더보기 +</NavLink>
               </div>
               {/* table */}
               <TableContainer>
@@ -284,16 +285,15 @@ function MainTenance () {
                   <TableBody>
                     {rows1.map((row1) => (
                       <TableRow hover key={row1.name}
-                        className={row1.rowclass}
                       >
-                        <TableCell align="center">{row1.division}</TableCell>
-                        <TableCell align="center">{row1.number}</TableCell>
-                        <TableCell align="center">{row1.part}</TableCell>
-                        <TableCell align="center">{row1.station}</TableCell>
-                        <TableCell align="center">{row1.sort}</TableCell>
-                        <TableCell align="center">{row1.equipname}</TableCell>
-                        <TableCell align="center">{row1.equipnum}</TableCell>
-                        <TableCell align="center">{row1.condition}</TableCell>
+                        <TableCell align="center" className={row1.rowclass}><Link to="/mro_stationstate">{row1.division}</Link></TableCell>
+                        <TableCell align="center"><Link to="/mro_stationstate">{row1.number}</Link></TableCell>
+                        <TableCell align="center"><Link to="/mro_stationstate">{row1.part}</Link></TableCell>
+                        <TableCell align="center"><Link to="/mro_stationstate">{row1.station}</Link></TableCell>
+                        <TableCell align="center"><Link to="/mro_stationstate">{row1.sort}</Link></TableCell>
+                        <TableCell align="center"><Link to="/mro_stationstate">{row1.equipname}</Link></TableCell>
+                        <TableCell align="center"><Link to="/mro_stationstate">{row1.equipnum}</Link></TableCell>
+                        <TableCell align="center"><Link to="/mro_stationstate">{row1.condition}</Link></TableCell>
                         <TableCell align="center" style={{color:"#000"}}>
                           <span className="material-symbols-outlined">content_paste_search</span>
                         </TableCell>
@@ -307,7 +307,7 @@ function MainTenance () {
             <MainCard content={false} style={{marginTop:"10px"}}>
               <div className='more'>
                 <Chip label="최근 점검내역" color="success" />
-                <NavLink className='more_btn' style={{color:"#000"}}>더보기 +</NavLink>
+                <NavLink as={Link} to="/mro_checklist" className='more_btn' style={{color:"#000"}}>더보기 +</NavLink>
               </div>
               {/* table */}
               <TableContainer>
@@ -327,16 +327,15 @@ function MainTenance () {
                   <TableBody>
                     {rows2.map((row2) => (
                       <TableRow hover key={row2.name}
-                        className={row2.rowclass}
                       >
-                        <TableCell align="center">{row2.time}</TableCell>
-                        <TableCell align="center">{row2.division}</TableCell>
-                        <TableCell align="center">{row2.number}</TableCell>
-                        <TableCell align="center">{row2.part}</TableCell>
-                        <TableCell align="center">{row2.station}</TableCell>
-                        <TableCell align="center">{row2.sort}</TableCell>
-                        <TableCell align="center">{row2.equipname}</TableCell>
-                        <TableCell align="center">{row2.result}</TableCell>
+                        <TableCell align="center"><Link to="/mro_checkdetail">{row2.time}</Link></TableCell>
+                        <TableCell align="center"><Link to="/mro_checkdetail">{row2.division}</Link></TableCell>
+                        <TableCell align="center"><Link to="/mro_checkdetail">{row2.number}</Link></TableCell>
+                        <TableCell align="center"><Link to="/mro_checkdetail">{row2.part}</Link></TableCell>
+                        <TableCell align="center"><Link to="/mro_checkdetail">{row2.station}</Link></TableCell>
+                        <TableCell align="center"><Link to="/mro_checkdetail">{row2.sort}</Link></TableCell>
+                        <TableCell align="center"><Link to="/mro_checkdetail">{row2.equipname}</Link></TableCell>
+                        <TableCell align="center" className={row2.rowclass}><Link to="/mro_checkdetail">{row2.result}</Link></TableCell>
                       </TableRow>
                     ))}
                   </TableBody>
@@ -347,7 +346,7 @@ function MainTenance () {
             <MainCard content={false} style={{marginTop:"10px"}}>
               <div className='more'>
                 <Chip label="최근 유지보수내역" color="success" />
-                <NavLink className='more_btn' style={{color:"#000"}}>더보기 +</NavLink>
+                <NavLink as={Link} to="/mro_list" className='more_btn' style={{color:"#000"}}>더보기 +</NavLink>
               </div>
               {/* table */}
               <TableContainer>
@@ -367,14 +366,14 @@ function MainTenance () {
                   <TableBody>
                     {rows3.map((row3) => (
                       <TableRow hover key={row3.name}>
-                        <TableCell align="center">{row3.time}</TableCell>
-                        <TableCell align="center">{row3.number}</TableCell>
-                        <TableCell align="center">{row3.part}</TableCell>
-                        <TableCell align="center">{row3.station}</TableCell>
-                        <TableCell align="center">{row3.equipname}</TableCell>
-                        <TableCell align="center">{row3.product}</TableCell>
-                        <TableCell align="center">{row3.division}</TableCell>
-                        <TableCell align="center">{row3.analysis}</TableCell>
+                        <TableCell align="center"><Link to="/mro_checkdetail">{row3.time}</Link></TableCell>
+                        <TableCell align="center"><Link to="/mro_checkdetail">{row3.number}</Link></TableCell>
+                        <TableCell align="center"><Link to="/mro_checkdetail">{row3.part}</Link></TableCell>
+                        <TableCell align="center"><Link to="/mro_checkdetail">{row3.station}</Link></TableCell>
+                        <TableCell align="center"><Link to="/mro_checkdetail">{row3.equipname}</Link></TableCell>
+                        <TableCell align="center"><Link to="/mro_checkdetail">{row3.product}</Link></TableCell>
+                        <TableCell align="center"><Link to="/mro_checkdetail">{row3.division}</Link></TableCell>
+                        <TableCell align="center"><Link to="/mro_checkdetail">{row3.analysis}</Link></TableCell>
                       </TableRow>
                     ))}
                   </TableBody>
