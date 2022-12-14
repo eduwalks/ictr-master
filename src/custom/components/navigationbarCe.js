@@ -17,8 +17,8 @@ const Navigationbar = () => {
           <NavLink eventKey="3" as={Link} to="/mro_equiplist">설비목록</NavLink>
           <NavLink eventKey="4" as={Link} to="/mro_checklist">점검목록</NavLink>
           <NavLink eventKey="5" as={Link} to="/mro_list">유지보수목록</NavLink>
-          <NavLink eventKey="6" as={Link} to="/4">통계/보고서</NavLink>
-          <NavLink eventKey="7" as={Link} to="/5">설정</NavLink>
+          <NavLink eventKey="6" as={Link} to="/test1">통계/보고서</NavLink>
+          <NavLink eventKey="7" as={Link} to="/test1">설정</NavLink>
         </Nav>
         <Nav>
           <TodayAll style={{color:"#707071"}} />

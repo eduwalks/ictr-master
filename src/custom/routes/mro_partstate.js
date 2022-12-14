@@ -6,7 +6,7 @@ import Chip from '@mui/material/Chip';
 import MainCard from 'components/MainCard';
 
 // table data
-function createData1(division, number, part, station, sort, equipname, equipnum, condition) {
+function createData1(division, station, sort, equipname, equipnum, condition) {
   let rowclass;
   if(division == '상시점검') {
     rowclass='condition1';
@@ -19,10 +19,10 @@ function createData1(division, number, part, station, sort, equipname, equipnum,
   } else {
     rowclass=''
   }
-  return { division, number, part, station, sort, equipname, equipnum, condition, rowclass };
+  return { division, station, sort, equipname, equipnum, condition, rowclass };
 }
 
-function createData2(time, division, number, part, station, sort, equipname, result) {
+function createData2(time, division, station, sort, equipname, result) {
   let rowclass;
   if(result == '주의관찰') {
     rowclass='result1';
@@ -34,49 +34,49 @@ function createData2(time, division, number, part, station, sort, equipname, res
     rowclass=''
   }
 
-  return { time, division, number, part, station, sort, equipname, result, rowclass };
+  return { time, division, station, sort, equipname, result, rowclass };
 }
 
-function createData3(time, number, part, station, equipname, product, division, analysis) {
-  return { time, number, part, station, equipname, product, division, analysis };
+function createData3(time, station, equipname, product, division, analysis) {
+  return { time, station, equipname, product, division, analysis };
 }
 
 const rows1 = [
-  createData1('상시점검', '1호선', '예술회관', '부평', '공기조화설비', '좌대합실공조시-1', '124-L-AHU01-RF1', '불량'),
-  createData1('상시점검', '1호선', '예술회관', '부평', '소방설비', '좌대합실공조시-1', '124-L-AHU01-RF1', '결함'),
-  createData1('상시점검', '1호선', '예술회관', '부평', '승강장안전문설비', '좌대합실공조시-1', '124-L-AHU01-RF1', '결함'),
-  createData1('상시점검', '1호선', '예술회관', '부평', '오/배수 통기 및 우수배수설비', '좌대합실공조시-1', '124-L-AHU01-RF1', '불량'),
-  createData1('상시점검', '1호선', '예술회관', '부평', '위생기구설비', '좌대합실공조시-1', '124-L-AHU01-RF1', '미흡'),
-  createData1('상시점검', '1호선', '예술회관', '부평', '자동제어설비', '좌대합실공조시-1', '124-L-AHU01-RF1', '미흡'),
-  createData1('경과', '1호선', '예술회관', '부평', '급수/급탕설비', '좌대합실공조시-1', '124-L-AHU01-RF1', '미흡'),
-  createData1('경과', '1호선', '예술회관', '부평', '위생기구설비', '좌대합실공조시-1', '124-L-AHU01-RF1', '미흡'),
-  createData1('임박', '1호선', '예술회관', '부평', '승강설비', '좌대합실공조시-1', '124-L-AHU01-RF1', '통신'),
-  createData1('임박', '1호선', '예술회관', '부평', '승강설비', '좌대합실공조시-1', '124-L-AHU01-RF1', '통신'),
-  createData1('주의관찰', '1호선', '예술회관', '부평', '자동제어설비', '좌대합실공조시-1', '124-L-AHU01-RF1', '미흡'),
-  createData1('주의관찰', '1호선', '예술회관', '부평', '자동제어설비', '좌대합실공조시-1', '124-L-AHU01-RF1', '미흡'),
-  createData1('주의관찰', '1호선', '예술회관', '부평', '급수/급탕설비', '좌대합실공조시-1', '124-L-AHU01-RF1', '미흡')
+  createData1('상시점검', '부평', '공기조화설비', '좌대합실공조시-1', '124-L-AHU01-RF1', '불량'),
+  createData1('상시점검', '부평', '소방설비', '좌대합실공조시-1', '124-L-AHU01-RF1', '결함'),
+  createData1('상시점검', '부평', '승강장안전문설비', '좌대합실공조시-1', '124-L-AHU01-RF1', '결함'),
+  createData1('상시점검', '부평', '오/배수 통기 및 우수배수설비', '좌대합실공조시-1', '124-L-AHU01-RF1', '불량'),
+  createData1('상시점검', '부평', '위생기구설비', '좌대합실공조시-1', '124-L-AHU01-RF1', '미흡'),
+  createData1('상시점검', '부평', '자동제어설비', '좌대합실공조시-1', '124-L-AHU01-RF1', '미흡'),
+  createData1('경과', '부평', '급수/급탕설비', '좌대합실공조시-1', '124-L-AHU01-RF1', '미흡'),
+  createData1('경과', '부평', '위생기구설비', '좌대합실공조시-1', '124-L-AHU01-RF1', '미흡'),
+  createData1('임박', '부평', '승강설비', '좌대합실공조시-1', '124-L-AHU01-RF1', '통신'),
+  createData1('임박', '부평', '승강설비', '좌대합실공조시-1', '124-L-AHU01-RF1', '통신'),
+  createData1('주의관찰', '부평', '자동제어설비', '좌대합실공조시-1', '124-L-AHU01-RF1', '미흡'),
+  createData1('주의관찰', '부평', '자동제어설비', '좌대합실공조시-1', '124-L-AHU01-RF1', '미흡'),
+  createData1('주의관찰', '부평', '급수/급탕설비', '좌대합실공조시-1', '124-L-AHU01-RF1', '미흡')
 ]
 
 const rows2 = [
-  createData2('2022-06-02 00:07', '상시', '1호선', '예술회관', '부평', '공기조화설비', '좌대합실공조시-1', '정상'),
-  createData2('2022-06-02 00:07', '일일', '1호선', '예술회관', '부평', '소방설비', '좌대합실공조시-1', '유지보수'),
-  createData2('2022-06-02 00:07', '일일', '1호선', '예술회관', '부평', '승강장안전문설비', '좌대합실공조시-1', '주의관찰'),
+  createData2('2022-06-02 00:07', '상시', '부평', '공기조화설비', '좌대합실공조시-1', '정상'),
+  createData2('2022-06-02 00:07', '일일', '부평', '소방설비', '좌대합실공조시-1', '유지보수'),
+  createData2('2022-06-02 00:07', '일일', '부평', '승강장안전문설비', '좌대합실공조시-1', '주의관찰'),
 ];
 
 const rows3 = [
-  createData3('2022-06-02 00:07', '1호선', '예술회관', '부평', '우 직팽식공조기', 'EOCR', '유지보수(교체)', '고장 및 기능장애'),
-  createData3('2022-06-02 00:07', '1호선', '예술회관', '부평', '우 직팽식공조기', 'EOCR', '유지보수(교체)', '고장 및 기능장애'),
-  createData3('2022-06-02 00:07', '1호선', '예술회관', '부평', '우 직팽식공조기', 'EOCR', '유지보수(교체)', '고장 및 기능장애')
+  createData3('2022-06-02 00:07', '부평', '우 직팽식공조기', 'EOCR', '유지보수(교체)', '고장 및 기능장애'),
+  createData3('2022-06-02 00:07', '부평', '우 직팽식공조기', 'EOCR', '유지보수(교체)', '고장 및 기능장애'),
+  createData3('2022-06-02 00:07', '부평', '우 직팽식공조기', 'EOCR', '유지보수(교체)', '고장 및 기능장애')
 ];
 
-function MainTenance () {
+function MroPartState () {
 
   return (
     <div className="maintenance">
       <Navigationbar />
       <div className="sub_container_ce" style={{backgroundColor:"#fff"}}>
         <Row>
-          <Col sm={4} className="main_left">
+          <Col sm={6} className="main_left">
             <MainCard>
               <Chip label="점검 대상" color="warning" style={{color:"#fff"}}/>
               <TableContainer>
@@ -85,16 +85,24 @@ function MainTenance () {
                     <TableRow>
                       <TableCell style={{backgroundColor:"#f5f5f5",borderRadius:"0"}}></TableCell>
                       <TableCell className="train1" align="center">계산</TableCell>
-                      <TableCell className="train1" align="center">예술회관</TableCell>
-                      <TableCell className="train1" align="center">동막</TableCell>
-                      <TableCell className="train2" align="center">검암</TableCell>
-                      <TableCell className="train2" align="center">가재울</TableCell>
-                      <TableCell className="train2" align="center">인천시청</TableCell>
+                      <TableCell className="train1" align="center">귤현</TableCell>
+                      <TableCell className="train1" align="center">박촌</TableCell>
+                      <TableCell className="train1" align="center">임학</TableCell>
+                      <TableCell className="train1" align="center">계산</TableCell>
+                      <TableCell className="train1" align="center">경인교대</TableCell>
+                      <TableCell className="train1" align="center">작전</TableCell>
+                      <TableCell className="train1" align="center">갈산</TableCell>
+                      <TableCell className="train1" align="center">부평구청</TableCell>
+                      <TableCell className="train1" align="center">부평시장</TableCell>
                     </TableRow>
                   </TableHead>
                   <TableBody>
                     <TableRow className="bad">
                       <th>상시점검</th>
+                      <td>0/0</td>
+                      <td>0/0</td>
+                      <td>0/0</td>
+                      <td>0/0</td>
                       <td>0/0</td>
                       <td>0/0</td>
                       <td>0/0</td>
@@ -110,6 +118,10 @@ function MainTenance () {
                       <td>0/0</td>
                       <td>0/0</td>
                       <td>0/0</td>
+                      <td>0/0</td>
+                      <td>0/0</td>
+                      <td>0/0</td>
+                      <td>0/0</td>
                     </TableRow>
                     <TableRow className="insuff">
                       <th>임박</th>
@@ -119,9 +131,17 @@ function MainTenance () {
                       <td>0/0</td>
                       <td>0/0</td>
                       <td>0/0</td>
+                      <td>0/0</td>
+                      <td>0/0</td>
+                      <td>0/0</td>
+                      <td>0/0</td>
                     </TableRow>
                     <TableRow className="communi">
                       <th>주의관찰</th>
+                      <td>0/0</td>
+                      <td>0/0</td>
+                      <td>0/0</td>
+                      <td>0/0</td>
                       <td>0/0</td>
                       <td>0/0</td>
                       <td>0/0</td>
@@ -142,16 +162,24 @@ function MainTenance () {
                     <TableRow>
                       <TableCell style={{backgroundColor:"#f5f5f5",borderRadius:"0"}}></TableCell>
                       <TableCell className="train1" align="center">계산</TableCell>
-                      <TableCell className="train1" align="center">예술회관</TableCell>
-                      <TableCell className="train1" align="center">동막</TableCell>
-                      <TableCell className="train2" align="center">검암</TableCell>
-                      <TableCell className="train2" align="center">가재울</TableCell>
-                      <TableCell className="train2" align="center">인천시청</TableCell>
+                      <TableCell className="train1" align="center">귤현</TableCell>
+                      <TableCell className="train1" align="center">박촌</TableCell>
+                      <TableCell className="train1" align="center">임학</TableCell>
+                      <TableCell className="train1" align="center">계산</TableCell>
+                      <TableCell className="train1" align="center">경인교대</TableCell>
+                      <TableCell className="train1" align="center">작전</TableCell>
+                      <TableCell className="train1" align="center">갈산</TableCell>
+                      <TableCell className="train1" align="center">부평구청</TableCell>
+                      <TableCell className="train1" align="center">부평시장</TableCell>
                     </TableRow>
                   </TableHead>
                   <TableBody>
                     <TableRow className="normal">
                       <th>일간</th>
+                      <td>0</td>
+                      <td>0</td>
+                      <td>0</td>
+                      <td>0</td>
                       <td>0</td>
                       <td>0</td>
                       <td>0</td>
@@ -167,9 +195,17 @@ function MainTenance () {
                       <td>0</td>
                       <td>0</td>
                       <td>0</td>
+                      <td>0</td>
+                      <td>0</td>
+                      <td>0</td>
+                      <td>0</td>
                     </TableRow>
                     <TableRow className="fine">
                       <th>월간</th>
+                      <td>0</td>
+                      <td>0</td>
+                      <td>0</td>
+                      <td>0</td>
                       <td>0</td>
                       <td>0</td>
                       <td>0</td>
@@ -183,17 +219,21 @@ function MainTenance () {
             </MainCard>
 
             <MainCard style={{marginTop:"10px"}}>
-              <Chip label="금월 성능검사 대상" color="warning" style={{color:"#fff"}} />
+              <Chip label="성능검사 대상" color="warning" style={{color:"#fff"}} />
               <TableContainer>
                 <Table sx={{ minWidth: 400 }} aria-label="simple table" className="part_status">
                   <TableHead>
                     <TableRow>
                       <TableCell className="train1" align="center">계산</TableCell>
-                      <TableCell className="train1" align="center">예술회관</TableCell>
-                      <TableCell className="train1" align="center">동막</TableCell>
-                      <TableCell className="train2" align="center">검암</TableCell>
-                      <TableCell className="train2" align="center">가재울</TableCell>
-                      <TableCell className="train2" align="center">인천시청</TableCell>
+                      <TableCell className="train1" align="center">귤현</TableCell>
+                      <TableCell className="train1" align="center">박촌</TableCell>
+                      <TableCell className="train1" align="center">임학</TableCell>
+                      <TableCell className="train1" align="center">계산</TableCell>
+                      <TableCell className="train1" align="center">경인교대</TableCell>
+                      <TableCell className="train1" align="center">작전</TableCell>
+                      <TableCell className="train1" align="center">갈산</TableCell>
+                      <TableCell className="train1" align="center">부평구청</TableCell>
+                      <TableCell className="train1" align="center">부평시장</TableCell>
                     </TableRow>
                   </TableHead>
                   <TableBody>
@@ -201,9 +241,13 @@ function MainTenance () {
                       <td className="train1_in">0</td>
                       <td className="train1_in">0</td>
                       <td className="train1_in">0</td>
-                      <td className="train2_in">0</td>
-                      <td className="train2_in">0</td>
-                      <td className="train2_in">0</td>
+                      <td className="train1_in">0</td>
+                      <td className="train1_in">0</td>
+                      <td className="train1_in">0</td>
+                      <td className="train1_in">0</td>
+                      <td className="train1_in">0</td>
+                      <td className="train1_in">0</td>
+                      <td className="train1_in">0</td>
                     </TableRow>
                   </TableBody>
                 </Table>
@@ -259,7 +303,7 @@ function MainTenance () {
             <div className="btn_right"><Button variant="contained" color="error">고장/점검 등록</Button></div>
           </Col>
           
-          <Col sm={8} className="main_right">
+          <Col sm={6} className="main_right">
             <MainCard content={false}>
               <div className='more'>
                 <Chip label="점검 대상 목록" style={{backgroundColor:"#257DDC"}} />
@@ -267,12 +311,10 @@ function MainTenance () {
               </div>
               {/* table */}
               <TableContainer>
-                <Table sx={{ minWidth: 800 }} aria-label="simple table" className="maintlist_table">
+                <Table sx={{ minWidth: 800 }} aria-label="simple table" className="maintlist_table same_width">
                   <TableHead>
                     <TableRow>
                       <TableCell align="center">점검구분</TableCell>
-                      <TableCell align="center">호선</TableCell>
-                      <TableCell align="center">파트</TableCell>
                       <TableCell align="center">역사명</TableCell>
                       <TableCell align="center">설비대분류</TableCell>
                       <TableCell align="center">설비명</TableCell>
@@ -287,8 +329,6 @@ function MainTenance () {
                         className={row1.rowclass}
                       >
                         <TableCell align="center">{row1.division}</TableCell>
-                        <TableCell align="center">{row1.number}</TableCell>
-                        <TableCell align="center">{row1.part}</TableCell>
                         <TableCell align="center">{row1.station}</TableCell>
                         <TableCell align="center">{row1.sort}</TableCell>
                         <TableCell align="center">{row1.equipname}</TableCell>
@@ -311,13 +351,11 @@ function MainTenance () {
               </div>
               {/* table */}
               <TableContainer>
-                <Table sx={{ minWidth: 800 }} aria-label="simple table" className="maintlist_table">
+                <Table sx={{ minWidth: 800 }} aria-label="simple table" className="maintlist_table same_width">
                   <TableHead>
                     <TableRow>
                       <TableCell>일시</TableCell>
                       <TableCell align="center">구분</TableCell>
-                      <TableCell align="center">호선</TableCell>
-                      <TableCell align="center">파트</TableCell>
                       <TableCell align="center">역사명</TableCell>
                       <TableCell align="center">설비대분류</TableCell>
                       <TableCell align="center">설비명</TableCell>
@@ -331,8 +369,6 @@ function MainTenance () {
                       >
                         <TableCell align="center">{row2.time}</TableCell>
                         <TableCell align="center">{row2.division}</TableCell>
-                        <TableCell align="center">{row2.number}</TableCell>
-                        <TableCell align="center">{row2.part}</TableCell>
                         <TableCell align="center">{row2.station}</TableCell>
                         <TableCell align="center">{row2.sort}</TableCell>
                         <TableCell align="center">{row2.equipname}</TableCell>
@@ -351,12 +387,10 @@ function MainTenance () {
               </div>
               {/* table */}
               <TableContainer>
-                <Table sx={{ minWidth: 800 }} aria-label="simple table" className="maintlist_table">
+                <Table sx={{ minWidth: 800 }} aria-label="simple table" className="maintlist_table same_width">
                   <TableHead>
                     <TableRow>
                       <TableCell>일시</TableCell>
-                      <TableCell align="center">호선</TableCell>
-                      <TableCell align="center">파트</TableCell>
                       <TableCell align="center">역사명</TableCell>
                       <TableCell align="center">설비명</TableCell>
                       <TableCell align="center">품명</TableCell>
@@ -368,8 +402,6 @@ function MainTenance () {
                     {rows3.map((row3) => (
                       <TableRow hover key={row3.name}>
                         <TableCell align="center">{row3.time}</TableCell>
-                        <TableCell align="center">{row3.number}</TableCell>
-                        <TableCell align="center">{row3.part}</TableCell>
                         <TableCell align="center">{row3.station}</TableCell>
                         <TableCell align="center">{row3.equipname}</TableCell>
                         <TableCell align="center">{row3.product}</TableCell>
@@ -388,4 +420,4 @@ function MainTenance () {
   )
 }
 
-export default MainTenance;
+export default MroPartState;

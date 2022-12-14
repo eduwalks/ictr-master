@@ -1,27 +1,15 @@
 import React from "react";
-import { ThemeProvider, createTheme } from '@mui/material/styles';
-import CssBaseline from '@mui/material/CssBaseline';
+import Navigationbar from 'custom/components/navigationbar';
 
-// import {
-//   AppBar,
-//   CssBaseline,
-//   Typography,
-//   createMuiTheme
-// } from "@material-ui/core";
 
-const theme = createTheme({
-  palette: {
-    mode: "dark",
-  }
-});
-
-const Test = () => {
+function Test() {
   return (
-    <ThemeProvider theme={theme}>
-      <CssBaseline />
-      11
-    </ThemeProvider>
-  );
-};
+    <div className="monitering">
+      <Navigationbar />
+      <div className="sub_container">
+      </div>
+    </div>
+  )
+}
 
 export default Test;
