@@ -321,20 +321,27 @@ table .pl {padding: 6px 0 6px 10px !important;text-align: center;}
 .sub_container_ce table .condition2 td, tr.condition2 a{color: #ef710b;}
 .sub_container_ce table .condition3 td, tr.condition3 a{color: #e7c748;}
 .sub_container_ce table .condition4 td, tr.condition4 a{color: #b2b2b2;}
-.sub_container_ce tr.condition5 .MuiTableCell-body a{color: #308a2a;}
-.sub_container_ce tr.condition6 .MuiTableCell-body a{color: #2666ae;}
-.sub_container_ce tr.condition7 .MuiTableCell-body a{color: #000;}
+.sub_container_ce tr.condition5 .MuiTableCell-body, .sub_container_ce tr.condition5 .MuiTableCell-body a{color: #308a2a;}
+.sub_container_ce tr.condition6 .MuiTableCell-body, .sub_container_ce tr.condition6 .MuiTableCell-body a{color: #2666ae;}
+.sub_container_ce tr.condition7 .MuiTableCell-body, .sub_container_ce tr.condition7 .MuiTableCell-body a{color: #000;}
+
+.sub_container_ce .css-h0q0iv-MuiButtonBase-root-MuiTab-root{min-width: 150px;min-height: 50px;}
 
 .sub_container_ce table .result1 td{color: red;}
 .sub_container_ce table .result2 td{color: #308a2a;}
 .sub_container_ce table .result3 td{color: #2666ae;}
 .sub_container_ce table .result4 td{color: #ef710b;}
 
+.sub_container_ce .apexcharts-legend-text {
+  color: #000 !important;
+  fill: #000;
+}
+
 /* .sub_container_ce .MuiInputBase-input{background-color: #fff;}
 .sub_container_ce .MuiOutlinedInput-notchedOutline{background-color: #fff;border: 1px solid #ced4da;box-shadow:none;color:#000;} */
 .sub_container_ce .MuiSelect-select{padding:10px 14px 10px 12px;}
 
-.sub_container_ce .MuiTab-root{margin:0 2px;background-color: #f1f1f1;color: #fff;border-radius: 0;color:#000;}
+.sub_container_ce .MuiTab-root{margin:0 3px 0 0;background-color: #f1f1f1;color: #fff;border-radius: 0;color:#000;}
 .sub_container_ce .MuiTabs-root{border-bottom: 1px solid #257DDC;}
 .sub_container_ce .Mui-selected{background-color: #759cce;color: #fff;border-radius: 0;color:#fff;}
 .sub_container_ce_in li{color: #fff;}

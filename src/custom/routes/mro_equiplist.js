@@ -145,21 +145,21 @@ function MroEquiplist () {
                       // component={Link} to="/equipdetail"
                       // onClick={click}
                     >
-                      <TableCell><Link to="/mro_checkdetail">{row.data1}</Link></TableCell>
-                      <TableCell><Link to="/mro_checkdetail">{row.data2}</Link></TableCell>
-                      <TableCell><Link to="/mro_checkdetail">{row.data3}</Link></TableCell>
-                      <TableCell><Link to="/mro_checkdetail">{row.data4}</Link></TableCell>
-                      <TableCell><Link to="/mro_checkdetail">{row.data5}</Link></TableCell>
-                      <TableCell><Link to="/mro_checkdetail">{row.data6}</Link></TableCell>
-                      <TableCell><Link to="/mro_checkdetail">{row.data7}</Link></TableCell>
-                      <TableCell><Link to="/mro_checkdetail">{row.data8}</Link></TableCell>
-                      <TableCell><Link to="/mro_checkdetail">{row.data9}</Link></TableCell>
-                      <TableCell><Link to="/mro_checkdetail">{row.data10}</Link></TableCell>
-                      <TableCell><Link to="/mro_checkdetail">{row.data11}</Link></TableCell>
-                      <TableCell><Link to="/mro_checkdetail">{row.data12}</Link></TableCell>
-                      <TableCell><Link to="/mro_checkdetail">{row.data13}</Link></TableCell>
-                      <TableCell><Link to="/mro_checkdetail">{row.data14}</Link></TableCell>
-                      <TableCell><Link to="/mro_checkdetail">{row.data15}</Link></TableCell>
+                      <TableCell><Link to="/mro_stationstate">{row.data1}</Link></TableCell>
+                      <TableCell><Link to="/mro_stationstate">{row.data2}</Link></TableCell>
+                      <TableCell><Link to="/mro_stationstate">{row.data3}</Link></TableCell>
+                      <TableCell><Link to="/mro_stationstate">{row.data4}</Link></TableCell>
+                      <TableCell><Link to="/mro_stationstate">{row.data5}</Link></TableCell>
+                      <TableCell><Link to="/mro_stationstate">{row.data6}</Link></TableCell>
+                      <TableCell><Link to="/mro_stationstate">{row.data7}</Link></TableCell>
+                      <TableCell><Link to="/mro_stationstate">{row.data8}</Link></TableCell>
+                      <TableCell><Link to="/mro_stationstate">{row.data9}</Link></TableCell>
+                      <TableCell><Link to="/mro_stationstate">{row.data10}</Link></TableCell>
+                      <TableCell><Link to="/mro_stationstate">{row.data11}</Link></TableCell>
+                      <TableCell><Link to="/mro_stationstate">{row.data12}</Link></TableCell>
+                      <TableCell><Link to="/mro_stationstate">{row.data13}</Link></TableCell>
+                      <TableCell><Link to="/mro_stationstate">{row.data14}</Link></TableCell>
+                      <TableCell><Link to="/mro_stationstate">{row.data15}</Link></TableCell>
                       <TableCell align="center"><span className="material-symbols-outlined" style={{color:"#000"}}>build</span></TableCell>
                     </TableRow>
                   ))}

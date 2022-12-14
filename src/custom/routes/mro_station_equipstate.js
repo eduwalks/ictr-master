@@ -7,11 +7,11 @@ import TabPanel from '@mui/lab/TabPanel';
 
 import Navigationbar from "custom/components/navigationbarCe";
 import { Table, TableBody, TableCell, TableContainer, TableRow } from '@mui/material';
-import Page21_1 from 'custom/pages/21-1';
-import Page21_2 from 'custom/pages/21-2';
-import Page21_3 from 'custom/pages/21-3';
+import MroStation1 from 'custom/pages/mro_station1';
+import MroStation2 from 'custom/pages/mro_station2';
+import MroStation3 from 'custom/pages/mro_station3';
 
-function Page21 () {
+function MroStationEquipstate() {
   const [value, setValue] = React.useState('1');
 
   const handleChange = (event, newValue) => {
@@ -59,9 +59,9 @@ function Page21 () {
               <Tab label="유지보수 내역" value="3" />
             </TabList>
           </Box>
-          <TabPanel value="1"><Page21_1 /></TabPanel>
-          <TabPanel value="2"><Page21_2 /></TabPanel>
-          <TabPanel value="3"><Page21_3 /></TabPanel>
+          <TabPanel value="1"><MroStation1 /></TabPanel>
+          <TabPanel value="2"><MroStation2 /></TabPanel>
+          <TabPanel value="3"><MroStation3 /></TabPanel>
         </TabContext>
       </Box>
     </div>
@@ -69,4 +69,4 @@ function Page21 () {
   )
 }
 
-export default Page21;
+export default MroStationEquipstate;

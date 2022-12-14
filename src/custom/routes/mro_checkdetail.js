@@ -29,7 +29,7 @@ export function MroCheckDetail() {
       <div className="maintenance">
         <Navigationbar />
         <div className="sub_container_ce" style={{backgroundColor:"#fff"}}>
-          <h5 style={{color:"#000"}}>* 1호선 &gt; 계산 &gt; (124)인천시청 &gt; 대합실공조기 &gt; 좌 대합실공조기(RF1(환기부))</h5>
+          <h5 style={{color:"#000",marginTop:"10px"}}>* 1호선 &gt; 계산 &gt; (124)인천시청 &gt; 대합실공조기 &gt; 좌 대합실공조기(RF1(환기부))</h5>
           <br/>
           <Row>
             <Col sm={4} className="sub_left">
