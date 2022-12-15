@@ -5,6 +5,8 @@ import Navigationbar from 'custom/components/navigationbar';
 import Paging from 'custom/components/table/paging';
 import DialogSelect from 'custom/components/search/equipsearch';
 
+import Alert1 from 'custom/components/pop/alert1';
+
 function createData(condition, date, number, part, station, equipnum, equipcate, equipname, locate, equipcompo, grade, gate, flaw) {
   let rowclass1;
   if(condition == '정지중') {
@@ -83,7 +85,7 @@ export function EquipList() {
                 <TableCell align="center">등급</TableCell>
                 <TableCell align="center">게이트웹이</TableCell>
                 <TableCell align="center">결함여부</TableCell>
-                <TableCell align="center"></TableCell>
+                <TableCell align="center">고장신고/점검요청</TableCell>
               </TableRow>
             </TableHead>
             <TableBody>
@@ -104,7 +106,7 @@ export function EquipList() {
                   <TableCell align="center"><Link to="/equipdetail">{row.gate}</Link></TableCell>
                   <TableCell align="center" className={row.rowclass2}><Link to="/equipdetail">{row.flaw}</Link></TableCell>
                   <TableCell align="center">
-                    <span className="material-symbols-outlined">build</span>
+                    <Alert1 />
                   </TableCell>
                 </TableRow>
               ))}

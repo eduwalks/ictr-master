@@ -143,7 +143,7 @@ function AlertDetail () {
                       <TableCell className="th" align="center">경보확인자</TableCell>
                       <TableCell align="center">홍길동</TableCell>
                       <TableCell className="th" align="center">상태</TableCell>
-                      <TableCell align="center">현장점검</TableCell>
+                      <TableCell align="center"><div className="condition4">현장점검</div></TableCell>
                     </TableRow>
                     <TableRow>
                       <TableCell className="th" align="center">현장확인일시</TableCell>
@@ -151,7 +151,7 @@ function AlertDetail () {
                       <TableCell className="th" align="center">현장점검자</TableCell>
                       <TableCell align="center">홍길동</TableCell>
                       <TableCell className="th" align="center">후속조치</TableCell>
-                      <TableCell align="center">유지보수</TableCell>
+                      <TableCell align="center"><div className="condition5">유지보수</div></TableCell>
                     </TableRow>
                   </TableBody>
                 </Table>
@@ -187,7 +187,7 @@ function AlertDetail () {
                       <TableCell className="th" align="center">등록처리자</TableCell>
                       <TableCell colSpan={3} align="center">홍길동</TableCell>
                       <TableCell className="th" align="center">상태</TableCell>
-                      <TableCell align="center">정지</TableCell>
+                      <TableCell align="center"><div className="condition1">정지</div></TableCell>
                     </TableRow>
                     <TableRow>
                       <TableCell className="th" align="center">주의관찰 정지일</TableCell>
@@ -394,6 +394,58 @@ function AlertDetail () {
             </MainCard>
 
             <ChartTabCont />
+
+            <MainCard className="center_table" content={false}>
+              <TableContainer>
+              <Table sx={{ minWidth: 500 }} aria-label="simple table" className="same_width">
+                  <TableBody>
+                    <TableRow>
+                      <TableCell className="th" align="center">진동센서</TableCell>
+                      <TableCell align="center">반경</TableCell>
+                      <TableCell className="th1" align="center">0.73 mm/s</TableCell>
+                      <TableCell align="center">축</TableCell>
+                      <TableCell className="th1" align="center">2.31 mm/s</TableCell>
+                      <TableCell align="center">수직</TableCell>
+                      <TableCell className="th1" align="center">5.6mm/s</TableCell>
+                    </TableRow>
+                  </TableBody>
+                </Table>
+              </TableContainer>
+            </MainCard>
+
+            <MainCard className="center_table" content={false}>
+              <TableContainer>
+              <Table sx={{ minWidth: 500 }} aria-label="simple table" className="same_width">
+                  <TableBody>
+                    <TableRow>
+                      <TableCell className="th" align="center">진동센서</TableCell>
+                      <TableCell align="center">반경</TableCell>
+                      <TableCell className="th1" align="center">0.73 mm/s</TableCell>
+                      <TableCell align="center">축</TableCell>
+                      <TableCell className="th1" align="center">2.31 mm/s</TableCell>
+                      <TableCell align="center">수직</TableCell>
+                      <TableCell className="th1" align="center">5.6mm/s</TableCell>
+                    </TableRow>
+                  </TableBody>
+                </Table>
+              </TableContainer>
+            </MainCard>
+
+            <MainCard className="center_table" content={false}>
+              <TableContainer>
+                <Table sx={{ minWidth: 500 }} aria-label="simple table" className="same_width">
+                  <TableBody>
+                    <TableRow>
+                      <TableCell className="th" align="center">소음센서</TableCell>
+                      <TableCell align="center">신율</TableCell>
+                      <TableCell className="th1" align="center">0.00%</TableCell>
+                      <TableCell align="center">동력전달률</TableCell>
+                      <TableCell className="th1" align="center">92.35%</TableCell>
+                    </TableRow>
+                  </TableBody>
+                </Table>
+              </TableContainer>
+            </MainCard>
 
             <MainCard className="center_table" content={false}>
             <Chip label="현장(상시)점검 내역" color="success" />

@@ -8,8 +8,9 @@ import Chip from '@mui/material/Chip';
 
 // project imports
 import MainCard from 'components/MainCard';
-import InSpection from "../pop/inspection";
 import Alert from "../pop/alert";
+import Alert1 from "../pop/alert1";
+import Mro from "../pop/mro";
 
 // table data
 function createData1(time, number, part, station, equipname, equipstate, condition) {
@@ -110,7 +111,7 @@ export default function MainTable1() {
                 <TableCell align="center">설비명</TableCell>
                 <TableCell align="center">설비상태</TableCell>
                 <TableCell align="center">상태</TableCell>
-                <TableCell align="center"></TableCell>
+                <TableCell align="center">고장신고/점검요청</TableCell>
               </TableRow>
             </TableHead>
             <TableBody>
@@ -128,7 +129,7 @@ export default function MainTable1() {
                   <TableCell align="center" className={row1.rowclass}><Link to="/equipdetail">{row1.condition}</Link></TableCell>
                   {/* <TableCell align="center" onClick="event.stopPropagation();"> */}
                   <TableCell align="center">
-                    <InSpection />
+                    <Alert />
                   </TableCell>
                 </TableRow>
               ))}
@@ -156,7 +157,7 @@ export default function MainTable1() {
                 <TableCell align="center">경보분류</TableCell>
                 <TableCell align="center">내용</TableCell>
                 <TableCell align="center">상태</TableCell>
-                <TableCell align="center"></TableCell>
+                <TableCell align="center">내용보기</TableCell>
               </TableRow>
             </TableHead>
             <TableBody>
@@ -173,7 +174,7 @@ export default function MainTable1() {
                   <TableCell align="center"><Link to="/alertdetail">{row2.cont}</Link></TableCell>
                   <TableCell align="center" className={row2.rowclass}><Link to="/alertdetail">{row2.check}</Link></TableCell>
                   <TableCell align="center">
-                    <Alert />
+                    <Alert1 />
                   </TableCell>
                 </TableRow>
               ))}
@@ -201,6 +202,7 @@ export default function MainTable1() {
                 <TableCell align="center">설비명</TableCell>
                 <TableCell align="center">점검자</TableCell>
                 <TableCell align="center">결과</TableCell>
+                <TableCell align="center">내용보기</TableCell>
               </TableRow>
             </TableHead>
             <TableBody>
@@ -215,6 +217,9 @@ export default function MainTable1() {
                   <TableCell align="center"><Link to="/spotdetail">{row3.equipname}</Link></TableCell>
                   <TableCell align="center"><Link to="/spotdetail">{row3.inspector}</Link></TableCell>
                   <TableCell align="center" className={row3.rowclass}><Link to="/spotdetail">{row3.result}</Link></TableCell>
+                  <TableCell align="center">
+                    <Mro />
+                  </TableCell>
                 </TableRow>
               ))}
             </TableBody>

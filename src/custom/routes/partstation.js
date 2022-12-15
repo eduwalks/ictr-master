@@ -10,6 +10,9 @@ import Motor from 'custom/img/motor.svg'
 import Fan from 'custom/img/fan.svg'
 import Vbelt from 'custom/img/vbelt.svg'
 
+import Alert1 from "custom/components/pop/alert1";
+import Alert2 from "custom/components/pop/alert2";
+
 function PartStation () {
   function createData1(station, sum, state1, state2, state3, state4, state5, state6) {
     return { station, sum, state1, state2, state3, state4, state5, state6 };
@@ -203,6 +206,8 @@ function PartStation () {
                 </Table>
               </TableContainer>
             </MainCard>
+
+            <div className="btn_right"><Alert2 /></div>
           </Col>
 
           <Col sm={8} className="sub_right">
@@ -216,7 +221,7 @@ function PartStation () {
                       <TableCell rowspan="2" align="center">설비명</TableCell>
                       <TableCell colSpan="3" align="center">설비상태진단</TableCell>
                       <TableCell colSpan="3" align="center">설비결함진단(고장예측)</TableCell>
-                      <TableCell rowspan="2" align="center">IoT경보이력</TableCell>
+                      <TableCell rowspan="2" align="center">고장신고/점검요청</TableCell>
                     </TableRow>
                     <TableRow>
                       <TableCell align="center">전동기</TableCell>
@@ -231,131 +236,139 @@ function PartStation () {
                     <TableRow hover>
                       <TableCell component="th" scope="row">좌 대합실공조기</TableCell>
                       <TableCell align="center">
-                        <Button className="icon" variant="contained" color="error"><img src={Motor} alt="전동기" /></Button>
+                        <Link to="/equipdetail"><Button className="icon" variant="contained" color="error"><img src={Motor} alt="전동기" /></Button></Link>
                       </TableCell>
                       <TableCell align="center">
-                        <Button className="icon" variant="contained" color="secondary"><img src={Fan} alt="송풍기" /></Button>
+                        <Link to="/equipdetail"><Button className="icon" variant="contained" color="secondary"><img src={Fan} alt="송풍기" /></Button></Link>
                       </TableCell>
                       <TableCell align="center">
-                        <Button className="icon" variant="contained" color="secondary"><img src={Vbelt} alt="V벨트" /></Button>
+                        <Link to="/equipdetail"><Button className="icon" variant="contained" color="secondary"><img src={Vbelt} alt="V벨트" /></Button></Link>
                       </TableCell>
-                      <TableCell align="center"><Button variant="contained" color="success">정상</Button></TableCell>
-                      <TableCell align="center"><Button variant="contained" color="success">정상</Button></TableCell>
-                      <TableCell align="center"><Button variant="contained" color="success">정상</Button></TableCell>
-                      <TableCell align="center"><Button variant="contained">조회</Button></TableCell>
+                      <TableCell align="center"><Link to="/equipdetail"><Button variant="contained" color="success">정상</Button></Link></TableCell>
+                      <TableCell align="center"><Link to="/equipdetail"><Button variant="contained" color="success">정상</Button></Link></TableCell>
+                      <TableCell align="center"><Link to="/equipdetail"><Button variant="contained" color="success">정상</Button></Link></TableCell>
+                      <TableCell align="center"><Alert1 /></TableCell>
                     </TableRow>
+
                     <TableRow hover>
                       <TableCell component="th" scope="row">좌 대합실공조기</TableCell>
                       <TableCell align="center">
-                        <Button className="icon" variant="contained" color="secondary"><img src={Motor} alt="전동기" /></Button>
+                        <Link to="/equipdetail"><Button className="icon" variant="contained" color="error"><img src={Motor} alt="전동기" /></Button></Link>
                       </TableCell>
                       <TableCell align="center">
-                        <Button className="icon" variant="contained" color="secondary"><img src={Fan} alt="송풍기" /></Button>
+                        <Link to="/equipdetail"><Button className="icon" variant="contained" color="secondary"><img src={Fan} alt="송풍기" /></Button></Link>
                       </TableCell>
                       <TableCell align="center">
-                        <Button className="icon" variant="contained" color="secondary"><img src={Vbelt} alt="V벨트" /></Button>
+                        <Link to="/equipdetail"><Button className="icon" variant="contained" color="secondary"><img src={Vbelt} alt="V벨트" /></Button></Link>
                       </TableCell>
-                      <TableCell align="center"><Button variant="contained" color="success">정상</Button></TableCell>
-                      <TableCell align="center"><Button variant="contained" color="success">정상</Button></TableCell>
-                      <TableCell align="center"><Button variant="contained" color="success">정상</Button></TableCell>
-                      <TableCell align="center"><Button variant="contained">조회</Button></TableCell>
+                      <TableCell align="center"><Link to="/equipdetail"><Button variant="contained" color="success">정상</Button></Link></TableCell>
+                      <TableCell align="center"><Link to="/equipdetail"><Button variant="contained" color="success">정상</Button></Link></TableCell>
+                      <TableCell align="center"><Link to="/equipdetail"><Button variant="contained" color="success">정상</Button></Link></TableCell>
+                      <TableCell align="center"><Alert1 /></TableCell>
                     </TableRow>
+
                     <TableRow hover>
                       <TableCell component="th" scope="row">좌 대합실공조기</TableCell>
                       <TableCell align="center">
-                        <Button className="icon" variant="contained" color="secondary"><img src={Motor} alt="전동기" /></Button>
+                        <Link to="/equipdetail"><Button className="icon" variant="contained" color="error"><img src={Motor} alt="전동기" /></Button></Link>
                       </TableCell>
                       <TableCell align="center">
-                        <Button className="icon" variant="contained" color="success"><img src={Fan} alt="송풍기" /></Button>
+                        <Link to="/equipdetail"><Button className="icon" variant="contained" color="secondary"><img src={Fan} alt="송풍기" /></Button></Link>
                       </TableCell>
                       <TableCell align="center">
-                        <Button className="icon" variant="contained" color="secondary"><img src={Vbelt} alt="V벨트" /></Button>
+                        <Link to="/equipdetail"><Button className="icon" variant="contained" color="secondary"><img src={Vbelt} alt="V벨트" /></Button></Link>
                       </TableCell>
-                      <TableCell align="center"><Button variant="contained" color="success">정상</Button></TableCell>
-                      <TableCell align="center"><Button variant="contained" color="success">정상</Button></TableCell>
-                      <TableCell align="center"><Button variant="contained" color="success">정상</Button></TableCell>
-                      <TableCell align="center"><Button variant="contained">조회</Button></TableCell>
+                      <TableCell align="center"><Link to="/equipdetail"><Button variant="contained" color="success">정상</Button></Link></TableCell>
+                      <TableCell align="center"><Link to="/equipdetail"><Button variant="contained" color="success">정상</Button></Link></TableCell>
+                      <TableCell align="center"><Link to="/equipdetail"><Button variant="contained" color="success">정상</Button></Link></TableCell>
+                      <TableCell align="center"><Alert1 /></TableCell>
                     </TableRow>
+
                     <TableRow hover>
                       <TableCell component="th" scope="row">좌 대합실공조기</TableCell>
                       <TableCell align="center">
-                        <Button className="icon" variant="contained" color="secondary"><img src={Motor} alt="전동기" /></Button>
+                        <Link to="/equipdetail"><Button className="icon" variant="contained" color="error"><img src={Motor} alt="전동기" /></Button></Link>
                       </TableCell>
                       <TableCell align="center">
-                        <Button className="icon" variant="contained" color="error"><img src={Fan} alt="송풍기" /></Button>
+                        <Link to="/equipdetail"><Button className="icon" variant="contained" color="secondary"><img src={Fan} alt="송풍기" /></Button></Link>
                       </TableCell>
                       <TableCell align="center">
-                        <Button className="icon" variant="contained" color="secondary"><img src={Vbelt} alt="V벨트" /></Button>
+                        <Link to="/equipdetail"><Button className="icon" variant="contained" color="secondary"><img src={Vbelt} alt="V벨트" /></Button></Link>
                       </TableCell>
-                      <TableCell align="center"><Button variant="contained" color="success">정상</Button></TableCell>
-                      <TableCell align="center"><Button variant="contained" color="success">정상</Button></TableCell>
-                      <TableCell align="center"><Button variant="contained" color="success">정상</Button></TableCell>
-                      <TableCell align="center"><Button variant="contained">조회</Button></TableCell>
+                      <TableCell align="center"><Link to="/equipdetail"><Button variant="contained" color="success">정상</Button></Link></TableCell>
+                      <TableCell align="center"><Link to="/equipdetail"><Button variant="contained" color="success">정상</Button></Link></TableCell>
+                      <TableCell align="center"><Link to="/equipdetail"><Button variant="contained" color="success">정상</Button></Link></TableCell>
+                      <TableCell align="center"><Alert1 /></TableCell>
                     </TableRow>
+
                     <TableRow hover>
                       <TableCell component="th" scope="row">좌 대합실공조기</TableCell>
                       <TableCell align="center">
-                        <Button className="icon" variant="contained" color="secondary"><img src={Motor} alt="전동기" /></Button>
+                        <Link to="/equipdetail"><Button className="icon" variant="contained" color="error"><img src={Motor} alt="전동기" /></Button></Link>
                       </TableCell>
                       <TableCell align="center">
-                        <Button className="icon" variant="contained" color="secondary"><img src={Fan} alt="송풍기" /></Button>
+                        <Link to="/equipdetail"><Button className="icon" variant="contained" color="secondary"><img src={Fan} alt="송풍기" /></Button></Link>
                       </TableCell>
                       <TableCell align="center">
-                        <Button className="icon" variant="contained" color="secondary"><img src={Vbelt} alt="V벨트" /></Button>
+                        <Link to="/equipdetail"><Button className="icon" variant="contained" color="secondary"><img src={Vbelt} alt="V벨트" /></Button></Link>
                       </TableCell>
-                      <TableCell align="center"><Button variant="contained" color="success">정상</Button></TableCell>
-                      <TableCell align="center"><Button variant="contained" color="success">정상</Button></TableCell>
-                      <TableCell align="center"><Button variant="contained" color="success">정상</Button></TableCell>
-                      <TableCell align="center"><Button variant="contained">조회</Button></TableCell>
+                      <TableCell align="center"><Link to="/equipdetail"><Button variant="contained" color="success">정상</Button></Link></TableCell>
+                      <TableCell align="center"><Link to="/equipdetail"><Button variant="contained" color="success">정상</Button></Link></TableCell>
+                      <TableCell align="center"><Link to="/equipdetail"><Button variant="contained" color="success">정상</Button></Link></TableCell>
+                      <TableCell align="center"><Alert1 /></TableCell>
                     </TableRow>
+
                     <TableRow hover>
                       <TableCell component="th" scope="row">좌 대합실공조기</TableCell>
                       <TableCell align="center">
-                        <Button className="icon" variant="contained" color="secondary"><img src={Motor} alt="전동기" /></Button>
+                        <Link to="/equipdetail"><Button className="icon" variant="contained" color="error"><img src={Motor} alt="전동기" /></Button></Link>
                       </TableCell>
                       <TableCell align="center">
-                        <Button className="icon" variant="contained" color="secondary"><img src={Fan} alt="송풍기" /></Button>
+                        <Link to="/equipdetail"><Button className="icon" variant="contained" color="secondary"><img src={Fan} alt="송풍기" /></Button></Link>
                       </TableCell>
                       <TableCell align="center">
-                        <Button className="icon" variant="contained" color="secondary"><img src={Vbelt} alt="V벨트" /></Button>
+                        <Link to="/equipdetail"><Button className="icon" variant="contained" color="secondary"><img src={Vbelt} alt="V벨트" /></Button></Link>
                       </TableCell>
-                      <TableCell align="center"><Button variant="contained" color="success">정상</Button></TableCell>
-                      <TableCell align="center"><Button variant="contained" color="success">정상</Button></TableCell>
-                      <TableCell align="center"><Button variant="contained" color="success">정상</Button></TableCell>
-                      <TableCell align="center"><Button variant="contained">조회</Button></TableCell>
+                      <TableCell align="center"><Link to="/equipdetail"><Button variant="contained" color="success">정상</Button></Link></TableCell>
+                      <TableCell align="center"><Link to="/equipdetail"><Button variant="contained" color="success">정상</Button></Link></TableCell>
+                      <TableCell align="center"><Link to="/equipdetail"><Button variant="contained" color="success">정상</Button></Link></TableCell>
+                      <TableCell align="center"><Alert1 /></TableCell>
                     </TableRow>
+
                     <TableRow hover>
                       <TableCell component="th" scope="row">좌 대합실공조기</TableCell>
                       <TableCell align="center">
-                        <Button className="icon" variant="contained" color="secondary"><img src={Motor} alt="전동기" /></Button>
+                        <Link to="/equipdetail"><Button className="icon" variant="contained" color="error"><img src={Motor} alt="전동기" /></Button></Link>
                       </TableCell>
                       <TableCell align="center">
-                        <Button className="icon" variant="contained" color="secondary"><img src={Fan} alt="송풍기" /></Button>
+                        <Link to="/equipdetail"><Button className="icon" variant="contained" color="secondary"><img src={Fan} alt="송풍기" /></Button></Link>
                       </TableCell>
                       <TableCell align="center">
-                        <Button className="icon" variant="contained" color="secondary"><img src={Vbelt} alt="V벨트" /></Button>
+                        <Link to="/equipdetail"><Button className="icon" variant="contained" color="secondary"><img src={Vbelt} alt="V벨트" /></Button></Link>
                       </TableCell>
-                      <TableCell align="center"><Button variant="contained" color="success">정상</Button></TableCell>
-                      <TableCell align="center"><Button variant="contained" color="success">정상</Button></TableCell>
-                      <TableCell align="center"><Button variant="contained" color="success">정상</Button></TableCell>
-                      <TableCell align="center"><Button variant="contained">조회</Button></TableCell>
+                      <TableCell align="center"><Link to="/equipdetail"><Button variant="contained" color="success">정상</Button></Link></TableCell>
+                      <TableCell align="center"><Link to="/equipdetail"><Button variant="contained" color="success">정상</Button></Link></TableCell>
+                      <TableCell align="center"><Link to="/equipdetail"><Button variant="contained" color="success">정상</Button></Link></TableCell>
+                      <TableCell align="center"><Alert1 /></TableCell>
                     </TableRow>
+
                     <TableRow hover>
                       <TableCell component="th" scope="row">좌 대합실공조기</TableCell>
                       <TableCell align="center">
-                        <Button className="icon" variant="contained" color="secondary"><img src={Motor} alt="전동기" /></Button>
+                        <Link to="/equipdetail"><Button className="icon" variant="contained" color="error"><img src={Motor} alt="전동기" /></Button></Link>
                       </TableCell>
                       <TableCell align="center">
-                        <Button className="icon" variant="contained" color="secondary"><img src={Fan} alt="송풍기" /></Button>
+                        <Link to="/equipdetail"><Button className="icon" variant="contained" color="secondary"><img src={Fan} alt="송풍기" /></Button></Link>
                       </TableCell>
                       <TableCell align="center">
-                        <Button className="icon" variant="contained" color="error"><img src={Vbelt} alt="V벨트" /></Button>
+                        <Link to="/equipdetail"><Button className="icon" variant="contained" color="secondary"><img src={Vbelt} alt="V벨트" /></Button></Link>
                       </TableCell>
-                      <TableCell align="center"><Button variant="contained" color="success">정상</Button></TableCell>
-                      <TableCell align="center"><Button variant="contained" color="success">정상</Button></TableCell>
-                      <TableCell align="center"><Button variant="contained" color="success">정상</Button></TableCell>
-                      <TableCell align="center"><Button variant="contained">조회</Button></TableCell>
+                      <TableCell align="center"><Link to="/equipdetail"><Button variant="contained" color="success">정상</Button></Link></TableCell>
+                      <TableCell align="center"><Link to="/equipdetail"><Button variant="contained" color="success">정상</Button></Link></TableCell>
+                      <TableCell align="center"><Link to="/equipdetail"><Button variant="contained" color="success">정상</Button></Link></TableCell>
+                      <TableCell align="center"><Alert1 /></TableCell>
                     </TableRow>
+
                   </TableBody>
                 </Table>
               </TableContainer>

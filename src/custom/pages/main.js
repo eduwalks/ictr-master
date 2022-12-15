@@ -8,6 +8,7 @@ import Chip from '@mui/material/Chip';
 import TrainMap from 'custom/components/trainmap';
 import MainChart from 'custom/components/chart/mainchart';
 import MainTable from 'custom/components/table/maintable';
+import Alert2 from "custom/components/pop/alert2";
 
 function Main() {
   return (
@@ -19,6 +20,7 @@ function Main() {
             <div className="map_box">
               <TrainMap />
             </div>
+            <div className="btn_right"><Alert2 /></div>
           </Col>
           
           <Col sm={8} className="main_right">
@@ -37,12 +39,12 @@ function Main() {
                     <TableHead>
                       <TableRow>
                         <TableCell></TableCell>
-                        <TableCell className="train1" align="center">계산</TableCell>
-                        <TableCell className="train1" align="center">예술회관</TableCell>
-                        <TableCell className="train1" align="center">동막</TableCell>
-                        <TableCell className="train2" align="center">검암</TableCell>
-                        <TableCell className="train2" align="center">가재울</TableCell>
-                        <TableCell className="train2" align="center">인천시청</TableCell>
+                        <TableCell className="train1" align="center"><Link to="/partstation">계산</Link></TableCell>
+                        <TableCell className="train1" align="center"><Link to="/partstation">예술회관</Link></TableCell>
+                        <TableCell className="train1" align="center"><Link to="/partstation">동막</Link></TableCell>
+                        <TableCell className="train2" align="center"><Link to="/partstation">검암</Link></TableCell>
+                        <TableCell className="train2" align="center"><Link to="/partstation">가재울</Link></TableCell>
+                        <TableCell className="train2" align="center"><Link to="/partstation">인천시청</Link></TableCell>
                       </TableRow>
                     </TableHead>
                     <TableBody>

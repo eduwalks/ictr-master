@@ -5,6 +5,8 @@ import Navigationbar from 'custom/components/navigationbar';
 import Paging from 'custom/components/table/paging';
 import DialogSelect from 'custom/components/search/alertsearch';
 
+import Alert1 from 'custom/components/pop/alert1';
+
 function AlertList () {
   function createData(check, date, measure, alertdate, alertype, alertcompo, equipnum, number, part, station, equipcompo, equipname) {
     let rowclass;
@@ -56,7 +58,7 @@ function AlertList () {
                 <TableCell align="center">역사명</TableCell>
                 <TableCell align="center">설비분류</TableCell>
                 <TableCell align="center">설비명</TableCell>
-                <TableCell align="center"></TableCell>
+                <TableCell align="center">경보확인</TableCell>
               </TableRow>
             </TableHead>
             <TableBody>
@@ -64,21 +66,20 @@ function AlertList () {
                 <TableRow hover key={row.name}
                   // component={Link} to="/alertdetail"
                 >
-                  <TableCell align="center" className={row.rowclass}><Link to="/equipdetail">{row.check}</Link></TableCell>
-                  <TableCell align="center"><Link to="/equipdetail">{row.date}</Link></TableCell>
-                  <TableCell align="center"><Link to="/equipdetail">{row.measure}</Link></TableCell>
-                  <TableCell align="center"><Link to="/equipdetail">{row.alertdate}</Link></TableCell>
-                  <TableCell align="center"><Link to="/equipdetail">{row.alertype}</Link></TableCell>
-                  <TableCell align="center"><Link to="/equipdetail">{row.alertcompo}</Link></TableCell>
-                  <TableCell align="center"><Link to="/equipdetail">{row.equipnum}</Link></TableCell>
-                  <TableCell align="center"><Link to="/equipdetail">{row.number}</Link></TableCell>
-                  <TableCell align="center"><Link to="/equipdetail">{row.part}</Link></TableCell>
-                  <TableCell align="center"><Link to="/equipdetail">{row.station}</Link></TableCell>
-                  <TableCell align="center"><Link to="/equipdetail">{row.equipcompo}</Link></TableCell>
-                  <TableCell align="center"><Link to="/equipdetail">{row.equipname}</Link></TableCell>
+                  <TableCell align="center" className={row.rowclass}><Link to="/spotdetail">{row.check}</Link></TableCell>
+                  <TableCell align="center"><Link to="/spotdetail">{row.date}</Link></TableCell>
+                  <TableCell align="center"><Link to="/spotdetail">{row.measure}</Link></TableCell>
+                  <TableCell align="center"><Link to="/spotdetail">{row.alertdate}</Link></TableCell>
+                  <TableCell align="center"><Link to="/spotdetail">{row.alertype}</Link></TableCell>
+                  <TableCell align="center"><Link to="/spotdetail">{row.alertcompo}</Link></TableCell>
+                  <TableCell align="center"><Link to="/spotdetail">{row.equipnum}</Link></TableCell>
+                  <TableCell align="center"><Link to="/spotdetail">{row.number}</Link></TableCell>
+                  <TableCell align="center"><Link to="/spotdetail">{row.part}</Link></TableCell>
+                  <TableCell align="center"><Link to="/spotdetail">{row.station}</Link></TableCell>
+                  <TableCell align="center"><Link to="/spotdetail">{row.equipcompo}</Link></TableCell>
+                  <TableCell align="center"><Link to="/spotdetail">{row.equipname}</Link></TableCell>
                   <TableCell align="center">
-                    <span className="material-symbols-outlined">content_paste_search</span>
-                    <span className="material-symbols-outlined">build</span>
+                    <Alert1 />
                   </TableCell>
                 </TableRow>
               ))}

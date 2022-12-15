@@ -12,12 +12,12 @@ a{text-decoration: none;}
 .monitering .condition4 a, .monitering .condition5 a, .monitering .condition6 a
 {display: block;border-radius:4px;width: 70px;margin: 0 auto;}
 
-.monitering .condition1 a{background-color: red;}
-.monitering .condition2 a{background-color: #ef710b;}
-.monitering .condition3 a{background-color: #e7c748;}
-.monitering .condition4 a{background-color: #b2b2b2;}
-.monitering .condition5 a{background-color: #308a2a;}
-.monitering .condition6 a{background-color: #2666ae;}
+.monitering .condition1 a, .monitering div.condition1{background-color: red;}
+.monitering .condition2 a, .monitering div.condition2{background-color: #ef710b;}
+.monitering .condition3 a, .monitering div.condition3{background-color: #e7c748;}
+.monitering .condition4 a, .monitering div.condition4{background-color: #b2b2b2;}
+.monitering .condition5 a, .monitering div.condition5{background-color: #308a2a;}
+.monitering .condition6 a, .monitering div.condition6{background-color: #2666ae;}
 
 .monitering thead {
   background-color: #000;
@@ -145,6 +145,7 @@ display: flex;align-items: center;justify-content: center;border-radius: 5px;}
   text-align: center;
 }
 table .th {background-color: #000;}
+table .th1 {background-color: #838383;}
 table .pl {padding: 6px 0 6px 10px !important;text-align: center;}
 
 /* 차트탭 */
@@ -393,6 +394,9 @@ table .pl {padding: 6px 0 6px 10px !important;text-align: center;}
 .sub_container_ce .Mui-selected{background-color: #759cce;color: #fff;border-radius: 0;color:#fff;}
 .sub_container_ce_in li{color: #fff;}
 .blue_th{background-color: #2666ae;color: #fff;}
+
+.monitering .red_table td{color: red !important;}
+.monitering .red_table .td_red .th{background-color: #b23939;color: #fff !important;}
 
 /* 반응형 */
 @media (max-width: 1700px) {

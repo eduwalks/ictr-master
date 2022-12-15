@@ -8,7 +8,7 @@ import Select from '@mui/material/Select';
 
 import BasicDatePicker from '../picker/DatePicker';
 
-export function Alert() {
+export function Alert2() {
 
   const [open, setOpen] = useState(false);
   const handleOpen = () => setOpen(true);
@@ -16,8 +16,8 @@ export function Alert() {
 
   return (
     <>
-      <Button variant="contained" onClick={handleOpen} style={{padding:"3px", minWidth:"unset"}} color="grey">
-        <span className="material-symbols-outlined" style={{color:"#fff"}}>build</span>
+      <Button variant="contained" onClick={handleOpen} style={{minWidth:"unset",color:"#fff"}} color="warning">
+        고장신고/점검요청
       </Button>
 
       <Modal className="pop_box" open={open} onClose={handleClose} aria-labelledby="modal-modal-title" aria-describedby="modal-modal-description">
@@ -153,4 +153,4 @@ export function Alert() {
   )
 }
 
-export default Alert;
+export default Alert2;

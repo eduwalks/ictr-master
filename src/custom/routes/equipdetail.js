@@ -11,6 +11,8 @@ import Chip from '@mui/material/Chip';
 import ChartTabs from 'custom/components/tabs/ChartTabs';
 import Video from 'custom/video/1.mp4'
 
+import Alert2 from 'custom/components/pop/alert2';
+
 function EquipDetail () {
 
   function createData1(check, time, alertype, division, cont) {
@@ -73,6 +75,7 @@ function EquipDetail () {
                 loop={true}
               />
             </div>
+            <div className="btn_right"><Alert2 /></div>
 
             <MainCard className="center_table" content={false}>
               <TableContainer>
@@ -93,6 +96,65 @@ function EquipDetail () {
                       <TableCell align="center">3C7AAA9223A7</TableCell>
                       <TableCell className="th" align="center">상태</TableCell>
                       <TableCell align="center">Active</TableCell>
+                    </TableRow>
+                  </TableBody>
+                </Table>
+              </TableContainer>
+            </MainCard>
+
+            <MainCard content={false} style={{marginBottom:"10px"}}>
+              <TableContainer>
+                <Table aria-label="simple table" className="red_table maint_table">
+                  <TableBody>
+                    <TableRow className='td_red'>
+                      <TableCell className="th" style={{width:"100px"}}>주의관찰</TableCell>
+                      <TableCell>2022-10-01~2022-12-31</TableCell>
+                      <TableCell>
+                        <div style={{display:"flex", alignItems:"center", justifyContent:"space-between"}}>
+                          <div>유지보수 조치 후 3개월간 주의관찰 필요</div>
+                          <div style={{marginRight:"5px"}}><Button variant="contained">주의관찰 해제</Button></div>
+                        </div>
+                      </TableCell>
+                    </TableRow>
+                  </TableBody>
+                </Table>
+              </TableContainer>
+            </MainCard>
+
+            <MainCard content={false} style={{marginBottom:"10px"}}>
+              <TableContainer>
+                <Table aria-label="simple table" className="red_table maint_table">
+                  <TableBody>
+                    <TableRow className='td_red'>
+                      <TableCell className="th" style={{width:"100px"}}>경보발생</TableCell>
+                      <TableCell style={{width:"160px"}}>2022-10-01~2022-12-31</TableCell>
+                      <TableCell className="th" style={{width:"80px"}}>경보유형</TableCell>
+                      <TableCell style={{width:"90px"}}>진단IoT경보</TableCell>
+                      <TableCell className="th" style={{width:"80px"}}>내용</TableCell>
+                      <TableCell>
+                        <div style={{display:"flex", alignItems:"center", justifyContent:"space-between"}}>
+                          <div style={{marginLeft:"25px"}}>축정렬불량(편심)(00011)…</div>
+                          <div style={{marginRight:"5px"}}><Button variant="contained">경보확인</Button></div>
+                        </div>
+                      </TableCell>
+                    </TableRow>
+                  </TableBody>
+                </Table>
+              </TableContainer>
+            </MainCard>
+
+            <MainCard content={false} style={{marginBottom:"10px"}}>
+              <TableContainer>
+                <Table aria-label="simple table" className="red_table maint_table">
+                  <TableBody>
+                    <TableRow className='td_red'>
+                      <TableCell className="th" style={{width:"100px"}}>현장(상기)점검</TableCell>
+                      <TableCell>
+                        <div style={{display:"flex", alignItems:"center", justifyContent:"space-between"}}>
+                          <div style={{marginLeft:"25px"}}>대기 중</div>
+                          <div style={{marginRight:"5px"}}><Button variant="contained">점검확인</Button></div>
+                        </div>
+                      </TableCell>
                     </TableRow>
                   </TableBody>
                 </Table>

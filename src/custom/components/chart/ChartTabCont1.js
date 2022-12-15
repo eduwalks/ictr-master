@@ -6,6 +6,8 @@ import ChartTab1 from '../tabs/ChartTab1';
 import ChartTab2 from '../tabs/ChartTab2';
 import ChartTab3 from '../tabs/ChartTab3';
 
+import { Table, TableBody, TableCell, TableContainer, TableRow } from '@mui/material';
+
 class ChartTabCont1 extends Component {
   constructor(props) {
     super(props);
@@ -68,6 +70,24 @@ class ChartTabCont1 extends Component {
           <div style={{opacity:"30%"}}><ChartTab2 /></div>
           <div style={{opacity:"30%",height:"100%"}}><ChartTab3 /></div>
         </div>
+
+        <MainCard className="center_table" content={false}>
+          <TableContainer>
+          <Table sx={{ minWidth: 500 }} aria-label="simple table" className="same_width">
+              <TableBody>
+                <TableRow>
+                  <TableCell className="th" align="center">진동센서</TableCell>
+                  <TableCell align="center">반경</TableCell>
+                  <TableCell className="th1" align="center">0.73 mm/s</TableCell>
+                  <TableCell align="center">축</TableCell>
+                  <TableCell className="th1" align="center">2.31 mm/s</TableCell>
+                  <TableCell align="center">수직</TableCell>
+                  <TableCell className="th1" align="center">5.6mm/s</TableCell>
+                </TableRow>
+              </TableBody>
+            </Table>
+          </TableContainer>
+        </MainCard>
 
         <div className="mixed-chart">
           <MainCard style={{marginTop:"10px"}} content={false}>
