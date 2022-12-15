@@ -1,9 +1,11 @@
+import { Link } from "react-router-dom";
 import Navigationbar from "custom/components/navigationbarCe";
 import { Row, Col, NavLink } from 'react-bootstrap';
 import { Button, Table, TableBody, TableCell, TableContainer, TableHead, TableRow } from '@mui/material';
 
 import Chip from '@mui/material/Chip';
 import MainCard from 'components/MainCard';
+import InSpection from "custom/components/pop/inspection_lg";
 
 // table data
 function createData1(division, station, sort, equipname, equipnum, condition) {
@@ -25,11 +27,11 @@ function createData1(division, station, sort, equipname, equipnum, condition) {
 function createData2(time, division, station, sort, equipname, result) {
   let rowclass;
   if(result == '주의관찰') {
-    rowclass='result1';
+    rowclass='condition3';
   } else if(result == '유지보수') {
-    rowclass='result2';
+    rowclass='condition5';
   } else if(result == '정상') {
-    rowclass='result3';
+    rowclass='condition6';
   } else {
     rowclass=''
   }
@@ -98,56 +100,56 @@ function MroPartState () {
                   </TableHead>
                   <TableBody>
                     <TableRow className="bad">
-                      <th>상시점검</th>
-                      <td>0/0</td>
-                      <td>0/0</td>
-                      <td>0/0</td>
-                      <td>0/0</td>
-                      <td>0/0</td>
-                      <td>0/0</td>
-                      <td>0/0</td>
-                      <td>0/0</td>
-                      <td>0/0</td>
-                      <td>0/0</td>
+                      <th><Link to="/mro_station_equipstate">상시점검</Link></th>
+                      <td><Link to="/mro_station_equipstate">0/0</Link></td>
+                      <td><Link to="/mro_station_equipstate">0/0</Link></td>
+                      <td><Link to="/mro_station_equipstate">0/0</Link></td>
+                      <td><Link to="/mro_station_equipstate">0/0</Link></td>
+                      <td><Link to="/mro_station_equipstate">0/0</Link></td>
+                      <td><Link to="/mro_station_equipstate">0/0</Link></td>
+                      <td><Link to="/mro_station_equipstate">0/0</Link></td>
+                      <td><Link to="/mro_station_equipstate">0/0</Link></td>
+                      <td><Link to="/mro_station_equipstate">0/0</Link></td>
+                      <td><Link to="/mro_station_equipstate">0/0</Link></td>
                     </TableRow>
                     <TableRow className="error">
-                      <th>경과</th>
-                      <td>0/0</td>
-                      <td>0/0</td>
-                      <td>0/0</td>
-                      <td>0/0</td>
-                      <td>0/0</td>
-                      <td>0/0</td>
-                      <td>0/0</td>
-                      <td>0/0</td>
-                      <td>0/0</td>
-                      <td>0/0</td>
+                      <th><Link to="/mro_station_equipstate">경과</Link></th>
+                      <td><Link to="/mro_station_equipstate">0/0</Link></td>
+                      <td><Link to="/mro_station_equipstate">0/0</Link></td>
+                      <td><Link to="/mro_station_equipstate">0/0</Link></td>
+                      <td><Link to="/mro_station_equipstate">0/0</Link></td>
+                      <td><Link to="/mro_station_equipstate">0/0</Link></td>
+                      <td><Link to="/mro_station_equipstate">0/0</Link></td>
+                      <td><Link to="/mro_station_equipstate">0/0</Link></td>
+                      <td><Link to="/mro_station_equipstate">0/0</Link></td>
+                      <td><Link to="/mro_station_equipstate">0/0</Link></td>
+                      <td><Link to="/mro_station_equipstate">0/0</Link></td>
                     </TableRow>
                     <TableRow className="insuff">
-                      <th>임박</th>
-                      <td>0/0</td>
-                      <td>0/0</td>
-                      <td>0/0</td>
-                      <td>0/0</td>
-                      <td>0/0</td>
-                      <td>0/0</td>
-                      <td>0/0</td>
-                      <td>0/0</td>
-                      <td>0/0</td>
-                      <td>0/0</td>
+                      <th><Link to="/mro_station_equipstate">임박</Link></th>
+                      <td><Link to="/mro_station_equipstate">0/0</Link></td>
+                      <td><Link to="/mro_station_equipstate">0/0</Link></td>
+                      <td><Link to="/mro_station_equipstate">0/0</Link></td>
+                      <td><Link to="/mro_station_equipstate">0/0</Link></td>
+                      <td><Link to="/mro_station_equipstate">0/0</Link></td>
+                      <td><Link to="/mro_station_equipstate">0/0</Link></td>
+                      <td><Link to="/mro_station_equipstate">0/0</Link></td>
+                      <td><Link to="/mro_station_equipstate">0/0</Link></td>
+                      <td><Link to="/mro_station_equipstate">0/0</Link></td>
+                      <td><Link to="/mro_station_equipstate">0/0</Link></td>
                     </TableRow>
                     <TableRow className="communi">
                       <th>주의관찰</th>
-                      <td>0/0</td>
-                      <td>0/0</td>
-                      <td>0/0</td>
-                      <td>0/0</td>
-                      <td>0/0</td>
-                      <td>0/0</td>
-                      <td>0/0</td>
-                      <td>0/0</td>
-                      <td>0/0</td>
-                      <td>0/0</td>
+                      <td><Link to="/mro_station_equipstate">0/0</Link></td>
+                      <td><Link to="/mro_station_equipstate">0/0</Link></td>
+                      <td><Link to="/mro_station_equipstate">0/0</Link></td>
+                      <td><Link to="/mro_station_equipstate">0/0</Link></td>
+                      <td><Link to="/mro_station_equipstate">0/0</Link></td>
+                      <td><Link to="/mro_station_equipstate">0/0</Link></td>
+                      <td><Link to="/mro_station_equipstate">0/0</Link></td>
+                      <td><Link to="/mro_station_equipstate">0/0</Link></td>
+                      <td><Link to="/mro_station_equipstate">0/0</Link></td>
+                      <td><Link to="/mro_station_equipstate">0/0</Link></td>
                     </TableRow>
                   </TableBody>
                 </Table>
@@ -161,57 +163,57 @@ function MroPartState () {
                   <TableHead>
                     <TableRow>
                       <TableCell style={{backgroundColor:"#f5f5f5",borderRadius:"0"}}></TableCell>
-                      <TableCell className="train1" align="center">계산</TableCell>
-                      <TableCell className="train1" align="center">귤현</TableCell>
-                      <TableCell className="train1" align="center">박촌</TableCell>
-                      <TableCell className="train1" align="center">임학</TableCell>
-                      <TableCell className="train1" align="center">계산</TableCell>
-                      <TableCell className="train1" align="center">경인교대</TableCell>
-                      <TableCell className="train1" align="center">작전</TableCell>
-                      <TableCell className="train1" align="center">갈산</TableCell>
-                      <TableCell className="train1" align="center">부평구청</TableCell>
-                      <TableCell className="train1" align="center">부평시장</TableCell>
+                      <TableCell className="train1" align="center"><Link to="/mro_station_equipstate">계산</Link></TableCell>
+                      <TableCell className="train1" align="center"><Link to="/mro_station_equipstate">귤현</Link></TableCell>
+                      <TableCell className="train1" align="center"><Link to="/mro_station_equipstate">박촌</Link></TableCell>
+                      <TableCell className="train1" align="center"><Link to="/mro_station_equipstate">임학</Link></TableCell>
+                      <TableCell className="train1" align="center"><Link to="/mro_station_equipstate">계산</Link></TableCell>
+                      <TableCell className="train1" align="center"><Link to="/mro_station_equipstate">경인교대</Link></TableCell>
+                      <TableCell className="train1" align="center"><Link to="/mro_station_equipstate">작전</Link></TableCell>
+                      <TableCell className="train1" align="center"><Link to="/mro_station_equipstate">갈산</Link></TableCell>
+                      <TableCell className="train1" align="center"><Link to="/mro_station_equipstate">부평구청</Link></TableCell>
+                      <TableCell className="train1" align="center"><Link to="/mro_station_equipstate">부평시장</Link></TableCell>
                     </TableRow>
                   </TableHead>
                   <TableBody>
                     <TableRow className="normal">
-                      <th>일간</th>
-                      <td>0</td>
-                      <td>0</td>
-                      <td>0</td>
-                      <td>0</td>
-                      <td>0</td>
-                      <td>0</td>
-                      <td>0</td>
-                      <td>0</td>
-                      <td>0</td>
-                      <td>0</td>
+                      <th><Link to="/mro_station_equipstate">일간</Link></th>
+                      <td><Link to="/mro_station_equipstate">0</Link></td>
+                      <td><Link to="/mro_station_equipstate">0</Link></td>
+                      <td><Link to="/mro_station_equipstate">0</Link></td>
+                      <td><Link to="/mro_station_equipstate">0</Link></td>
+                      <td><Link to="/mro_station_equipstate">0</Link></td>
+                      <td><Link to="/mro_station_equipstate">0</Link></td>
+                      <td><Link to="/mro_station_equipstate">0</Link></td>
+                      <td><Link to="/mro_station_equipstate">0</Link></td>
+                      <td><Link to="/mro_station_equipstate">0</Link></td>
+                      <td><Link to="/mro_station_equipstate">0</Link></td>
                     </TableRow>
                     <TableRow className="error">
-                      <th>주간</th>
-                      <td>0</td>
-                      <td>0</td>
-                      <td>0</td>
-                      <td>0</td>
-                      <td>0</td>
-                      <td>0</td>
-                      <td>0</td>
-                      <td>0</td>
-                      <td>0</td>
-                      <td>0</td>
+                      <th><Link to="/mro_station_equipstate">주간</Link></th>
+                      <td><Link to="/mro_station_equipstate">0</Link></td>
+                      <td><Link to="/mro_station_equipstate">0</Link></td>
+                      <td><Link to="/mro_station_equipstate">0</Link></td>
+                      <td><Link to="/mro_station_equipstate">0</Link></td>
+                      <td><Link to="/mro_station_equipstate">0</Link></td>
+                      <td><Link to="/mro_station_equipstate">0</Link></td>
+                      <td><Link to="/mro_station_equipstate">0</Link></td>
+                      <td><Link to="/mro_station_equipstate">0</Link></td>
+                      <td><Link to="/mro_station_equipstate">0</Link></td>
+                      <td><Link to="/mro_station_equipstate">0</Link></td>
                     </TableRow>
                     <TableRow className="fine">
-                      <th>월간</th>
-                      <td>0</td>
-                      <td>0</td>
-                      <td>0</td>
-                      <td>0</td>
-                      <td>0</td>
-                      <td>0</td>
-                      <td>0</td>
-                      <td>0</td>
-                      <td>0</td>
-                      <td>0</td>
+                      <th><Link to="/mro_station_equipstate">월간</Link></th>
+                      <td><Link to="/mro_station_equipstate">0</Link></td>
+                      <td><Link to="/mro_station_equipstate">0</Link></td>
+                      <td><Link to="/mro_station_equipstate">0</Link></td>
+                      <td><Link to="/mro_station_equipstate">0</Link></td>
+                      <td><Link to="/mro_station_equipstate">0</Link></td>
+                      <td><Link to="/mro_station_equipstate">0</Link></td>
+                      <td><Link to="/mro_station_equipstate">0</Link></td>
+                      <td><Link to="/mro_station_equipstate">0</Link></td>
+                      <td><Link to="/mro_station_equipstate">0</Link></td>
+                      <td><Link to="/mro_station_equipstate">0</Link></td>
                     </TableRow>
                   </TableBody>
                 </Table>
@@ -224,16 +226,16 @@ function MroPartState () {
                 <Table sx={{ minWidth: 400 }} aria-label="simple table" className="part_status">
                   <TableHead>
                     <TableRow>
-                      <TableCell className="train1" align="center">계산</TableCell>
-                      <TableCell className="train1" align="center">귤현</TableCell>
-                      <TableCell className="train1" align="center">박촌</TableCell>
-                      <TableCell className="train1" align="center">임학</TableCell>
-                      <TableCell className="train1" align="center">계산</TableCell>
-                      <TableCell className="train1" align="center">경인교대</TableCell>
-                      <TableCell className="train1" align="center">작전</TableCell>
-                      <TableCell className="train1" align="center">갈산</TableCell>
-                      <TableCell className="train1" align="center">부평구청</TableCell>
-                      <TableCell className="train1" align="center">부평시장</TableCell>
+                      <TableCell className="train1" align="center"><Link to="/mro_station_equipstate">계산</Link></TableCell>
+                      <TableCell className="train1" align="center"><Link to="/mro_station_equipstate">귤현</Link></TableCell>
+                      <TableCell className="train1" align="center"><Link to="/mro_station_equipstate">박촌</Link></TableCell>
+                      <TableCell className="train1" align="center"><Link to="/mro_station_equipstate">임학</Link></TableCell>
+                      <TableCell className="train1" align="center"><Link to="/mro_station_equipstate">계산</Link></TableCell>
+                      <TableCell className="train1" align="center"><Link to="/mro_station_equipstate">경인교대</Link></TableCell>
+                      <TableCell className="train1" align="center"><Link to="/mro_station_equipstate">작전</Link></TableCell>
+                      <TableCell className="train1" align="center"><Link to="/mro_station_equipstate">갈산</Link></TableCell>
+                      <TableCell className="train1" align="center"><Link to="/mro_station_equipstate">부평구청</Link></TableCell>
+                      <TableCell className="train1" align="center"><Link to="/mro_station_equipstate">부평시장</Link></TableCell>
                     </TableRow>
                   </TableHead>
                   <TableBody>
@@ -307,7 +309,7 @@ function MroPartState () {
             <MainCard content={false}>
               <div className='more'>
                 <Chip label="점검 대상 목록" style={{backgroundColor:"#257DDC"}} />
-                <NavLink className='more_btn' style={{color:"#000"}}>더보기 +</NavLink>
+                <NavLink as={Link} to="/mro_equiplist" className='more_btn' style={{color:"#000"}}>더보기 +</NavLink>
               </div>
               {/* table */}
               <TableContainer>
@@ -326,16 +328,15 @@ function MroPartState () {
                   <TableBody>
                     {rows1.map((row1) => (
                       <TableRow hover key={row1.name}
-                        className={row1.rowclass}
                       >
-                        <TableCell align="center">{row1.division}</TableCell>
-                        <TableCell align="center">{row1.station}</TableCell>
-                        <TableCell align="center">{row1.sort}</TableCell>
-                        <TableCell align="center">{row1.equipname}</TableCell>
-                        <TableCell align="center">{row1.equipnum}</TableCell>
-                        <TableCell align="center">{row1.condition}</TableCell>
+                        <TableCell align="center" className={row1.rowclass}><Link to="/mro_stationstate">{row1.division}</Link></TableCell>
+                        <TableCell align="center"><Link to="/mro_stationstate">{row1.station}</Link></TableCell>
+                        <TableCell align="center"><Link to="/mro_stationstate">{row1.sort}</Link></TableCell>
+                        <TableCell align="center"><Link to="/mro_stationstate">{row1.equipname}</Link></TableCell>
+                        <TableCell align="center"><Link to="/mro_stationstate">{row1.equipnum}</Link></TableCell>
+                        <TableCell align="center"><Link to="/mro_stationstate">{row1.condition}</Link></TableCell>
                         <TableCell align="center" style={{color:"#000"}}>
-                          <span className="material-symbols-outlined">content_paste_search</span>
+                          <InSpection />
                         </TableCell>
                       </TableRow>
                     ))}
@@ -347,7 +348,7 @@ function MroPartState () {
             <MainCard content={false} style={{marginTop:"10px"}}>
               <div className='more'>
                 <Chip label="최근 점검내역" color="success" />
-                <NavLink className='more_btn' style={{color:"#000"}}>더보기 +</NavLink>
+                <NavLink as={Link} to="/mro_checklist" className='more_btn' style={{color:"#000"}}>더보기 +</NavLink>
               </div>
               {/* table */}
               <TableContainer>
@@ -365,14 +366,13 @@ function MroPartState () {
                   <TableBody>
                     {rows2.map((row2) => (
                       <TableRow hover key={row2.name}
-                        className={row2.rowclass}
                       >
-                        <TableCell align="center">{row2.time}</TableCell>
-                        <TableCell align="center">{row2.division}</TableCell>
-                        <TableCell align="center">{row2.station}</TableCell>
-                        <TableCell align="center">{row2.sort}</TableCell>
-                        <TableCell align="center">{row2.equipname}</TableCell>
-                        <TableCell align="center">{row2.result}</TableCell>
+                        <TableCell align="center"><Link to="/mro_checkdetail">{row2.time}</Link></TableCell>
+                        <TableCell align="center"><Link to="/mro_checkdetail">{row2.division}</Link></TableCell>
+                        <TableCell align="center"><Link to="/mro_checkdetail">{row2.station}</Link></TableCell>
+                        <TableCell align="center"><Link to="/mro_checkdetail">{row2.sort}</Link></TableCell>
+                        <TableCell align="center"><Link to="/mro_checkdetail">{row2.equipname}</Link></TableCell>
+                        <TableCell align="center" className={row2.rowclass}><Link to="/mro_checkdetail">{row2.result}</Link></TableCell>
                       </TableRow>
                     ))}
                   </TableBody>
@@ -383,7 +383,7 @@ function MroPartState () {
             <MainCard content={false} style={{marginTop:"10px"}}>
               <div className='more'>
                 <Chip label="최근 유지보수내역" color="success" />
-                <NavLink className='more_btn' style={{color:"#000"}}>더보기 +</NavLink>
+                <NavLink as={Link} to="/mro_list" className='more_btn' style={{color:"#000"}}>더보기 +</NavLink>
               </div>
               {/* table */}
               <TableContainer>

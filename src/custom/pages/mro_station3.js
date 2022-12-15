@@ -96,7 +96,7 @@ function MroStation3 () {
         
         <br/>
         <TableContainer>
-          <Table sx={{ minWidth: 800 }} aria-label="simple table">
+          <Table sx={{ minWidth: 800 }} aria-label="simple table" className="mro_table">
             <TableHead>
               <TableRow>
                 <TableCell className="blue_th" align="center">구분</TableCell>
@@ -116,7 +116,6 @@ function MroStation3 () {
             <TableBody>
               {rows.map((row) => (
                 <TableRow hover key={row.name}
-                  className={row.rowclass}
                   // component={Link} to="/equipdetail"
                   // onClick={click}
                 >
@@ -131,7 +130,7 @@ function MroStation3 () {
                   <TableCell><Link to="/mro_checkdetail">{row.data9}</Link></TableCell>
                   <TableCell><Link to="/mro_checkdetail">{row.data10}</Link></TableCell>
                   <TableCell><Link to="/mro_checkdetail">{row.data11}</Link></TableCell>
-                  <TableCell><Link to="/mro_checkdetail">{row.data12}</Link></TableCell>
+                  <TableCell className={row.rowclass}><Link to="/mro_checkdetail">{row.data12}</Link></TableCell>
                 </TableRow>
               ))}
             </TableBody>

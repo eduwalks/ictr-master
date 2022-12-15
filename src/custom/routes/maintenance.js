@@ -5,6 +5,7 @@ import { Button, Table, TableBody, TableCell, TableContainer, TableHead, TableRo
 
 import Chip from '@mui/material/Chip';
 import MainCard from 'components/MainCard';
+import InSpection from "custom/components/pop/inspection_lg";
 
 // table data
 function createData1(division, number, part, station, sort, equipname, equipnum, condition) {
@@ -295,7 +296,7 @@ function MainTenance () {
                         <TableCell align="center"><Link to="/mro_stationstate">{row1.equipnum}</Link></TableCell>
                         <TableCell align="center"><Link to="/mro_stationstate">{row1.condition}</Link></TableCell>
                         <TableCell align="center" style={{color:"#000"}}>
-                          <span className="material-symbols-outlined">content_paste_search</span>
+                          <InSpection />
                         </TableCell>
                       </TableRow>
                     ))}
