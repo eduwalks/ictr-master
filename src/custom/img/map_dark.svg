@@ -13,6 +13,7 @@
 <svg version="1.1" id="레이어_1" xmlns:x="&ns_extend;" xmlns:i="&ns_ai;" xmlns:graph="&ns_graphs;"
 	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 1562.09 2510.51"
 	 style="enable-background:new 0 0 1562.09 2510.51;" xml:space="preserve">
+
 <style type="text/css">
   .st1{fill:red;}
 	.st2{fill:#ef710b;}
@@ -43,6 +44,7 @@
     }
   }
 </style>
+
 <switch>
 	<foreignObject requiredExtensions="&ns_ai;" x="0" y="0" width="1" height="1">
 		<i:aipgfRef  xlink:href="#adobe_illustrator_pgf">
@@ -6914,14 +6916,6 @@ AAAAACIwAAAAAAAAIjAAAAAAAAAiMAAAAAAAACIwAAAAAAAAIjAAAAAAAAAiMAAAAAAAACIwAAAA
 AAAAIjAAAAAAAAAiMAAAAAAAACIwAAAAAAAAIjAAAAAAAAAiMAAAAAAAACIwAAAAAAAAIjAAAAAA
 AAAiMAAAAAAAACIwAAAAAAAAIjAAAAAAAACS/A8AAP//AwBrcYwMHJf6wgAAAABJRU5ErkJggg==" transform="matrix(1 0 0 1 0 16.085)">
 		</image>
-		<circle id="circle" class="st1" cx="1135.83" cy="205.87" r="36"/>
-		<circle id="circle" class="st0" cx="1134.83" cy="304.04" r="36"/>
-		<circle id="circle" class="st1" cx="996.19" cy="734.32" r="36"/>
-		<circle id="circle" class="st3" cx="927.19" cy="1212.28" r="36"/>
-		<circle id="circle" class="st4" cx="408.47" cy="1221.26" r="36"/>
-		<circle id="circle" class="st5" cx="858.92" cy="1688.17" r="36"/>
-		<circle id="circle" class="st6" cx="652.43" cy="2185.23" r="36"/>
-		<circle id="circle" class="st1" cx="1339.34" cy="1679.7" r="36"/>
 	</g>
 </switch>
 <i:aipgf  id="adobe_illustrator_pgf" i:pgfEncoding="zstd/base64" i:pgfVersion="24">
@@ -12549,4 +12543,14 @@ SeLTxMFFkRxh/XSTPMVyxM3pmY0fQTM14kMG6BClgnQjKq+u/609lRAQFSDtjR2SuFRrZjJU/jXE
 UmYmMZjjaboXLvs67rtnJenke+if3NkejHb1np1z1UYdBDRt8AU=
 	]]>
 </i:aipgf>
+
+		<a xlink:href="http://www.google.com/"><circle id="circle" class="st0" cx="1135.83" cy="205.87" r="36"/></a>
+		<circle id="circle" class="st0" cx="1134.83" cy="304.04" r="36"/>
+		<circle id="circle" class="st1" cx="996.19" cy="734.32" r="36"/>
+		<circle id="circle" class="st3" cx="927.19" cy="1212.28" r="36"/>
+		<circle id="circle" class="st4" cx="408.47" cy="1221.26" r="36"/>
+		<circle id="circle" class="st5" cx="858.92" cy="1688.17" r="36"/>
+		<circle id="circle" class="st6" cx="652.43" cy="2185.23" r="36"/>
+		<circle id="circle" class="st1" cx="1339.34" cy="1679.7" r="36"/>
+
 </svg>

@@ -25,7 +25,7 @@ export function mroStationState() {
         <br/>
         <Row>
           <Col sm={4} className="sub_left">
-            <img style={{width:"620px"}} src={sampleImg} alt="" />
+            <img style={{width:"100%"}} src={sampleImg} alt="" />
             <br/>
             <MainCard className="cal_box" content={false}>
               <Chip label="유지보수/점검 현황" color="primary" />
