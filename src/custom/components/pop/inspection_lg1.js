@@ -17,8 +17,8 @@ export function InSpection() {
 
   return (
     <>
-      <Button variant="contained" onClick={handleOpen} style={{minWidth:"unset",color:"#fff"}} color="error">
-        고장신고/점검요청
+      <Button variant="contained" onClick={handleOpen}>
+        현장(상시)점검
       </Button>
 
       <Modal className="pop_box" open={open} onClose={handleClose} aria-labelledby="modal-modal-title" aria-describedby="modal-modal-description">

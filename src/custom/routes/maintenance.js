@@ -1,27 +1,41 @@
 import { Link } from "react-router-dom";
 import { Row, Col, NavLink } from 'react-bootstrap';
 import Navigationbar from "custom/components/navigationbarCe";
-import { Button, Table, TableBody, TableCell, TableContainer, TableHead, TableRow } from '@mui/material';
+import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow } from '@mui/material';
 
 import Chip from '@mui/material/Chip';
 import MainCard from 'components/MainCard';
+import MroLg from "custom/components/pop/mro_lg";
 import InSpection from "custom/components/pop/inspection_lg";
 
 // table data
 function createData1(division, number, part, station, sort, equipname, equipnum, condition) {
-  let rowclass;
+  let rowclass1;
   if(division == '상시점검') {
-    rowclass='condition1';
+    rowclass1='condition1';
   } else if(division == '경과') {
-    rowclass='condition2';
+    rowclass1='condition2';
   } else if(division == '임박') {
-    rowclass='condition3';
+    rowclass1='condition3';
   } else if(division == '주의관찰') {
-    rowclass='condition4';
+    rowclass1='condition4';
   } else {
-    rowclass=''
+    rowclass1=''
   }
-  return { division, number, part, station, sort, equipname, equipnum, condition, rowclass };
+
+  let rowclass2;
+  if(condition == '불량') {
+    rowclass2='condition1';
+  } else if(condition == '결함') {
+    rowclass2='condition2';
+  } else if(condition == '미흡') {
+    rowclass2='condition3';
+  } else if(condition == '통신') {
+    rowclass2='condition4';
+  } else {
+    rowclass2=''
+  }
+  return { division, number, part, station, sort, equipname, equipnum, condition, rowclass1, rowclass2 };
 }
 
 function createData2(time, division, number, part, station, sort, equipname, result) {
@@ -258,7 +272,7 @@ function MainTenance () {
               </TableContainer>
             </MainCard>
 
-            <div className="btn_right"><Button variant="contained" color="error">고장/점검 등록</Button></div>
+            <div className="btn_right"><InSpection /></div>
           </Col>
           
           <Col sm={8} className="main_right">
@@ -287,16 +301,16 @@ function MainTenance () {
                     {rows1.map((row1) => (
                       <TableRow hover key={row1.name}
                       >
-                        <TableCell align="center" className={row1.rowclass}><Link to="/mro_stationstate">{row1.division}</Link></TableCell>
+                        <TableCell align="center" className={row1.rowclass1}><Link to="/mro_stationstate">{row1.division}</Link></TableCell>
                         <TableCell align="center"><Link to="/mro_stationstate">{row1.number}</Link></TableCell>
                         <TableCell align="center"><Link to="/mro_stationstate">{row1.part}</Link></TableCell>
                         <TableCell align="center"><Link to="/mro_stationstate">{row1.station}</Link></TableCell>
                         <TableCell align="center"><Link to="/mro_stationstate">{row1.sort}</Link></TableCell>
                         <TableCell align="center"><Link to="/mro_stationstate">{row1.equipname}</Link></TableCell>
                         <TableCell align="center"><Link to="/mro_stationstate">{row1.equipnum}</Link></TableCell>
-                        <TableCell align="center"><Link to="/mro_stationstate">{row1.condition}</Link></TableCell>
+                        <TableCell align="center" className={row1.rowclass2}><Link to="/mro_stationstate">{row1.condition}</Link></TableCell>
                         <TableCell align="center" style={{color:"#000"}}>
-                          <InSpection />
+                          <MroLg />
                         </TableCell>
                       </TableRow>
                     ))}

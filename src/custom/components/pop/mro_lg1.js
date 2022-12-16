@@ -9,7 +9,7 @@ import Select from '@mui/material/Select';
 import BasicDatePicker from '../picker/DatePicker';
 import BasicTimePicker from '../picker/TimePicker';
 
-export function InSpection() {
+export function MroLg() {
 
   const [open, setOpen] = useState(false);
   const handleOpen = () => setOpen(true);
@@ -17,12 +17,12 @@ export function InSpection() {
 
   return (
     <>
-      <Button variant="contained" onClick={handleOpen} style={{minWidth:"unset",color:"#fff"}} color="error">
-        고장신고/점검요청
+      <Button variant="contained" onClick={handleOpen} color="grey">
+        <span className="material-symbols-outlined" style={{color:"#000"}}>content_paste_search</span>
       </Button>
 
       <Modal className="pop_box" open={open} onClose={handleClose} aria-labelledby="modal-modal-title" aria-describedby="modal-modal-description">
-        <MainCard title="현장(상시)점검" modal darkTitle content={false}>
+        <MainCard title="유지보수" modal darkTitle content={false}>
           <CardContent>
             <TableContainer>
               <Table sx={{ minWidth: 1000 }} aria-label="simple table" className="same_width pop_table">
@@ -369,4 +369,4 @@ export function InSpection() {
   )
 }
 
-export default InSpection;
+export default MroLg;
