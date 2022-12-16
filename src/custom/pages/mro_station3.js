@@ -39,7 +39,7 @@ function MroStation3 () {
 
   return (
     <>
-      <div style={{display:"flex",justifyContent:"space-between",alignItems:"center"}}>
+      <div className="mro_search">
         <ul className='condition' style={{marginTop:"px"}}>
           <li className='sum'>전체: 00</li>
           <li className='normal'>확인: 00</li>
@@ -51,7 +51,7 @@ function MroStation3 () {
       </div>
 
       <TableContainer>
-        <Table sx={{ minWidth: 400 }} aria-label="simple table" className="maint_table same_width">
+        <Table sx={{ minWidth: 1100 }} aria-label="simple table" className="maint_table same_width">
           <TableBody>
             <TableRow>
               <TableCell className="th" align="center">공기조화설비</TableCell>
@@ -85,7 +85,7 @@ function MroStation3 () {
       
       <br/>
       <TableContainer>
-        <Table sx={{ minWidth: 800 }} aria-label="simple table" className="mro_table">
+        <Table sx={{ minWidth: 1200 }} aria-label="simple table" className="mro_table">
           <TableHead>
             <TableRow>
               <TableCell className="blue_th" align="center">구분</TableCell>

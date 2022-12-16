@@ -23,10 +23,10 @@ function MroStationEquipstate() {
     <Navigationbar />
     
     <div className="sub_container_ce" style={{backgroundColor:"#fff"}}>
-      <div style={{display:"flex",alignItems:"center"}}>
-        <h5 style={{color:"#000",width:"40%"}}>* 1호선 &gt; 계산 &gt; (124)인천시청</h5>
+      <div className="mro_search">
+        <h5 className="mro_m_left">* 1호선 &gt; 계산 &gt; (124)인천시청</h5>
 
-        <TableContainer style={{color:"#000",width:"60%"}}>
+        <TableContainer className="mro_m_right">
           <Table sx={{ minWidth: 400 }} aria-label="simple table" className="maint_table same_width">
             <TableBody>
               <TableRow>

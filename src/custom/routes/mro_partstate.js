@@ -96,7 +96,7 @@ function MroPartState () {
             <MainCard>
               <Chip label="점검 대상" color="warning" style={{color:"#fff"}}/>
               <TableContainer>
-                <Table sx={{ minWidth: 400 }} aria-label="simple table" className="part_status">
+                <Table sx={{ minWidth: 800 }} aria-label="simple table" className="part_status">
                   <TableHead>
                     <TableRow>
                       <TableCell style={{backgroundColor:"#f5f5f5",borderRadius:"0"}}></TableCell>
@@ -173,7 +173,7 @@ function MroPartState () {
             <MainCard style={{marginTop:"10px"}}>
               <Chip label="유지보수 현황" color="warning" style={{color:"#fff"}} />
               <TableContainer>
-                <Table sx={{ minWidth: 400 }} aria-label="simple table" className="part_status">
+                <Table sx={{ minWidth: 800 }} aria-label="simple table" className="part_status">
                   <TableHead>
                     <TableRow>
                       <TableCell style={{backgroundColor:"#f5f5f5",borderRadius:"0"}}></TableCell>
@@ -237,7 +237,7 @@ function MroPartState () {
             <MainCard style={{marginTop:"10px"}}>
               <Chip label="성능검사 대상" color="warning" style={{color:"#fff"}} />
               <TableContainer>
-                <Table sx={{ minWidth: 400 }} aria-label="simple table" className="part_status">
+                <Table sx={{ minWidth: 800 }} aria-label="simple table" className="part_status">
                   <TableHead>
                     <TableRow>
                       <TableCell className="train1" align="center"><Link to="/mro_station_equipstate">계산</Link></TableCell>

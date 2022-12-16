@@ -53,8 +53,8 @@ div.condition1, div.condition2, div.condition3, div.condition4, div.condition5, 
 .sub_container_ce .part_status td a, .mro_table td a{color: #000 !important;}
 
 /* 로고 영역 */
-.navbar-brand{width: 200px;cursor: pointer;}
-.maintenance .navbar-brand{width: 320px;cursor: pointer;}
+.navbar-brand{width: 180px;cursor: pointer;}
+.maintenance .navbar-brand{width: 280px;cursor: pointer;}
 .navbar{padding: 10px;}
 .maintenance .navbar h6{color: grey !important;}
 .navbar-nav .MuiBox-root{padding: 0; padding-left: 9px;}
@@ -71,6 +71,7 @@ div.condition1, div.condition2, div.condition3, div.condition4, div.condition5, 
 .mobile_serach_box .MuiPaper-root{background-color: rgba(30, 30, 30, 1);}
 /* .MuiPaper-root{background-color: rgba(30, 30, 30, 1);} */
 /* .MuiMenu-paper{background-color: rgba(30, 30, 30, 1);} */
+.css-1869usk-MuiFormControl-root{margin: 8px 3px;}
 
 /* 차트 영역 */
 .apexcharts-legend-text, .apexcharts-canvas text{color: #fff !important;fill: #fff;}
@@ -94,7 +95,14 @@ div.condition1, div.condition2, div.condition3, div.condition4, div.condition5, 
 .pop_table .MuiSvgIcon-root{fill: #fff;}
 .pop_table td.pa10{padding-left: 9px !important;}
 
-.MuiPopperUnstyled-root .MuiPaper-root{background-color: rgba(30, 30, 30, 1);}
+.MuiPopperUnstyled-root .MuiPaper-root{background-color: rgb(215, 215, 215);}
+
+.white_modal .MuiPaper-root{background-color: rgba(255, 255, 255, 1); color: #000;}
+.white_modal .pop_table .th{text-align: center;background-color: #F1F1F1;color:#000;}
+.white_modal .pop_table td{border-bottom: 1px solid #ddd;background-color: #fff;color: #ddd;}
+.white_modal .pop_table td select{color: #ddd;}
+.white_modal .pop_table .MuiSvgIcon-root{fill: #ddd;}
+.white_modal .css-1c4wyd1-MuiOutlinedInput-notchedOutline{border-color: #ddd;}
 
 /* 테이블 설정 */
 .same_width{height: auto;text-align: center;table-layout: fixed;word-break: break-all;}
@@ -421,6 +429,7 @@ table .pl {padding: 6px 0 6px 10px !important;text-align: center;}
 .css-qm4dkt .fc .fc-col-header-cell {background-color: #f1f1f1;}
 .css-qm4dkt .fc .fc-col-header-cell-cushion{color: #000}
 .css-b6qqbz-MuiTypography-root{color: #000;}
+.css-245ebz{color: #000;}
 .css-qm4dkt .fc .fc-timeGridDay-view .fc-timegrid-slot {
   background-color: #fff;
 }
@@ -428,6 +437,16 @@ table .pl {padding: 6px 0 6px 10px !important;text-align: center;}
   background-color: #fff;
 }
 .fc-list-event:hover{background-color: #fff;}
+
+
+.mro_search{display: flex;justify-content: space-between;align-items: center;margin: 10px 0;}
+
+.css-13xfq8m-MuiTabPanel-root {
+  padding: 10px;
+}
+
+.mro_m_left{color: #000;width:40%;}
+.mro_m_right{color: #000;width:60%;}
 
 /* 반응형 */
 @media (max-width: 1700px) {
@@ -520,6 +539,13 @@ table .pl {padding: 6px 0 6px 10px !important;text-align: center;}
   .mobile_serach {
     display: block !important;
   }
+  .mro_search{display: block;}
+  .mro_m_left{width:100%;}
+  .mro_m_right{width:100%;}
+
+  .maintenance .main_left{width: 100%;}
+  .navbar-nav .MuiButtonBase-root{width: 100%;}
+  .navbar-nav .nav-link{width: 100%;}
 }
 
 @media (max-width: 800px) {

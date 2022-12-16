@@ -24,7 +24,7 @@ export function InSpection() {
       <Modal className="pop_box" open={open} onClose={handleClose} aria-labelledby="modal-modal-title" aria-describedby="modal-modal-description">
         <MainCard title="현장(상시)점검" modal darkTitle content={false}>
           <CardContent>
-            <TableContainer>
+            <TableContainer className="white_modal">
               <Table sx={{ minWidth: 1000 }} aria-label="simple table" className="same_width pop_table">
                 <TableBody>
                   <TableRow>

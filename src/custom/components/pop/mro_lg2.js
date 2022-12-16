@@ -21,7 +21,7 @@ export function MroLg() {
         유지보수
       </Button>
 
-      <Modal className="pop_box" open={open} onClose={handleClose} aria-labelledby="modal-modal-title" aria-describedby="modal-modal-description">
+      <Modal className="pop_box white_modal" open={open} onClose={handleClose} aria-labelledby="modal-modal-title" aria-describedby="modal-modal-description">
         <MainCard title="유지보수" modal darkTitle content={false}>
           <CardContent>
             <TableContainer>
