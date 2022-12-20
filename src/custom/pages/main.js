@@ -6,8 +6,10 @@ import Navigationbar from 'custom/components/navigationbar';
 import MainCard from 'components/MainCard';
 import Chip from '@mui/material/Chip';
 import TrainMap from 'custom/components/trainmap';
+import MainTable1 from "custom/components/table/maintable1";
+import MainTable2 from "custom/components/table/maintable2";
+import MainTable3 from "custom/components/table/maintable3";
 import MainChart from 'custom/components/chart/mainchart';
-import MainTable from 'custom/components/table/maintable';
 import Alert2 from "custom/components/pop/alert2";
 
 function Main() {
@@ -113,7 +115,9 @@ function Main() {
             </div>
 
             <div className="main_table">
-              <MainTable />
+              <MainTable1 />
+              <MainTable2 />
+              <MainTable3 />
             </div>
           </Col>
         </Row>

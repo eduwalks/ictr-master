@@ -19,15 +19,15 @@ function MroStationEquipstate() {
   };
 
   return (
-    <div className="monitering">
+    <div className="maintenance">
     <Navigationbar />
     
-    <div className="main_container">
+    <div className="sub_container_ce" style={{backgroundColor:"#fff"}}>
       <div className="mro_search">
-        <h5 className="mro_m_left" style={{color:"#fff"}}>* 1호선 &gt; 계산 &gt; (124)인천시청</h5>
+        <h5 className="mro_m_left">* 1호선 &gt; 계산 &gt; (124)인천시청</h5>
 
         <TableContainer className="mro_m_right">
-          <Table sx={{ minWidth: 400 }} aria-label="simple table" className="same_width">
+          <Table sx={{ minWidth: 400 }} aria-label="simple table" className="maint_table same_width">
             <TableBody>
               <TableRow>
                 <TableCell className="th" align="center">유지관리자</TableCell>

@@ -9,8 +9,7 @@ import { Button, Table, TableBody, TableCell, TableContainer, TableRow } from '@
 import { lazy } from 'react';
 import Loadable from 'components/Loadable';
 
-import MroLg from "custom/components/pop/mro_lg2";
-import MroCheck from 'custom/components/pop/mro_check';
+import MroLg from 'custom/components/pop/mro_lg2';
 import InSpection from "custom/components/pop/inspection_lg1";
 import Watch from "custom/components/pop/watch";
 
@@ -19,10 +18,10 @@ const AppCalendar = Loadable(lazy(() => import('pages/apps/calendar')));
 export function MroStationState() {
 
   return (
-    <div className="monitering">
+    <div className="maintenance">
       <Navigationbar />
-      <div className="main_container">
-        <h5 style={{marginTop:"10px"}}>* 1호선 &gt; 계산 &gt; (124)인천시청 &gt; 대합실공조기 &gt; 좌 대합실공조기(RF1(환기부))</h5>
+      <div className="sub_container_ce" style={{backgroundColor:"#fff"}}>
+        <h5 style={{color:"#000",marginTop:"10px"}}>* 1호선 &gt; 계산 &gt; (124)인천시청 &gt; 대합실공조기 &gt; 좌 대합실공조기(RF1(환기부))</h5>
         <br/>
         <Row>
           <Col sm={4} className="sub_left">
@@ -40,7 +39,7 @@ export function MroStationState() {
             </div>
 
             <div className="btn_right">
-              <MroCheck />&nbsp;&nbsp;
+              <Button variant="contained">정기점검</Button>&nbsp;&nbsp;
               <Button variant="contained">성능검사</Button>
             </div>
           </Col>
@@ -49,7 +48,7 @@ export function MroStationState() {
             <div className="btn_right"><Button variant="contained">분석보고서</Button></div>
             <MainCard content={false} style={{marginBottom:"10px", marginTop:"10px"}}>
               <TableContainer>
-                <Table aria-label="simple table" className="same_width">
+                <Table aria-label="simple table" className="maint_table same_width">
                   <TableBody>
                     <TableRow>
                       <TableCell className="th">유지관리자</TableCell>
@@ -74,7 +73,7 @@ export function MroStationState() {
 
             <MainCard content={false} style={{marginBottom:"10px"}}>
               <TableContainer>
-                <Table aria-label="simple table" className="same_width">
+                <Table aria-label="simple table" className="maint_table same_width">
                   <TableBody>
                     <TableRow>
                       <TableCell className="th">설비대분류</TableCell>

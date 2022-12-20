@@ -6,7 +6,7 @@ import Navigationbar from "custom/components/navigationbarCe";
 import DialogSelectBase from "custom/components/search/mro_search";
 import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow } from '@mui/material';
 import Paging from 'custom/components/table/paging';
-import Mro from "custom/components/pop/mro";
+import MroLg from "custom/components/pop/mro_lg";
 
 function createData1(data1, data2, data3, data4, data5, data6, data7, data8, data9, data10, data11, data12, data13, data14, data15) {
   let rowclass;
@@ -57,9 +57,9 @@ function MroEquiplist () {
 
   return (
     <>
-      <div className="monitering">
+      <div className="maintenance">
         <Navigationbar />
-        <div className="main_container">
+        <div className="sub_container_ce" style={{backgroundColor:"#fff"}}>
           <DialogSelectBase />
           <div className="mro_search">
             <ul className='condition' style={{marginTop:"px"}}>
@@ -73,8 +73,8 @@ function MroEquiplist () {
           </div>
 
           <TableContainer>
-            <Table sx={{ minWidth: 1100 }} aria-label="simple table" className="same_width">
-              <TableHead>
+            <Table sx={{ minWidth: 1100 }} aria-label="simple table" className="maint_table same_width">
+              <TableBody>
                 <TableRow>
                   <TableCell className="th" align="center">공기조화설비</TableCell>
                   <TableCell className="th" align="center">급수/급탕설비</TableCell>
@@ -88,8 +88,6 @@ function MroEquiplist () {
                   <TableCell className="th" align="center">환기설비</TableCell>
                   <TableCell className="th" align="center">자동제어설비</TableCell>
                 </TableRow>
-              </TableHead>
-              <TableBody>
                 <TableRow>
                   <TableCell align="center">870</TableCell>
                   <TableCell align="center">870</TableCell>
@@ -109,25 +107,25 @@ function MroEquiplist () {
         
           <br/>
           <TableContainer>
-            <Table sx={{ minWidth: 1200 }} aria-label="simple table">
+            <Table sx={{ minWidth: 1200 }} aria-label="simple table" className="mro_table">
               <TableHead>
                 <TableRow>
-                  <TableCell className="th" align="center">No.</TableCell>
-                  <TableCell className="th" align="center">운용상태</TableCell>
-                  <TableCell className="th" align="center">최근점검</TableCell>
-                  <TableCell className="th" align="center">호선</TableCell>
-                  <TableCell className="th" align="center">파트</TableCell>
-                  <TableCell className="th" align="center">역사명</TableCell>
-                  <TableCell className="th" align="center">설비번호</TableCell>
-                  <TableCell className="th" align="center">설비분류</TableCell>
-                  <TableCell className="th" align="center">설비명</TableCell>
-                  <TableCell className="th" align="center">위치</TableCell>
-                  <TableCell className="th" align="center">설비구성부</TableCell>
-                  <TableCell className="th" align="center">등급</TableCell>
-                  <TableCell className="th" align="center">게이트웹이</TableCell>
-                  <TableCell className="th" align="center">IoT결함</TableCell>
-                  <TableCell className="th" align="center">상태</TableCell>
-                  <TableCell className="th" align="center"></TableCell>
+                  <TableCell className="blue_th" align="center">No.</TableCell>
+                  <TableCell className="blue_th" align="center">운용상태</TableCell>
+                  <TableCell className="blue_th" align="center">최근점검</TableCell>
+                  <TableCell className="blue_th" align="center">호선</TableCell>
+                  <TableCell className="blue_th" align="center">파트</TableCell>
+                  <TableCell className="blue_th" align="center">역사명</TableCell>
+                  <TableCell className="blue_th" align="center">설비번호</TableCell>
+                  <TableCell className="blue_th" align="center">설비분류</TableCell>
+                  <TableCell className="blue_th" align="center">설비명</TableCell>
+                  <TableCell className="blue_th" align="center">위치</TableCell>
+                  <TableCell className="blue_th" align="center">설비구성부</TableCell>
+                  <TableCell className="blue_th" align="center">등급</TableCell>
+                  <TableCell className="blue_th" align="center">게이트웹이</TableCell>
+                  <TableCell className="blue_th" align="center">IoT결함</TableCell>
+                  <TableCell className="blue_th" align="center">상태</TableCell>
+                  <TableCell className="blue_th" align="center"></TableCell>
                 </TableRow>
               </TableHead>
               <TableBody>
@@ -151,7 +149,7 @@ function MroEquiplist () {
                     <TableCell><Link to="/mro_stationstate">{row.data13}</Link></TableCell>
                     <TableCell><Link to="/mro_stationstate">{row.data14}</Link></TableCell>
                     <TableCell className={row.rowclass}><Link to="/mro_stationstate">{row.data15}</Link></TableCell>
-                    <TableCell align="center"><Mro /></TableCell>
+                    <TableCell align="center"><MroLg /></TableCell>
                   </TableRow>
                 ))}
               </TableBody>

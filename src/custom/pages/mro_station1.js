@@ -4,7 +4,7 @@ import DialogSelect from "custom/components/search/mro_station_search1";
 
 import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow } from '@mui/material';
 import Paging from 'custom/components/table/paging';
-import MroLg from "custom/components/pop/mro_lg";
+import Mro from "custom/components/pop/mro";
 
 function createData1(data1, data2, data3, data4, data5, data6, data7, data8, data9, data10, data11, data12) {
   let rowclass;
@@ -67,8 +67,8 @@ function MroStation1 () {
       </div>
 
       <TableContainer>
-        <Table sx={{ minWidth: 1100 }} aria-label="simple table" className="maint_table same_width">
-          <TableBody>
+        <Table sx={{ minWidth: 1100 }} aria-label="simple table" className="same_width">
+          <TableHead>
             <TableRow>
               <TableCell className="th" align="center">공기조화설비</TableCell>
               <TableCell className="th" align="center">급수/급탕설비</TableCell>
@@ -82,6 +82,8 @@ function MroStation1 () {
               <TableCell className="th" align="center">환기설비</TableCell>
               <TableCell className="th" align="center">자동제어설비</TableCell>
             </TableRow>
+          </TableHead>
+          <TableBody>
             <TableRow>
               <TableCell align="center">870</TableCell>
               <TableCell align="center">870</TableCell>
@@ -101,22 +103,22 @@ function MroStation1 () {
       
       <br/>
       <TableContainer>
-        <Table sx={{ minWidth: 1200 }} aria-label="simple table" className="mro_table">
+        <Table sx={{ minWidth: 1200 }} aria-label="simple table">
           <TableHead>
             <TableRow>
-              <TableCell className="blue_th" align="center">No.</TableCell>
-              <TableCell className="blue_th" align="center">운용상태</TableCell>
-              <TableCell className="blue_th" align="center">최근점검</TableCell>
-              <TableCell className="blue_th" align="center">설비번호</TableCell>
-              <TableCell className="blue_th" align="center">설비분류</TableCell>
-              <TableCell className="blue_th" align="center">설비명</TableCell>
-              <TableCell className="blue_th" align="center">위치</TableCell>
-              <TableCell className="blue_th" align="center">설비구성부</TableCell>
-              <TableCell className="blue_th" align="center">등급</TableCell>
-              <TableCell className="blue_th" align="center">게이트웹이</TableCell>
-              <TableCell className="blue_th" align="center">IoT결함</TableCell>
-              <TableCell className="blue_th" align="center">상태</TableCell>
-              <TableCell className="blue_th" align="center"></TableCell>
+              <TableCell className="th" align="center">No.</TableCell>
+              <TableCell className="th" align="center">운용상태</TableCell>
+              <TableCell className="th" align="center">최근점검</TableCell>
+              <TableCell className="th" align="center">설비번호</TableCell>
+              <TableCell className="th" align="center">설비분류</TableCell>
+              <TableCell className="th" align="center">설비명</TableCell>
+              <TableCell className="th" align="center">위치</TableCell>
+              <TableCell className="th" align="center">설비구성부</TableCell>
+              <TableCell className="th" align="center">등급</TableCell>
+              <TableCell className="th" align="center">게이트웹이</TableCell>
+              <TableCell className="th" align="center">IoT결함</TableCell>
+              <TableCell className="th" align="center">상태</TableCell>
+              <TableCell className="th" align="center"></TableCell>
             </TableRow>
           </TableHead>
           <TableBody>
@@ -137,7 +139,7 @@ function MroStation1 () {
                 <TableCell><Link to="/mro_stationstate">{row.data10}</Link></TableCell>
                 <TableCell><Link to="/mro_stationstate">{row.data11}</Link></TableCell>
                 <TableCell className={row.rowclass}><Link to="/mro_stationstate">{row.data12}</Link></TableCell>
-                <TableCell align="center"><MroLg /></TableCell>
+                <TableCell align="center"><Mro /></TableCell>
               </TableRow>
             ))}
           </TableBody>

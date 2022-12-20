@@ -163,10 +163,10 @@ export default function IconTabs() {
               <Table className="same_width" sx={{ minWidth: 800 }} aria-label="simple table">
                 <TableHead>
                   <TableRow>
-                    <TableCell className="th" align="center">항목</TableCell>
-                    <TableCell className="th" align="center">단위</TableCell>
-                    <TableCell className="th" align="center">설계값</TableCell>
-                    <TableCell className="th" align="center">비고</TableCell>
+                    <TableCell className="blue_th" align="center">항목</TableCell>
+                    <TableCell className="blue_th" align="center">단위</TableCell>
+                    <TableCell className="blue_th" align="center">설계값</TableCell>
+                    <TableCell className="blue_th" align="center">비고</TableCell>
                   </TableRow>
                 </TableHead>
                 <TableBody>
@@ -188,13 +188,13 @@ export default function IconTabs() {
               <Table sx={{ minWidth: 800 }} aria-label="simple table">
                 <TableHead>
                   <TableRow>
-                    <TableCell className="th" align="center">품목(품명)</TableCell>
-                    <TableCell className="th" align="center">상태</TableCell>
-                    <TableCell className="th" align="center">단위</TableCell>
-                    <TableCell className="th" align="center">교체주기</TableCell>
-                    <TableCell className="th" align="center">최근교체일</TableCell>
-                    <TableCell className="th" align="center">교체사유</TableCell>
-                    <TableCell className="th" align="center">향후교체예상일</TableCell>
+                    <TableCell className="blue_th" align="center">품목(품명)</TableCell>
+                    <TableCell className="blue_th" align="center">상태</TableCell>
+                    <TableCell className="blue_th" align="center">단위</TableCell>
+                    <TableCell className="blue_th" align="center">교체주기</TableCell>
+                    <TableCell className="blue_th" align="center">최근교체일</TableCell>
+                    <TableCell className="blue_th" align="center">교체사유</TableCell>
+                    <TableCell className="blue_th" align="center">향후교체예상일</TableCell>
                   </TableRow>
                 </TableHead>
                 <TableBody>
@@ -300,14 +300,14 @@ export default function IconTabs() {
               <Table className="same_width" sx={{ minWidth: 400 }} aria-label="simple table">
                 <TableHead>
                   <TableRow>
-                    <TableCell className="th" align="center">유지보수일</TableCell>
-                    <TableCell className="th" align="center">품명</TableCell>
-                    <TableCell className="th" align="center">주요부품</TableCell>
-                    <TableCell className="th" align="center">구분</TableCell>
-                    <TableCell className="th" align="center">분석유형</TableCell>
-                    <TableCell className="th" align="center">상황보고</TableCell>
-                    <TableCell className="th" align="center">작업자</TableCell>
-                    <TableCell className="th" align="center">상태</TableCell>
+                    <TableCell className="blue_th" align="center">유지보수일</TableCell>
+                    <TableCell className="blue_th" align="center">품명</TableCell>
+                    <TableCell className="blue_th" align="center">주요부품</TableCell>
+                    <TableCell className="blue_th" align="center">구분</TableCell>
+                    <TableCell className="blue_th" align="center">분석유형</TableCell>
+                    <TableCell className="blue_th" align="center">상황보고</TableCell>
+                    <TableCell className="blue_th" align="center">작업자</TableCell>
+                    <TableCell className="blue_th" align="center">상태</TableCell>
                   </TableRow>
                 </TableHead>
                 <TableBody>
@@ -337,10 +337,10 @@ export default function IconTabs() {
               <Table className="same_width" sx={{ minWidth: 400 }} aria-label="simple table">
                 <TableHead>
                   <TableRow>
-                    <TableCell className="th" align="center">점검구분</TableCell>
-                    <TableCell className="th" align="center">점검일</TableCell>
-                    <TableCell className="th" align="center">점검결과</TableCell>
-                    <TableCell className="th" align="center">점검자</TableCell>
+                    <TableCell className="blue_th" align="center">점검구분</TableCell>
+                    <TableCell className="blue_th" align="center">점검일</TableCell>
+                    <TableCell className="blue_th" align="center">점검결과</TableCell>
+                    <TableCell className="blue_th" align="center">점검자</TableCell>
                   </TableRow>
                 </TableHead>
                 <TableBody>

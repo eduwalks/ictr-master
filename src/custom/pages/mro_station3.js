@@ -51,8 +51,8 @@ function MroStation3 () {
       </div>
 
       <TableContainer>
-        <Table sx={{ minWidth: 1100 }} aria-label="simple table" className="maint_table same_width">
-          <TableBody>
+        <Table sx={{ minWidth: 1100 }} aria-label="simple table" className="same_width">
+          <TableHead>
             <TableRow>
               <TableCell className="th" align="center">공기조화설비</TableCell>
               <TableCell className="th" align="center">급수/급탕설비</TableCell>
@@ -66,6 +66,8 @@ function MroStation3 () {
               <TableCell className="th" align="center">환기설비</TableCell>
               <TableCell className="th" align="center">자동제어설비</TableCell>
             </TableRow>
+          </TableHead>
+          <TableBody>
             <TableRow>
               <TableCell align="center">870</TableCell>
               <TableCell align="center">870</TableCell>
@@ -85,21 +87,21 @@ function MroStation3 () {
       
       <br/>
       <TableContainer>
-        <Table sx={{ minWidth: 1200 }} aria-label="simple table" className="mro_table">
+        <Table sx={{ minWidth: 1200 }} aria-label="simple table">
           <TableHead>
             <TableRow>
-              <TableCell className="blue_th" align="center">구분</TableCell>
-              <TableCell className="blue_th" align="center">설비번호</TableCell>
-              <TableCell className="blue_th" align="center">유지보수일시</TableCell>
-              <TableCell className="blue_th" align="center">설비대분류</TableCell>
-              <TableCell className="blue_th" align="center">설비분류</TableCell>
-              <TableCell className="blue_th" align="center">설비명</TableCell>
-              <TableCell className="blue_th" align="center">위치</TableCell>
-              <TableCell className="blue_th" align="center">품명</TableCell>
-              <TableCell className="blue_th" align="center">주요부품</TableCell>
-              <TableCell className="blue_th" align="center">분석유형</TableCell>
-              <TableCell className="blue_th" align="center">작업자</TableCell>
-              <TableCell className="blue_th" align="center">작업상태</TableCell>
+              <TableCell className="th" align="center">구분</TableCell>
+              <TableCell className="th" align="center">설비번호</TableCell>
+              <TableCell className="th" align="center">유지보수일시</TableCell>
+              <TableCell className="th" align="center">설비대분류</TableCell>
+              <TableCell className="th" align="center">설비분류</TableCell>
+              <TableCell className="th" align="center">설비명</TableCell>
+              <TableCell className="th" align="center">위치</TableCell>
+              <TableCell className="th" align="center">품명</TableCell>
+              <TableCell className="th" align="center">주요부품</TableCell>
+              <TableCell className="th" align="center">분석유형</TableCell>
+              <TableCell className="th" align="center">작업자</TableCell>
+              <TableCell className="th" align="center">작업상태</TableCell>
             </TableRow>
           </TableHead>
           <TableBody>

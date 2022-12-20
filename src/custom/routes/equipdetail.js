@@ -62,6 +62,7 @@ function EquipDetail () {
     <div className="monitering">
       <Navigationbar />
       <div className="sub_container">
+        <h5>* 1호선 &gt; 계산 &gt; (124)인천시청 &gt; 대합실공조기 &gt; 좌 대합실공조기(RF1(환기부))</h5>
         <Row>
           <Col sm={5} className="sub_left">
             <div className='player-wrapper' style={{width:'100%'}}>

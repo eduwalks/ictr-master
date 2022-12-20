@@ -6,7 +6,7 @@ function Test1() {
   return (
     <div className="maintenance">
       <Navigationbar />
-      <div className="sub_container_ce" style={{backgroundColor:"#fff"}}>
+      <div className="sub_container_ce">
       </div>
     </div>
   )

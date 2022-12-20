@@ -35,7 +35,7 @@ import MroEquiplist from 'custom/routes/mro_equiplist';
 import MroChecklist from 'custom/routes/mro_checklist';
 import MroList from 'custom/routes/mro_list';
 import MroCheckDetail from 'custom/routes/mro_checkdetail';
-import mroStationState from 'custom/routes/mro_station_state';
+import MroStationState from 'custom/routes/mro_station_state';
 import Test from 'custom/routes/test';
 import Test1 from 'custom/routes/test1';
 
@@ -82,7 +82,7 @@ function App() {
                     <Route path='/mro_checklist' component={MroChecklist}/>
                     <Route path='/mro_checkdetail' component={MroCheckDetail}/>
                     <Route path='/mro_list' component={MroList}/>
-                    <Route path='/mro_stationstate' component={mroStationState}/>
+                    <Route path='/mro_stationstate' component={MroStationState}/>
                     <Route path='/test' component={Test}/>
                     <Route path='/test1' component={Test1}/>
                   {/* </Switch> */}

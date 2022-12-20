@@ -9,7 +9,7 @@ const Navigationbar = () => {
 
   return (
     <Navbar collapseOnSelect expand="lg" bg="light" variant="light">
-      <Navbar.Brand eventKey="1" as={Link} to="/maintenance"><img src={Logo} alt="로고" /></Navbar.Brand>
+      <Navbar.Brand eventKey="1" as={Link} to="/maintenance" className="navbar-brand1"><img src={Logo} alt="로고" /></Navbar.Brand>
       <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
         <Nav>

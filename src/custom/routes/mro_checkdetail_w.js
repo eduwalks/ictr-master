@@ -18,10 +18,10 @@ const AppCalendar = Loadable(lazy(() => import('pages/apps/calendar')));
 export function MroCheckDetail() {
 
   return (
-    <div className="monitering">
+    <div className="maintenance">
       <Navigationbar />
-      <div className="main_container">
-        <h5 style={{marginTop:"10px"}}>* 1호선 &gt; 계산 &gt; (124)인천시청 &gt; 대합실공조기 &gt; 좌 대합실공조기(RF1(환기부))</h5>
+      <div className="sub_container_ce" style={{backgroundColor:"#fff"}}>
+        <h5 style={{color:"#000",marginTop:"10px"}}>* 1호선 &gt; 계산 &gt; (124)인천시청 &gt; 대합실공조기 &gt; 좌 대합실공조기(RF1(환기부))</h5>
         <br/>
         <Row>
           <Col sm={4} className="sub_left">
@@ -47,7 +47,7 @@ export function MroCheckDetail() {
             <div className="btn_right"><Button variant="contained">분석보고서</Button></div>
             <MainCard content={false} style={{marginBottom:"10px", marginTop:"10px"}}>
               <TableContainer>
-                <Table aria-label="simple table" className="same_width">
+                <Table aria-label="simple table" className="maint_table same_width">
                   <TableBody>
                     <TableRow>
                       <TableCell className="th">유지관리자</TableCell>
@@ -72,7 +72,7 @@ export function MroCheckDetail() {
 
             <MainCard content={false} style={{marginBottom:"10px"}}>
               <TableContainer>
-                <Table aria-label="simple table" className="same_width">
+                <Table aria-label="simple table" className="maint_table same_width">
                   <TableBody>
                     <TableRow>
                       <TableCell className="th">설비대분류</TableCell>
@@ -161,7 +161,7 @@ export function MroCheckDetail() {
             <MainCard className="center_table" content={false}>
               <Chip label="경보 및 현장(상시) 점검 내용" color="error" />
               <TableContainer>
-                <Table sx={{ minWidth: 500 }} aria-label="simple table" className="same_width" style={{borderCollapse:"unset", borderSpacing:"revert"}}>
+                <Table sx={{ minWidth: 500 }} aria-label="simple table" className="maint_table same_width" style={{borderCollapse:"unset", borderSpacing:"revert"}}>
                   <TableBody>
                     <TableRow>
                       <TableCell className="th" align="center">경보일시</TableCell>
@@ -250,7 +250,7 @@ export function MroCheckDetail() {
             <MainCard className="center_table" content={false}>
               <Chip label="주의관찰" color="error" />
               <TableContainer>
-                <Table sx={{ minWidth: 500 }} aria-label="simple table" className="same_width" style={{borderCollapse:"unset", borderSpacing:"revert"}}>
+                <Table sx={{ minWidth: 500 }} aria-label="simple table" className="maint_table same_width" style={{borderCollapse:"unset", borderSpacing:"revert"}}>
                   <TableBody>
                     <TableRow>
                       <TableCell className="th" align="center">주의관찰 시작일</TableCell>
@@ -292,7 +292,7 @@ export function MroCheckDetail() {
             <MainCard className="center_table" content={false}>
               <Chip label="유지보수" color="success" />
               <TableContainer>
-                <Table sx={{ minWidth: 500 }} aria-label="simple table" className="same_width" style={{borderCollapse:"unset", borderSpacing:"revert"}}>
+                <Table sx={{ minWidth: 500 }} aria-label="simple table" className="maint_table same_width" style={{borderCollapse:"unset", borderSpacing:"revert"}}>
                   <TableBody>
                     <TableRow>
                       <TableCell className="th" align="center">설비구성부</TableCell>
@@ -341,7 +341,7 @@ export function MroCheckDetail() {
                     <TableRow>
                       <TableCell className="th" align="center">투입자재</TableCell>
                       <TableCell className="pl" colSpan={5} style={{textAlign:"left",padding:"0"}}>
-                        <Table sx={{ minWidth: 800 }} aria-label="simple table">
+                        <Table sx={{ minWidth: 800 }} aria-label="maint_table simple table">
                           <TableHead>
                             <TableRow>
                               <TableCell className="th" align="center">자재유형</TableCell>
