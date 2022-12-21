@@ -51,7 +51,7 @@ function MfvTable() {
     return (
         <TableContainer sx={{ maxHeight: 323 }}>
             <Table stickyHeader aria-label="sticky table" sx={{ minWidth: 500 }} className="same_width hov_non">
-                <TableHead style={{top: "0", position:"sticky", zIndex: "10000"}}>
+                <TableHead style={{top: "0", position:"sticky", zIndex: "1"}}>
                     <TableRow>
                         <TableCell align="center" rowSpan="2">설비명</TableCell>
                         <TableCell align="center" colSpan="3">설비상태진단</TableCell>

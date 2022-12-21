@@ -63,6 +63,11 @@ div.condition1, div.condition2, div.condition3, div.condition4, div.condition5, 
 .sub_container_ce .part_status th a{color: #fff !important;}
 .sub_container_ce .part_status td a, .mro_table td a{color: #000 !important;}
 
+.css-1v9be3b-MuiCardContent-root{padding: 0;}
+.css-1v9be3b-MuiCardContent-root:last-child {padding-bottom: 0;}
+
+.css-13al26b-MuiTableCell-root {border-color: rgba(255, 255, 255, 0.1);}
+
 /* 로고 영역 */
 .navbar-brand{width: 180px;cursor: pointer;}
 .navbar-brand1{width: 280px;cursor: pointer;}

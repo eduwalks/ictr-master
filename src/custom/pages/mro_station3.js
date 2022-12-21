@@ -1,8 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import DialogSelect from "custom/components/search/mro_station_search3";
-import { Button, Table, TableBody, TableCell, TableContainer, TableHead, TableRow } from '@mui/material';
+import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow } from '@mui/material';
 import Paging from 'custom/components/table/paging';
+import InSpection from "custom/components/pop/inspection_lg";
 
 function createData1(data1, data2, data3, data4, data5, data6, data7, data8, data9, data10, data11, data12) {
   let rowclass;
@@ -128,7 +129,7 @@ function MroStation3 () {
         </Table>
       </TableContainer>
 
-      <div className="btn_right"><Button variant="contained" color="error">고장/점검 등록</Button></div>
+      <div className="btn_right"><InSpection /></div>
       <Paging />
     </>
   )

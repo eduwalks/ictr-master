@@ -10,6 +10,7 @@ import Video from 'custom/video/1.mp4'
 import { lazy } from 'react';
 import Loadable from 'components/Loadable';
 import MroLg from 'custom/components/pop/mro_lg2';
+import MroCheck from 'custom/components/pop/mro_check';
 import InSpection from "custom/components/pop/inspection_lg1";
 import Watch from "custom/components/pop/watch";
 
@@ -38,7 +39,7 @@ export function MroCheckDetail() {
               <MroLg />
             </div>
             <div className="btn_right">
-              <Button variant="contained">정기점검</Button>&nbsp;&nbsp;
+              <MroCheck />&nbsp;&nbsp;
               <Button variant="contained">성능검사</Button>
             </div>
           </Col>
