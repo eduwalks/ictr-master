@@ -42,12 +42,21 @@ div.condition1, div.condition2, div.condition3, div.condition4, div.condition5, 
 .sub_container_ce .condition5 a{background-color: #308a2a;}
 .sub_container_ce .condition6 a{background-color: #2666ae;}
 
-.icon1{background-color: red;}
-.icon2{background-color: #ef710b;}
-.icon3{background-color: #e7c748;}
-.icon4{background-color: #b2b2b2;}
-.icon5{background-color: #308a2a;}
-.icon6{background-color: #2666ae;}
+.icon1 button, .icon1 button:hover{background-color: red;}
+.icon2 button, .icon2 button:hover{background-color: #ef710b;}
+.icon3 button, .icon3 button:hover{background-color: #e7c748;}
+.icon4 button, .icon4 button:hover{background-color: #b2b2b2;}
+.icon5 button, .icon5 button:hover{background-color: #308a2a;}
+.icon6 button, .icon6 button:hover{background-color: #2666ae;}
+
+.icon button{
+  padding: 5px;
+  min-width: auto;
+}
+
+.icon button img {
+  width: 18px;
+}
 
 .icon1:hover, .icon2:hover, .icon3:hover, .icon4:hover, .icon5:hover, .icon6:hover{background-color: #000;}
 
@@ -129,6 +138,8 @@ div.condition1, div.condition2, div.condition3, div.condition4, div.condition5, 
 
 .pagination .page-link{border: 1px solid rgba(255, 255, 255, 0.05);background-color: #1e1e1e;color: #fff;}
 .active>.page-link, .page-link.active {background-color: #141414;}
+
+.hov_non td:hover{background: none;}
 
 /* 기타 설정 */
 .MuiChip-root{margin:8px;font-size: 1rem !important;}
@@ -356,15 +367,6 @@ table .pl {padding: 6px 0 6px 10px !important;text-align: center;}
 }
 
 /* 서브페이지 */
-.same_cell .icon {
-  padding: 5px;
-  min-width: auto;
-}
-
-.same_cell .icon img {
-  width: 18px;
-}
-
 /* 유지보수 */
 .sub_container_ce .MuiPaper-root{background-color: #fff;border: 1px solid #eaeaea;box-shadow:none;}
 .sub_container_ce td{background-color: #fff;color:#000;border-bottom: 1px solid #eaeaea;}

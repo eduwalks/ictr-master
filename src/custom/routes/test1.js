@@ -1,15 +1,15 @@
 import React from "react";
-import Navigationbar from "custom/components/navigationbarCe";
+import Navigationbar from 'custom/components/navigationbar';
 
 
-function Test1() {
+function Test() {
   return (
-    <div className="maintenance">
+    <div className="monitering">
       <Navigationbar />
-      <div className="sub_container_ce">
+      <div className="sub_container">
       </div>
     </div>
   )
 }
 
-export default Test1;
+export default Test;

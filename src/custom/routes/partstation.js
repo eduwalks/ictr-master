@@ -3,15 +3,11 @@ import { NavLink } from "react-bootstrap";
 import { Row, Col } from 'react-bootstrap';
 import MainCard from 'components/MainCard';
 import Chip from '@mui/material/Chip';
-import { Button, Table, TableBody, TableCell, TableContainer, TableHead, TableRow } from '@mui/material';
+import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow } from '@mui/material';
 
 import Navigationbar from 'custom/components/navigationbar';
-import Motor from 'custom/img/motor.svg'
-import Fan from 'custom/img/fan.svg'
-import Vbelt from 'custom/img/vbelt.svg'
-
-import Alert1 from "custom/components/pop/alert1";
 import Alert2 from "custom/components/pop/alert2";
+import MfvTable from "custom/components/table/mfvtable";
 
 function PartStation () {
   function createData1(station, sum, state1, state2, state3, state4, state5, state6) {
@@ -214,164 +210,7 @@ function PartStation () {
             <MainCard className="mobile_top" content={false}>
               <Chip label="계산 &gt; (124)인천시청" color="primary" />
               {/* table */}
-              <TableContainer>
-                <Table className="same_cell part_station" sx={{ minWidth: 800 }} aria-label="simple table">
-                  <TableHead>
-                    <TableRow>
-                      <TableCell rowspan="2" align="center">설비명</TableCell>
-                      <TableCell colSpan="3" align="center">설비상태진단</TableCell>
-                      <TableCell colSpan="3" align="center">설비결함진단(고장예측)</TableCell>
-                      <TableCell rowspan="2" align="center">고장신고/점검요청</TableCell>
-                    </TableRow>
-                    <TableRow>
-                      <TableCell align="center">전동기</TableCell>
-                      <TableCell align="center">송풍기</TableCell>
-                      <TableCell align="center">V벨트</TableCell>
-                      <TableCell align="center">전동기</TableCell>
-                      <TableCell align="center">송풍기</TableCell>
-                      <TableCell align="center">V벨트</TableCell>
-                    </TableRow>
-                  </TableHead>
-                  <TableBody>
-                    <TableRow hover>
-                      <TableCell component="th" scope="row">좌 대합실공조기</TableCell>
-                      <TableCell align="center">
-                        <Link to="/equipdetail"><Button className="icon icon1" variant="contained"><img src={Motor} alt="전동기" /></Button></Link>
-                      </TableCell>
-                      <TableCell align="center">
-                        <Link to="/equipdetail"><Button className="icon icon2" variant="contained"><img src={Fan} alt="송풍기" /></Button></Link>
-                      </TableCell>
-                      <TableCell align="center">
-                        <Link to="/equipdetail"><Button className="icon icon3" variant="contained"><img src={Vbelt} alt="V벨트" /></Button></Link>
-                      </TableCell>
-                      <TableCell align="center"><Link to="/equipdetail"><Button variant="contained" color="success">정상</Button></Link></TableCell>
-                      <TableCell align="center"><Link to="/equipdetail"><Button variant="contained" color="success">정상</Button></Link></TableCell>
-                      <TableCell align="center"><Link to="/equipdetail"><Button variant="contained" color="success">정상</Button></Link></TableCell>
-                      <TableCell align="center"><Alert1 /></TableCell>
-                    </TableRow>
-
-                    <TableRow hover>
-                      <TableCell component="th" scope="row">좌 대합실공조기</TableCell>
-                      <TableCell align="center">
-                        <Link to="/equipdetail"><Button className="icon icon4" variant="contained"><img src={Motor} alt="전동기" /></Button></Link>
-                      </TableCell>
-                      <TableCell align="center">
-                        <Link to="/equipdetail"><Button className="icon icon5" variant="contained"><img src={Fan} alt="송풍기" /></Button></Link>
-                      </TableCell>
-                      <TableCell align="center">
-                        <Link to="/equipdetail"><Button className="icon icon6" variant="contained"><img src={Vbelt} alt="V벨트" /></Button></Link>
-                      </TableCell>
-                      <TableCell align="center"><Link to="/equipdetail"><Button variant="contained" color="success">정상</Button></Link></TableCell>
-                      <TableCell align="center"><Link to="/equipdetail"><Button variant="contained" color="success">정상</Button></Link></TableCell>
-                      <TableCell align="center"><Link to="/equipdetail"><Button variant="contained" color="success">정상</Button></Link></TableCell>
-                      <TableCell align="center"><Alert1 /></TableCell>
-                    </TableRow>
-
-                    <TableRow hover>
-                      <TableCell component="th" scope="row">좌 대합실공조기</TableCell>
-                      <TableCell align="center">
-                        <Link to="/equipdetail"><Button className="icon icon3" variant="contained"><img src={Motor} alt="전동기" /></Button></Link>
-                      </TableCell>
-                      <TableCell align="center">
-                        <Link to="/equipdetail"><Button className="icon icon2" variant="contained"><img src={Fan} alt="송풍기" /></Button></Link>
-                      </TableCell>
-                      <TableCell align="center">
-                        <Link to="/equipdetail"><Button className="icon icon5" variant="contained"><img src={Vbelt} alt="V벨트" /></Button></Link>
-                      </TableCell>
-                      <TableCell align="center"><Link to="/equipdetail"><Button variant="contained" color="success">정상</Button></Link></TableCell>
-                      <TableCell align="center"><Link to="/equipdetail"><Button variant="contained" color="success">정상</Button></Link></TableCell>
-                      <TableCell align="center"><Link to="/equipdetail"><Button variant="contained" color="success">정상</Button></Link></TableCell>
-                      <TableCell align="center"><Alert1 /></TableCell>
-                    </TableRow>
-
-                    <TableRow hover>
-                      <TableCell component="th" scope="row">좌 대합실공조기</TableCell>
-                      <TableCell align="center">
-                        <Link to="/equipdetail"><Button className="icon icon4" variant="contained"><img src={Motor} alt="전동기" /></Button></Link>
-                      </TableCell>
-                      <TableCell align="center">
-                        <Link to="/equipdetail"><Button className="icon icon4" variant="contained"><img src={Fan} alt="송풍기" /></Button></Link>
-                      </TableCell>
-                      <TableCell align="center">
-                        <Link to="/equipdetail"><Button className="icon icon4" variant="contained"><img src={Vbelt} alt="V벨트" /></Button></Link>
-                      </TableCell>
-                      <TableCell align="center"><Link to="/equipdetail"><Button variant="contained" color="success">정상</Button></Link></TableCell>
-                      <TableCell align="center"><Link to="/equipdetail"><Button variant="contained" color="success">정상</Button></Link></TableCell>
-                      <TableCell align="center"><Link to="/equipdetail"><Button variant="contained" color="success">정상</Button></Link></TableCell>
-                      <TableCell align="center"><Alert1 /></TableCell>
-                    </TableRow>
-
-                    <TableRow hover>
-                      <TableCell component="th" scope="row">좌 대합실공조기</TableCell>
-                      <TableCell align="center">
-                        <Link to="/equipdetail"><Button className="icon icon6" variant="contained"><img src={Motor} alt="전동기" /></Button></Link>
-                      </TableCell>
-                      <TableCell align="center">
-                        <Link to="/equipdetail"><Button className="icon icon1" icon5 variant="contained"><img src={Fan} alt="송풍기" /></Button></Link>
-                      </TableCell>
-                      <TableCell align="center">
-                        <Link to="/equipdetail"><Button className="icon icon1" variant="contained"><img src={Vbelt} alt="V벨트" /></Button></Link>
-                      </TableCell>
-                      <TableCell align="center"><Link to="/equipdetail"><Button variant="contained" color="success">정상</Button></Link></TableCell>
-                      <TableCell align="center"><Link to="/equipdetail"><Button variant="contained" color="success">정상</Button></Link></TableCell>
-                      <TableCell align="center"><Link to="/equipdetail"><Button variant="contained" color="success">정상</Button></Link></TableCell>
-                      <TableCell align="center"><Alert1 /></TableCell>
-                    </TableRow>
-
-                    <TableRow hover>
-                      <TableCell component="th" scope="row">좌 대합실공조기</TableCell>
-                      <TableCell align="center">
-                        <Link to="/equipdetail"><Button className="icon icon5" variant="contained"><img src={Motor} alt="전동기" /></Button></Link>
-                      </TableCell>
-                      <TableCell align="center">
-                        <Link to="/equipdetail"><Button className="icon icon2" variant="contained"><img src={Fan} alt="송풍기" /></Button></Link>
-                      </TableCell>
-                      <TableCell align="center">
-                        <Link to="/equipdetail"><Button className="icon icon1" variant="contained"><img src={Vbelt} alt="V벨트" /></Button></Link>
-                      </TableCell>
-                      <TableCell align="center"><Link to="/equipdetail"><Button variant="contained" color="success">정상</Button></Link></TableCell>
-                      <TableCell align="center"><Link to="/equipdetail"><Button variant="contained" color="success">정상</Button></Link></TableCell>
-                      <TableCell align="center"><Link to="/equipdetail"><Button variant="contained" color="success">정상</Button></Link></TableCell>
-                      <TableCell align="center"><Alert1 /></TableCell>
-                    </TableRow>
-
-                    <TableRow hover>
-                      <TableCell component="th" scope="row">좌 대합실공조기</TableCell>
-                      <TableCell align="center">
-                        <Link to="/equipdetail"><Button className="icon icon3" variant="contained"><img src={Motor} alt="전동기" /></Button></Link>
-                      </TableCell>
-                      <TableCell align="center">
-                        <Link to="/equipdetail"><Button className="icon icon4" variant="contained"><img src={Fan} alt="송풍기" /></Button></Link>
-                      </TableCell>
-                      <TableCell align="center">
-                        <Link to="/equipdetail"><Button className="icon icon2" variant="contained"><img src={Vbelt} alt="V벨트" /></Button></Link>
-                      </TableCell>
-                      <TableCell align="center"><Link to="/equipdetail"><Button variant="contained" color="success">정상</Button></Link></TableCell>
-                      <TableCell align="center"><Link to="/equipdetail"><Button variant="contained" color="success">정상</Button></Link></TableCell>
-                      <TableCell align="center"><Link to="/equipdetail"><Button variant="contained" color="success">정상</Button></Link></TableCell>
-                      <TableCell align="center"><Alert1 /></TableCell>
-                    </TableRow>
-
-                    <TableRow hover>
-                      <TableCell component="th" scope="row">좌 대합실공조기</TableCell>
-                      <TableCell align="center">
-                        <Link to="/equipdetail"><Button className="icon icon4" variant="contained"><img src={Motor} alt="전동기" /></Button></Link>
-                      </TableCell>
-                      <TableCell align="center">
-                        <Link to="/equipdetail"><Button className="icon icon4" variant="contained"><img src={Fan} alt="송풍기" /></Button></Link>
-                      </TableCell>
-                      <TableCell align="center">
-                        <Link to="/equipdetail"><Button className="icon icon4" variant="contained"><img src={Vbelt} alt="V벨트" /></Button></Link>
-                      </TableCell>
-                      <TableCell align="center"><Link to="/equipdetail"><Button variant="contained" color="success">정상</Button></Link></TableCell>
-                      <TableCell align="center"><Link to="/equipdetail"><Button variant="contained" color="success">정상</Button></Link></TableCell>
-                      <TableCell align="center"><Link to="/equipdetail"><Button variant="contained" color="success">정상</Button></Link></TableCell>
-                      <TableCell align="center"><Alert1 /></TableCell>
-                    </TableRow>
-
-                  </TableBody>
-                </Table>
-              </TableContainer>
+              <MfvTable />
             </MainCard>
 
             <MainCard className="center_table" content={false}>
