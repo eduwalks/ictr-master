@@ -81,7 +81,7 @@ function MroTable2() {
           <Chip label="최근 점검내역" color="success" />
           <NavLink as={Link} to="/mro_checklist" className='more_btn'>더보기 +</NavLink>
         </div>
-        <TableContainer sx={{ maxHeight: 190 }}>
+        <TableContainer sx={{ maxHeight: 230 }}>
           <Table stickyHeader aria-label="sticky table" className="sticky_table">
             <TableHead>
               <TableRow>

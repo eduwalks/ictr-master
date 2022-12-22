@@ -19,7 +19,7 @@ const AppCalendar = Loadable(lazy(() => import('pages/apps/calendar')));
 export function MroStationState() {
 
   return (
-    <div className="monitering">
+    <div className="monitering cal">
       <Navigationbar />
       <div className="main_container">
         <h5 style={{marginTop:"10px"}}>* 1호선 &gt; 계산 &gt; (124)인천시청 &gt; 대합실공조기 &gt; 좌 대합실공조기(RF1(환기부))</h5>

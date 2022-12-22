@@ -51,7 +51,7 @@ function SpotList () {
         </div>
 
         <TableContainer>
-          <Table sx={{ minWidth: 1000 }} aria-label="simple table">
+          <Table sx={{ minWidth: 1000 }} aria-label="simple table" className="list_table">
             <TableHead>
               <TableRow>
                 <TableCell align="center">결과</TableCell>

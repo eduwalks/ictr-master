@@ -154,7 +154,7 @@ function MainTenance () {
             <MainCard style={{marginTop:"10px"}}>
               <Chip label="등록 현황" color="info" />
               <TableContainer>
-                <Table sx={{ minWidth: 400 }} aria-label="simple table" className="same_width">
+                <Table sx={{ minWidth: 400 }} aria-label="simple table" className="same_width list_table">
                   <TableBody>
                     <TableRow>
                       <TableCell className="th" align="center">공기조화설비</TableCell>

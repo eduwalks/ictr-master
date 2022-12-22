@@ -94,7 +94,7 @@ function MroTable11() {
           <Chip label="점검 대상 목록" style={{backgroundColor:"#257DDC"}} />
           <NavLink as={Link} to="/mro_equiplist" className='more_btn'>더보기 +</NavLink>
         </div>
-        <TableContainer sx={{ maxHeight: 290 }}>
+        <TableContainer sx={{ maxHeight: 340 }}>
           <Table stickyHeader aria-label="sticky table" className="sticky_table">
             <TableHead>
               <TableRow>

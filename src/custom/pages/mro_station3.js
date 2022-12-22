@@ -88,7 +88,7 @@ function MroStation3 () {
       
       <br/>
       <TableContainer>
-        <Table sx={{ minWidth: 1200 }} aria-label="simple table">
+        <Table sx={{ minWidth: 1200 }} aria-label="simple table" className="list_table1">
           <TableHead>
             <TableRow>
               <TableCell className="th" align="center">구분</TableCell>

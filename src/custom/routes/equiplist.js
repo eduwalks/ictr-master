@@ -68,7 +68,7 @@ export function EquipList() {
         </ul>
 
         <TableContainer>
-          <Table sx={{ minWidth: 1250 }} aria-label="simple table">
+          <Table sx={{ minWidth: 1250 }} aria-label="simple table" className="list_table">
             <TableHead>
               <TableRow>
                 <TableCell align="center">선택</TableCell>

@@ -43,7 +43,7 @@ function AlertList () {
         </div>
 
         <TableContainer>
-          <Table sx={{ minWidth: 1250 }} aria-label="simple table">
+          <Table sx={{ minWidth: 1250 }} aria-label="simple table" className="list_table">
             <TableHead>
               <TableRow>
                 <TableCell align="center">상태</TableCell>
