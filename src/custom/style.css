@@ -22,7 +22,7 @@ a{text-decoration: none;}
 div.condition1, div.condition2, div.condition3, div.condition4, div.condition5, div.condition6{margin:0 auto;width:120px;border-radius:4px;}
 
 .monitering thead, .MuiTableCell-stickyHeader{
-  background-color: #000;
+  background-color: #121212;
   border-top: 1px solid rgba(255, 255, 255, 0.3);
   border-bottom: 1px solid rgba(255, 255, 255, 0.3) !important;
 }
@@ -63,7 +63,7 @@ div.condition1, div.condition2, div.condition3, div.condition4, div.condition5, 
 .sub_container_ce .part_status th a{color: #fff !important;}
 .sub_container_ce .part_status td a, .mro_table td a{color: #000 !important;}
 
-.css-1v9be3b-MuiCardContent-root{padding: 0;}
+.css-1v9be3b-MuiCardContent-root, .css-gazh6o{padding: 0;}
 .css-1v9be3b-MuiCardContent-root:last-child {padding-bottom: 0;}
 
 .css-13al26b-MuiTableCell-root {border-color: rgba(255, 255, 255, 0.1);}
@@ -148,9 +148,15 @@ div.condition1, div.condition2, div.condition3, div.condition4, div.condition5, 
 
 .list_table th, .list_table .MuiTableCell-body {padding: 7px 0 !important;}
 .list_table1 th, .list_table1 .MuiTableCell-body {padding: 5px 0 !important;}
+.list_table2 .MuiTableCell-body {padding: 5px 0 !important;}
 .fc-day, .fc-scrollgrid{border: 1px solid #4d4d4d !important;}
 
 .cal .fc-theme-standard td, .cal .fc-theme-standard th{border:none;}
+.fieldset{display: flex;align-items: center;}
+.fieldset .gt{font-size: 1.3rem;margin-top:-10px;}
+.fieldset fieldset{border: none;}
+.fieldset svg{display: none;}
+.fieldset .MuiSelect-select{font-size: 1.3rem;}
 
 /* 기타 설정 */
 .MuiChip-root{margin:8px;font-size: 1rem !important;}

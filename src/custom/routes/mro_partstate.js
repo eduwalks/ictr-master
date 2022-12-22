@@ -1,10 +1,10 @@
 import { Link } from "react-router-dom";
 import Navigationbar from "custom/components/navigationbarCe";
 import { Row, Col } from 'react-bootstrap';
-import { Button, Table, TableBody, TableCell, TableContainer, TableHead, TableRow } from '@mui/material';
+import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow } from '@mui/material';
 
 import Box from '@mui/material/Box';
-import InputLabel from '@mui/material/InputLabel';
+// import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
@@ -25,19 +25,20 @@ function MroPartState () {
         {/* <h5>* 1호선 &gt; 계산 </h5> */}
         <Row>
           <Col sm={6} className="main_left">
-            <Box component="form">
-              <FormControl sx={{ m: 1, minWidth: 120 }} style={{marginLeft:"0"}}>
-                <InputLabel htmlFor="grouped-select">호선</InputLabel>
-                <Select defaultValue={2} id="grouped-select" className="sub_container_ce_in" label="운용상태">
+            <Box component="form" className="fieldset">
+              <span className="gt">*</span>
+              <FormControl sx={{ m: 1, minWidth: 50 }} style={{marginLeft:"0"}}>
+                {/* <InputLabel htmlFor="grouped-select">호선</InputLabel> */}
+                <Select defaultValue={2} id="grouped-select" className="sub_container_ce_in">
                   {/* <MenuItem value="">None</MenuItem> */}
                   <MenuItem value={1}>1호선</MenuItem>
                   <MenuItem value={2}>2호선</MenuItem>
                 </Select>
               </FormControl>
-
+              <span className="gt">&gt;</span>
               <FormControl sx={{ m: 1, minWidth: 120 }}>
-                <InputLabel htmlFor="grouped-select">파트</InputLabel>
-                <Select defaultValue={6} id="grouped-select" label="설비대분류">
+                {/* <InputLabel htmlFor="grouped-select">파트</InputLabel> */}
+                <Select defaultValue={6} id="grouped-select">
                   <MenuItem value={1}>계산</MenuItem>
                   <MenuItem value={2}>예술회관</MenuItem>
                   <MenuItem value={3}>동막</MenuItem>
@@ -46,9 +47,9 @@ function MroPartState () {
                   <MenuItem value={6}>인천시청</MenuItem>
                 </Select>
               </FormControl>
-              <Button variant="contained" style={{marginTop:"9px",padding:"8px 15px"}}>
+              {/* <Button variant="contained" style={{marginTop:"9px",padding:"8px 15px"}}>
                 <span className="material-symbols-outlined">search</span>이동
-              </Button>
+              </Button> */}
             </Box>
 
             <MainCard>

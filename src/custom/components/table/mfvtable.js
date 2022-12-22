@@ -44,13 +44,23 @@ const rows = [
   createData1('좌 대합실공조기', '미흡', '결함', '양호'),
   createData1('좌 대합실공조기', '미흡', '결함', '양호'),
   createData1('좌 대합실공조기', '양호', '통신', '미흡'),
+  createData1('좌 대합실공조기', '결함', '보통', '양호'),
+  createData1('좌 대합실공조기', '미흡', '결함', '양호'),
+  createData1('좌 대합실공조기', '통신', '보통', '불량'),
+  createData1('좌 대합실공조기', '양호', '통신', '미흡'),
+  createData1('좌 대합실공조기', '결함', '보통', '양호'),
+  createData1('좌 대합실공조기', '미흡', '미흡', '미흡'),
+  createData1('좌 대합실공조기', '양호', '보통', '불량'),
+  createData1('좌 대합실공조기', '미흡', '결함', '양호'),
+  createData1('좌 대합실공조기', '미흡', '결함', '양호'),
+  createData1('좌 대합실공조기', '양호', '통신', '미흡'),
   createData1('좌 대합실공조기', '결함', '보통', '양호')
 ]
 
 function MfvTable() {
     return (
-        <TableContainer sx={{ maxHeight: 323 }}>
-            <Table stickyHeader aria-label="sticky table" sx={{ minWidth: 500 }} className="same_width hov_non">
+        <TableContainer sx={{ maxHeight: 383 }}>
+            <Table stickyHeader aria-label="sticky table" sx={{ minWidth: 500 }} className="same_width hov_non list_table2">
                 <TableHead style={{top: "0", position:"sticky", zIndex: "1"}}>
                     <TableRow>
                         <TableCell align="center" rowSpan="2">설비명</TableCell>
