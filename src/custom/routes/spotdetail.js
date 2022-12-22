@@ -10,6 +10,7 @@ import Video from 'custom/video/1.mp4'
 
 import Navigationbar from 'custom/components/navigationbar';
 import ChartTabCont from 'custom/components/chart/ChartTabCont';
+import InSpection from "custom/components/pop/inspection_lg1";
 import Paging from 'custom/components/table/paging';
 
 function AlertDetail () {
@@ -159,7 +160,7 @@ function AlertDetail () {
             </MainCard>
 
             <div className="btn_right">
-              <Button variant="contained">현장(상시)점검</Button>&nbsp;&nbsp;
+              <InSpection />&nbsp;&nbsp;
               <Button variant="contained">경보확인</Button>
             </div>
 

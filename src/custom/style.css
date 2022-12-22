@@ -473,11 +473,11 @@ table .pl {padding: 6px 0 6px 10px !important;text-align: center;}
 .mro_m_right{color: #000;width:60%;}
 
 /* 스크롤 */
-.MuiTableContainer-root {
+.MuiTableContainer-root, .MuiCardContent-root {
   -ms-overflow-style: none !important; /* IE, Edge */
   scrollbar-width: none; /* Firefox */
 }
-.MuiTableContainer-root::-webkit-scrollbar {
+.MuiTableContainer-root::-webkit-scrollbar, .MuiCardContent-root::-webkit-scrollbar {
   display: none; /* Chrome, Safari, Opera */
 }
 

@@ -84,7 +84,7 @@ function MainTable3() {
           <Chip label="현장(상시)점검 내역" color="success" />
           <NavLink as={Link} to="/SpotList" className='more_btn'>더보기 +</NavLink>
         </div>
-        <TableContainer sx={{ maxHeight: 185 }}>
+        <TableContainer sx={{ maxHeight: 180 }}>
           <Table stickyHeader aria-label="sticky table" className="sticky_table">
             <TableHead>
               <TableRow>
