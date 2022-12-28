@@ -36,8 +36,10 @@ import MroChecklist from 'custom/routes/mro_checklist';
 import MroList from 'custom/routes/mro_list';
 import MroCheckDetail from 'custom/routes/mro_checkdetail';
 import MroStationState from 'custom/routes/mro_station_state';
-import Test from 'custom/routes/test';
-import Test1 from 'custom/routes/test1';
+import Test11 from 'custom/routes/test11';
+import Test12 from 'custom/routes/test12';
+import Test21 from 'custom/routes/test21';
+import Test22 from 'custom/routes/test22';
 
 
 // ==============================|| APP - THEME, ROUTER, LOCAL  ||============================== //
@@ -83,8 +85,10 @@ function App() {
                     <Route path='/mro_checkdetail' component={MroCheckDetail}/>
                     <Route path='/mro_list' component={MroList}/>
                     <Route path='/mro_stationstate' component={MroStationState}/>
-                    <Route path='/test' component={Test}/>
-                    <Route path='/test1' component={Test1}/>
+                    <Route path='/test11' component={Test11}/>
+                    <Route path='/test12' component={Test12}/>
+                    <Route path='/test21' component={Test21}/>
+                    <Route path='/test22' component={Test22}/>
                   {/* </Switch> */}
                 </Router>
               </>

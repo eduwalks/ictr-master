@@ -1,5 +1,6 @@
 import Logo from 'logo1.svg'
-import { Nav, Navbar, NavLink } from "react-bootstrap";
+import { Nav, Navbar } from "react-bootstrap";
+import { NavLink } from 'react-router-dom';
 import { Button } from '@mui/material';
 import { Link } from "react-router-dom";
 import TodayAll from './time';
@@ -8,17 +9,17 @@ import TodayAll from './time';
 const Navigationbar = () => {
 
   return (
-    <Navbar collapseOnSelect expand="lg" bg="light" variant="light">
+    <Navbar collapseOnSelect expand="lg" bg="light" variant="light" className="mro_navbar">
       <Navbar.Brand eventKey="1" as={Link} to="/maintenance" className="navbar-brand1"><img src={Logo} alt="로고" /></Navbar.Brand>
       <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
         <Nav>
-          <NavLink eventKey="2" as={Link} to="/maintenance">대시보드</NavLink>
-          <NavLink eventKey="3" as={Link} to="/mro_equiplist">설비목록</NavLink>
-          <NavLink eventKey="4" as={Link} to="/mro_checklist">점검목록</NavLink>
-          <NavLink eventKey="5" as={Link} to="/mro_list">유지보수목록</NavLink>
-          <NavLink eventKey="6" as={Link} to="/test1">통계/보고서</NavLink>
-          <NavLink eventKey="7" as={Link} to="/test1">설정</NavLink>
+          <NavLink eventKey="2" as={Link} to="/maintenance" className="nav-link">대시보드</NavLink>
+          <NavLink eventKey="3" as={Link} to="/mro_equiplist" className="nav-link">설비목록</NavLink>
+          <NavLink eventKey="4" as={Link} to="/mro_checklist" className="nav-link">점검목록</NavLink>
+          <NavLink eventKey="5" as={Link} to="/mro_list" className="nav-link">유지보수목록</NavLink>
+          <NavLink eventKey="6" as={Link} to="/test21" className="nav-link">통계/보고서</NavLink>
+          <NavLink eventKey="7" as={Link} to="/test22" className="nav-link">설정</NavLink>
         </Nav>
         <Nav>
           <TodayAll style={{color:"#707071"}} />
@@ -31,8 +32,8 @@ const Navigationbar = () => {
               <span className="material-symbols-outlined">settings</span>
             </div>
           </NavLink>
-          <NavLink eventKey="9" as={Link} to="/"><Button variant="contained">로그아웃</Button></NavLink>
-          <NavLink eventKey="10" as={Link} to="/"><Button variant="contained">모니터링</Button></NavLink>
+          <NavLink eventKey="9" as={Link} to="/" className="nav-link"><Button variant="contained">로그아웃</Button></NavLink>
+          <NavLink eventKey="10" as={Link} to="/" className="nav-link"><Button variant="contained">모니터링</Button></NavLink>
           {/* <Customization /> */}
         </Nav>
       </Navbar.Collapse>     

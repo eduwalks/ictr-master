@@ -1,8 +1,8 @@
 import React from "react";
-import Navigationbar from 'custom/components/navigationbar';
+import Navigationbar from "custom/components/navigationbarCe";
 
 
-function Test() {
+function Test22() {
   return (
     <div className="monitering">
       <Navigationbar />
@@ -12,4 +12,4 @@ function Test() {
   )
 }
 
-export default Test;
+export default Test22;

@@ -5,6 +5,8 @@ html, body{margin: 0;}
 a{text-decoration: none;}
 
 /* 색상초기화 */
+.active{color : #fff !important;font-weight: 700;}
+.mro_navbar .active{color : #000 !important;font-weight: 700;}
 .monitering tr a, .monitering th, .monitering td{color: #fff !important;}
 .monitering .css-8a8flf-MuiPaper-root-MuiCard-root{background-color: rgba(71, 71, 71, 0.3);}
 

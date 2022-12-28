@@ -1,5 +1,6 @@
 import Logo from 'logo.svg'
-import { Nav, Navbar, NavLink } from "react-bootstrap";
+import { Nav, Navbar } from "react-bootstrap";
+import { NavLink } from 'react-router-dom';
 import { Button } from '@mui/material';
 import { Link } from "react-router-dom";
 import TodayAll from './time';
@@ -13,12 +14,12 @@ const Navigationbar = () => {
       <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
         <Nav>
-          <NavLink eventKey="2" as={Link} to="/">대시보드</NavLink>
-          <NavLink eventKey="3" as={Link} to="/equiplist">설비목록</NavLink>
-          <NavLink eventKey="4" as={Link} to="/alertlist">경보목록</NavLink>
-          <NavLink eventKey="5" as={Link} to="/spotlist">현장(상시)점검내역</NavLink>
-          <NavLink eventKey="6" as={Link} to="/test">통계/보고서</NavLink>
-          <NavLink eventKey="7" as={Link} to="/test">설정</NavLink>
+          <NavLink eventKey="2" as={Link} to="/" className="nav-link" exact={true}>대시보드</NavLink>
+          <NavLink eventKey="3" as={Link} to="/equiplist" className="nav-link">설비목록</NavLink>
+          <NavLink eventKey="4" as={Link} to="/alertlist" className="nav-link">경보목록</NavLink>
+          <NavLink eventKey="5" as={Link} to="/spotlist" className="nav-link">현장(상시)점검내역</NavLink>
+          <NavLink eventKey="6" as={Link} to="/test11" className="nav-link">통계/보고서</NavLink>
+          <NavLink eventKey="7" as={Link} to="/test12" className="nav-link">설정</NavLink>
         </Nav>
         <Nav>
           <TodayAll />
@@ -31,8 +32,8 @@ const Navigationbar = () => {
               <span className="material-symbols-outlined">settings</span>
             </div>
           </NavLink>
-          <NavLink eventKey="9" as={Link} to="/"><Button variant="contained">로그아웃</Button></NavLink>
-          <NavLink eventKey="10" as={Link} to="/maintenance"><Button variant="contained">유지보수관리</Button></NavLink>
+          <NavLink eventKey="9" as={Link} to="/" className="nav-link"><Button variant="contained">로그아웃</Button></NavLink>
+          <NavLink eventKey="10" as={Link} to="/maintenance" className="nav-link"><Button variant="contained">유지보수관리</Button></NavLink>
           {/* <Customization /> */}
         </Nav>
       </Navbar.Collapse>     
