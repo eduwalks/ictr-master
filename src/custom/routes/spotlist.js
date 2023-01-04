@@ -9,37 +9,43 @@ import DialogSelect from 'custom/components/search/spotsearch';
 function SpotList () {
   function createData(result, date, division, equipnum, number, part, station, equipcompo1, equipcompo2, equipname, inspector) {
     let rowclass;
+    let spotdetail;
+
     if(result == '대기') {
       rowclass='condition1';
+      spotdetail='/spotlist';
     } else if(result == '유지보수') {
       rowclass='condition5';
+      spotdetail='/spotdetail3';
     } else if(result == '정상') {
       rowclass='condition6';
+      spotdetail='/spotlist';
     } else if(result == '주의관찰') {
       rowclass='condition2';
+      spotdetail='/spotdetail2';
     } else {
       rowclass=''
     }
 
-    return { result, date, division, equipnum, number, part, station, equipcompo1, equipcompo2, equipname, inspector, rowclass };
+    return { result, date, division, equipnum, number, part, station, equipcompo1, equipcompo2, equipname, inspector, rowclass, spotdetail };
   }
 
   
   const rows = [
+    createData('대기','　','상시','124-L-AHU01-RF1','1호선','예술회관','부평','승강장안전문설비','직팽식공조기','좌대합실공조시-1','　'),
+    createData('대기','　','상시','124-L-AHU01-RF1','1호선','예술회관','부평','승강장안전문설비','직팽식공조기','좌대합실공조시-1','　'),
+    createData('대기','　','상시','124-L-AHU01-RF1','1호선','예술회관','부평','승강장안전문설비','직팽식공조기','좌대합실공조시-1','　'),
     createData('정상','2022-06-0200:00','상시','124-L-AHU01-RF1','1호선','예술회관','부평','공기조화설비','직팽식공조기','좌대합실공조시-1','홍길동'),
-    createData('유지보수','2022-06-0200:00','일일','124-L-AHU01-RF1','1호선','예술회관','부평','소방설비','직팽식공조기','좌대합실공조시-1','홍길동'),
     createData('정상','2022-06-0200:00','상시','124-L-AHU01-RF1','1호선','예술회관','부평','공기조화설비','직팽식공조기','좌대합실공조시-1','홍길동'),
-    createData('유지보수','2022-06-0200:00','일일','124-L-AHU01-RF1','1호선','예술회관','부평','소방설비','직팽식공조기','좌대합실공조시-1','홍길동'),
-    createData('유지보수','2022-06-0200:00','상시','124-L-AHU01-RF1','1호선','예술회관','부평','소방설비','직팽식공조기','좌대합실공조시-1','홍길동'),
-    createData('대기','','상시','124-L-AHU01-RF1','1호선','예술회관','부평','승강장안전문설비','직팽식공조기','좌대합실공조시-1',''),
+    createData('정상','2022-06-0200:00','상시','124-L-AHU01-RF1','1호선','예술회관','부평','공기조화설비','직팽식공조기','좌대합실공조시-1','홍길동'),
     createData('주의관찰','2022-06-0200:00','일일','124-L-AHU01-RF1','1호선','예술회관','부평','소방설비','직팽식공조기','좌대합실공조시-1','홍길동'),
     createData('주의관찰','2022-06-0200:00','상시','124-L-AHU01-RF1','1호선','예술회관','부평','소방설비','직팽식공조기','좌대합실공조시-1','홍길동'),
-    createData('정상','2022-06-0200:00','상시','124-L-AHU01-RF1','1호선','예술회관','부평','공기조화설비','직팽식공조기','좌대합실공조시-1','홍길동'),
-    createData('유지보수','2022-06-0200:00','일일','124-L-AHU01-RF1','1호선','예술회관','부평','소방설비','직팽식공조기','좌대합실공조시-1','홍길동'),
-    createData('대기','','상시','124-L-AHU01-RF1','1호선','예술회관','부평','승강장안전문설비','직팽식공조기','좌대합실공조시-1',''),
-    createData('유지보수','2022-06-0200:00','일일','124-L-AHU01-RF1','1호선','예술회관','부평','소방설비','직팽식공조기','좌대합실공조시-1','홍길동'),
     createData('주의관찰','2022-06-0200:00','일일','124-L-AHU01-RF1','1호선','예술회관','부평','소방설비','직팽식공조기','좌대합실공조시-1','홍길동'),
-    createData('대기','','상시','124-L-AHU01-RF1','1호선','예술회관','부평','승강장안전문설비','직팽식공조기','좌대합실공조시-1','')
+    createData('유지보수','2022-06-0200:00','일일','124-L-AHU01-RF1','1호선','예술회관','부평','소방설비','직팽식공조기','좌대합실공조시-1','홍길동'),
+    createData('유지보수','2022-06-0200:00','일일','124-L-AHU01-RF1','1호선','예술회관','부평','소방설비','직팽식공조기','좌대합실공조시-1','홍길동'),
+    createData('유지보수','2022-06-0200:00','상시','124-L-AHU01-RF1','1호선','예술회관','부평','소방설비','직팽식공조기','좌대합실공조시-1','홍길동'),
+    createData('유지보수','2022-06-0200:00','일일','124-L-AHU01-RF1','1호선','예술회관','부평','소방설비','직팽식공조기','좌대합실공조시-1','홍길동'),
+    createData('유지보수','2022-06-0200:00','일일','124-L-AHU01-RF1','1호선','예술회관','부평','소방설비','직팽식공조기','좌대합실공조시-1','홍길동')
   ];
 
   return (
@@ -71,19 +77,19 @@ function SpotList () {
             <TableBody>
               {rows.map((row) => (
                 <TableRow hover key={row.name}
-                  // component={Link} to="/spotdetail"
+                  // component={Link} to={row.spotdetail}
                 >
-                  <TableCell align="center" className={row.rowclass}><Link to="/spotdetail">{row.result}</Link></TableCell>
-                  <TableCell align="center"><Link to="/spotdetail">{row.date}</Link></TableCell>
-                  <TableCell align="center"><Link to="/spotdetail">{row.division}</Link></TableCell>
-                  <TableCell align="center"><Link to="/spotdetail">{row.equipnum}</Link></TableCell>
-                  <TableCell align="center"><Link to="/spotdetail">{row.number}</Link></TableCell>
-                  <TableCell align="center"><Link to="/spotdetail">{row.part}</Link></TableCell>
-                  <TableCell align="center"><Link to="/spotdetail">{row.station}</Link></TableCell>
-                  <TableCell align="center"><Link to="/spotdetail">{row.equipcompo1}</Link></TableCell>
-                  <TableCell align="center"><Link to="/spotdetail">{row.equipcompo2}</Link></TableCell>
-                  <TableCell align="center"><Link to="/spotdetail">{row.equipname}</Link></TableCell>
-                  <TableCell align="center"><Link to="/spotdetail">{row.inspector}</Link></TableCell>
+                  <TableCell align="center" className={row.rowclass}><Link to={row.spotdetail}>{row.result}</Link></TableCell>
+                  <TableCell align="center"><Link to={row.spotdetail}>{row.date}</Link></TableCell>
+                  <TableCell align="center"><Link to={row.spotdetail}>{row.division}</Link></TableCell>
+                  <TableCell align="center"><Link to={row.spotdetail}>{row.equipnum}</Link></TableCell>
+                  <TableCell align="center"><Link to={row.spotdetail}>{row.number}</Link></TableCell>
+                  <TableCell align="center"><Link to={row.spotdetail}>{row.part}</Link></TableCell>
+                  <TableCell align="center"><Link to={row.spotdetail}>{row.station}</Link></TableCell>
+                  <TableCell align="center"><Link to={row.spotdetail}>{row.equipcompo1}</Link></TableCell>
+                  <TableCell align="center"><Link to={row.spotdetail}>{row.equipcompo2}</Link></TableCell>
+                  <TableCell align="center"><Link to={row.spotdetail}>{row.equipname}</Link></TableCell>
+                  <TableCell align="center"><Link to={row.spotdetail}>{row.inspector}</Link></TableCell>
 
                 </TableRow>
               ))}

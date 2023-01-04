@@ -108,7 +108,7 @@ div.condition1, div.condition2, div.condition3, div.condition4, div.condition5, 
 .pop_table td{text-align: left;}
 .pop_table .th{text-align: center;background-color: rgba(17, 17, 17, .3);}
 .pop_table .th1{padding: 10px 0 !important;}
-.pop_table .MuiSelect-select, .pop_table .MuiInputBase-input{padding: 8px 10px;}
+/* .pop_table .MuiSelect-select, .pop_table .MuiInputBase-input{padding: 8px 10px;}*/
 .piker{display: flex;justify-content: center;align-items: center;margin:0 auto;width: 90%;}
 .plus{display: flex;align-items: center;}
 .pop_table .MuiSvgIcon-root{fill: #fff;}
@@ -159,6 +159,18 @@ div.condition1, div.condition2, div.condition3, div.condition4, div.condition5, 
 .fieldset fieldset{border: none;}
 .fieldset svg{display: none;}
 .fieldset .MuiSelect-select{font-size: 1.3rem;}
+
+/* 단계 설정 */
+.stpes{display: flex;}
+.stpes ul{display: flex; height: 48px; align-items: center;}
+.stpes ul li{list-style: none;font-size: 15px;}
+.stpes ul li span:first-child{padding:4px 9px;border-radius: 200px;}
+.stpes ul li.step_active span:first-child{background-color: #257DDC;}
+.stpes ul li.step_active_n span:first-child{background-color: #a8a8a8;}
+/* .stpes ul li span:first-child{background-color: #257DDC;} */
+
+.stpes ul li span:last-child{margin:0 10px;}
+
 
 /* 기타 설정 */
 .MuiChip-root{margin:8px;font-size: 1rem !important;}
@@ -258,6 +270,16 @@ table .pl {padding: 6px 0 6px 10px !important;text-align: center;}
 .condition2 a{color: #ef710b;}
 .condition3 a{color: #e7c748;}
 .condition4 a{color: #b2b2b2;}
+
+.inwidth1{width: 100px;}
+.inwidth2{width: 60px;}
+.inwidth3{width: 40px;}
+.inwidth4{width: 100px;}
+.inwidth5{width: 100px;}
+.circle1 span{margin:0 5px;padding:2px 5px; border-radius: 200px; background-color: #257DDC;}
+.circle2 span{margin:0 5px;padding:2px 5px; border-radius: 200px; background-color: #308a2a;}
+.circle3 span{margin:0 5px;padding:2px 5px; border-radius: 200px; background-color: #e7c748;}
+.circle4 span{margin:0 5px;padding:2px 5px;; border-radius: 200px; background-color: #ef710b;}
 
 .flaw1 a, .flaw1 th, .flaw1 td{color: red;}
 .flaw2 a, .flaw2 th, .flaw2 td{color: #ef710b;}

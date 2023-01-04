@@ -18,34 +18,42 @@ function createData(condition, date, number, part, station, equipnum, equipcate,
   }
 
   let rowclass2;
+  let equipdetail;
+
   if(flaw == '불량') {
     rowclass2='condition1';
+    equipdetail='/equipdetail1';
   } else if(flaw == '결함') {
     rowclass2='condition2';
+    equipdetail='/equipdetail2';
   } else if(flaw == '미흡') {
     rowclass2='condition3';
+    equipdetail='/equipdetail3';
   } else if(flaw == '통신') {
     rowclass2='condition4';
+    equipdetail='/equipdetail4';
   } else if(flaw == '양호') {
     rowclass2='condition5';
+    equipdetail='/equiplist';
   } else if(flaw == '보통') {
     rowclass2='condition6';
+    equipdetail='/equiplist';
   } else {
     rowclass2=''
   }
 
-  return { condition, date, number, part, station, equipnum, equipcate, equipname, locate, equipcompo, grade, gate, flaw, rowclass1, rowclass2 };
+  return { condition, date, number, part, station, equipnum, equipcate, equipname, locate, equipcompo, grade, gate, flaw, rowclass1, rowclass2, equipdetail };
 }
 
 const rows = [
-  createData('운용중','2022-10-13 07:59','1호선','계산','(124)인천시청','124-L-AHU01-RF1','대합실공조기','좌 대합실공조기','좌측 공조실','RF1(환기부)','A','3C7AAA9223A7','양호'),
+  createData('정지중','2022-10-13 07:59','2호선','석남','(124)인천시청','124-L-AHU01-RF1','대합실공조기','좌 대합실공조기','좌측 공조실','RF1(환기부)','A','3C7AAA9223A7','불량'),
+  createData('운용중','2022-10-13 07:59','2호선','석남','(124)인천시청','124-L-AHU01-RF1','대합실공조기','좌 대합실공조기','좌측 공조실','RF1(환기부)','A','3C7AAA9223A7','결함'),
+  createData('운용중','2022-10-13 07:59','2호선','석남','(124)인천시청','124-L-AHU01-RF1','대합실공조기','좌 대합실공조기','좌측 공조실','RF1(환기부)','A','3C7AAA9223A7','미흡'),
+  createData('정지중','2022-10-13 07:59','1호선','계산','(124)인천시청','124-L-AHU01-RF1','대합실공조기','좌 대합실공조기','좌측 공조실','RF1(환기부)','A','3C7AAA9223A7','통신'),
   createData('운용중','2022-10-13 07:59','1호선','계산','(124)인천시청','124-L-AHU01-RF1','대합실공조기','좌 대합실공조기','좌측 공조실','RF1(환기부)','A','3C7AAA9223A7','보통'),
   createData('운용중','2022-10-13 07:59','1호선','계산','(124)인천시청','124-L-AHU01-RF1','대합실공조기','좌 대합실공조기','좌측 공조실','RF1(환기부)','A','3C7AAA9223A7','양호'),
   createData('운용중','2022-10-13 07:59','1호선','계산','(124)인천시청','124-L-AHU01-RF1','대합실공조기','좌 대합실공조기','좌측 공조실','RF1(환기부)','A','3C7AAA9223A7','양호'),
-  createData('정지중','2022-10-13 07:59','1호선','계산','(124)인천시청','124-L-AHU01-RF1','대합실공조기','좌 대합실공조기','좌측 공조실','RF1(환기부)','A','3C7AAA9223A7','통신'),
-  createData('운용중','2022-10-13 07:59','2호선','석남','(124)인천시청','124-L-AHU01-RF1','대합실공조기','좌 대합실공조기','좌측 공조실','RF1(환기부)','A','3C7AAA9223A7','미흡'),
-  createData('운용중','2022-10-13 07:59','2호선','석남','(124)인천시청','124-L-AHU01-RF1','대합실공조기','좌 대합실공조기','좌측 공조실','RF1(환기부)','A','3C7AAA9223A7','결함'),
-  createData('정지중','2022-10-13 07:59','2호선','석남','(124)인천시청','124-L-AHU01-RF1','대합실공조기','좌 대합실공조기','좌측 공조실','RF1(환기부)','A','3C7AAA9223A7','불량')
+  createData('운용중','2022-10-13 07:59','1호선','계산','(124)인천시청','124-L-AHU01-RF1','대합실공조기','좌 대합실공조기','좌측 공조실','RF1(환기부)','A','3C7AAA9223A7','양호')
 ];
 
 export function EquipList() {
@@ -92,19 +100,19 @@ export function EquipList() {
               {rows.map((row) => (
                 <TableRow hover key={row.name}>
                   <TableCell align="center"><Checkbox size="small" /></TableCell>
-                  <TableCell align="center" className={row.rowclass1}><Link to="/equipdetail">{row.condition}</Link></TableCell>
-                  <TableCell align="center"><Link to="/equipdetail">{row.date}</Link></TableCell>
-                  <TableCell align="center"><Link to="/equipdetail">{row.number}</Link></TableCell>
-                  <TableCell align="center"><Link to="/equipdetail">{row.part}</Link></TableCell>
-                  <TableCell align="center"><Link to="/equipdetail">{row.station}</Link></TableCell>
-                  <TableCell align="center"><Link to="/equipdetail">{row.equipnum}</Link></TableCell>
-                  <TableCell align="center"><Link to="/equipdetail">{row.equipcate}</Link></TableCell>
-                  <TableCell align="center"><Link to="/equipdetail">{row.equipname}</Link></TableCell>
-                  <TableCell align="center"><Link to="/equipdetail">{row.locate}</Link></TableCell>
-                  <TableCell align="center"><Link to="/equipdetail">{row.equipcompo}</Link></TableCell>
-                  <TableCell align="center"><Link to="/equipdetail">{row.grade}</Link></TableCell>
-                  <TableCell align="center"><Link to="/equipdetail">{row.gate}</Link></TableCell>
-                  <TableCell align="center" className={row.rowclass2}><Link to="/equipdetail">{row.flaw}</Link></TableCell>
+                  <TableCell align="center" className={row.rowclass1}><Link to={row.equipdetail}>{row.condition}</Link></TableCell>
+                  <TableCell align="center"><Link to={row.equipdetail}>{row.date}</Link></TableCell>
+                  <TableCell align="center"><Link to={row.equipdetail}>{row.number}</Link></TableCell>
+                  <TableCell align="center"><Link to={row.equipdetail}>{row.part}</Link></TableCell>
+                  <TableCell align="center"><Link to={row.equipdetail}>{row.station}</Link></TableCell>
+                  <TableCell align="center"><Link to={row.equipdetail}>{row.equipnum}</Link></TableCell>
+                  <TableCell align="center"><Link to={row.equipdetail}>{row.equipcate}</Link></TableCell>
+                  <TableCell align="center"><Link to={row.equipdetail}>{row.equipname}</Link></TableCell>
+                  <TableCell align="center"><Link to={row.equipdetail}>{row.locate}</Link></TableCell>
+                  <TableCell align="center"><Link to={row.equipdetail}>{row.equipcompo}</Link></TableCell>
+                  <TableCell align="center"><Link to={row.equipdetail}>{row.grade}</Link></TableCell>
+                  <TableCell align="center"><Link to={row.equipdetail}>{row.gate}</Link></TableCell>
+                  <TableCell align="center" className={row.rowclass2}><Link to={row.equipdetail}>{row.flaw}</Link></TableCell>
                   <TableCell align="center">
                     <Alert1 />
                   </TableCell>

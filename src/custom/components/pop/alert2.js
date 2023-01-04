@@ -128,12 +128,12 @@ export function Alert2() {
                     </TableCell>
                   </TableRow>
 
-                  <TableRow>
+                  {/* <TableRow>
                     <TableCell className="th">경보확인 일시</TableCell>
                     <TableCell colspan="3" className='pa10'><BasicDatePicker /></TableCell>
                     <TableCell className="th">경보확인자</TableCell>
                     <TableCell><TextField id="outlined-basic" sx={{ m: 1, minWidth: '90%' }} /></TableCell>
-                  </TableRow>
+                  </TableRow> */}
                 </TableBody>
               </Table>
             </TableContainer>

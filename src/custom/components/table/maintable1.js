@@ -25,39 +25,45 @@ const columns = [
 // table data
 function createData1(time, number, part, station, equipname, equipstate, condition) {
   let rowclass;
+  let equipdetail;
+
   if(condition == '불량') {
     rowclass='condition1';
+    equipdetail='/equipdetail1';
   } else if(condition == '결함') {
     rowclass='condition2';
+    equipdetail='/equipdetail2';
   } else if(condition == '미흡') {
     rowclass='condition3';
+    equipdetail='/equipdetail3';
   } else if(condition == '통신') {
     rowclass='condition4';
+    equipdetail='/equipdetail4';
   } else {
     rowclass=''
   }
-  return { time, number, part, station, equipname, equipstate, condition, rowclass };
+  return { time, number, part, station, equipname, equipstate, condition, rowclass, equipdetail };
 }
 
 const rows1 = [
   createData1('2022-06-02 00:07', '1호선', '예술회관', '부평', '좌대합실공조시-1', '송풍기 V벨트 결함', '불량'),
+  createData1('2022-06-02 00:00', '1호선', '예술회관', '부평', '좌대합실공조시-1', '송풍기 V벨트 결함', '불량'),
+  createData1('2022-06-02 00:00', '1호선', '예술회관', '부평', '좌대합실공조시-1', '송풍기 V벨트 결함', '불량'),
+  createData1('2022-06-02 00:00', '1호선', '예술회관', '부평', '좌대합실공조시-1', '송풍기 V벨트 결함', '불량'),
   createData1('2022-06-02 00:00', '1호선', '예술회관', '부평', '좌대합실공조시-1', '송풍기 V벨트 결함', '결함'),
+  createData1('2022-06-02 00:07', '1호선', '예술회관', '부평', '좌대합실공조시-1', '송풍기 V벨트 결함', '결함'),
+  createData1('2022-06-02 00:00', '1호선', '예술회관', '부평', '좌대합실공조시-1', '송풍기 V벨트 결함', '결함'),
+  createData1('2022-06-02 00:00', '1호선', '예술회관', '부평', '좌대합실공조시-1', '송풍기 V벨트 결함', '결함'),
+  createData1('2022-06-02 00:00', '1호선', '예술회관', '부평', '좌대합실공조시-1', '송풍기 V벨트 결함', '미흡'),
+  createData1('2022-06-02 00:00', '1호선', '예술회관', '부평', '좌대합실공조시-1', '송풍기 V벨트 결함', '미흡'),
+  createData1('2022-06-02 00:07', '1호선', '예술회관', '부평', '좌대합실공조시-1', '송풍기 V벨트 결함', '미흡'),
   createData1('2022-06-02 00:00', '1호선', '예술회관', '부평', '좌대합실공조시-1', '송풍기 V벨트 결함', '미흡'),
   createData1('2022-06-02 00:00', '1호선', '예술회관', '부평', '좌대합실공조시-1', '송풍기 V벨트 결함', '통신'),
   createData1('2022-06-02 00:00', '1호선', '예술회관', '부평', '좌대합실공조시-1', '송풍기 V벨트 결함', '통신'),
-  createData1('2022-06-02 00:07', '1호선', '예술회관', '부평', '좌대합실공조시-1', '송풍기 V벨트 결함', '불량'),
-  createData1('2022-06-02 00:00', '1호선', '예술회관', '부평', '좌대합실공조시-1', '송풍기 V벨트 결함', '결함'),
-  createData1('2022-06-02 00:00', '1호선', '예술회관', '부평', '좌대합실공조시-1', '송풍기 V벨트 결함', '미흡'),
+  createData1('2022-06-02 00:00', '1호선', '예술회관', '부평', '좌대합실공조시-1', '송풍기 V벨트 결함', '통신'),
+  createData1('2022-06-02 00:07', '1호선', '예술회관', '부평', '좌대합실공조시-1', '송풍기 V벨트 결함', '통신'),
   createData1('2022-06-02 00:00', '1호선', '예술회관', '부평', '좌대합실공조시-1', '송풍기 V벨트 결함', '통신'),
   createData1('2022-06-02 00:00', '1호선', '예술회관', '부평', '좌대합실공조시-1', '송풍기 V벨트 결함', '통신'),
-  createData1('2022-06-02 00:07', '1호선', '예술회관', '부평', '좌대합실공조시-1', '송풍기 V벨트 결함', '불량'),
-  createData1('2022-06-02 00:00', '1호선', '예술회관', '부평', '좌대합실공조시-1', '송풍기 V벨트 결함', '결함'),
-  createData1('2022-06-02 00:00', '1호선', '예술회관', '부평', '좌대합실공조시-1', '송풍기 V벨트 결함', '미흡'),
-  createData1('2022-06-02 00:00', '1호선', '예술회관', '부평', '좌대합실공조시-1', '송풍기 V벨트 결함', '통신'),
-  createData1('2022-06-02 00:00', '1호선', '예술회관', '부평', '좌대합실공조시-1', '송풍기 V벨트 결함', '통신'),
-  createData1('2022-06-02 00:07', '1호선', '예술회관', '부평', '좌대합실공조시-1', '송풍기 V벨트 결함', '불량'),
-  createData1('2022-06-02 00:00', '1호선', '예술회관', '부평', '좌대합실공조시-1', '송풍기 V벨트 결함', '결함'),
-  createData1('2022-06-02 00:00', '1호선', '예술회관', '부평', '좌대합실공조시-1', '송풍기 V벨트 결함', '미흡'),
   createData1('2022-06-02 00:00', '1호선', '예술회관', '부평', '좌대합실공조시-1', '송풍기 V벨트 결함', '통신'),
   createData1('2022-06-02 00:00', '1호선', '예술회관', '부평', '좌대합실공조시-1', '송풍기 V벨트 결함', '통신')
 ];
@@ -102,7 +108,7 @@ function MainTable1() {
                     if(column.id == 'condition') {
                       return (
                         <TableCell key={column.id} align={column.align} className={row.rowclass}>
-                          <Link to="/equipdetail">
+                          <Link to={row.equipdetail}>
                             {column.format && typeof value === 'number' ? column.format(value) : value}
                           </Link>
                         </TableCell>
@@ -116,7 +122,7 @@ function MainTable1() {
                     } else {
                       return (
                         <TableCell key={column.id} align={column.align}>
-                          <Link to="/equipdetail">
+                          <Link to={row.equipdetail}>
                             {column.format && typeof value === 'number' ? column.format(value) : value}
                           </Link>
                         </TableCell>

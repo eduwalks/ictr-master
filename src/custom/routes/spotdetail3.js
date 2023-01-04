@@ -76,7 +76,16 @@ function AlertDetail () {
         <Row>
           <Col sm={8} className="sub_left">
             <MainCard className="center_table" content={false}>
-              <Chip label="경보 및 현장(상시) 점검 내용" color="error" />
+              <div className="stpes">
+                <Chip label="경보 및 현장(상시) 점검 내용" color="error" />
+                <ul>
+                  <li className="step_active"><span>1</span><span>경보발생</span></li>
+                  <li>&gt;&gt;&nbsp;</li>
+                  <li className="step_active"><span>2</span><span>현장(상시)점검</span></li>
+                  <li>&gt;&gt;&nbsp;</li>
+                  <li className="step_active"><span>3</span><span>유지보수</span></li>
+                </ul>
+              </div>
               <TableContainer>
                 <Table sx={{ minWidth: 500 }} aria-label="simple table" className="same_width" style={{borderCollapse:"unset", borderSpacing:"revert"}}>
                   <TableBody>
@@ -139,12 +148,12 @@ function AlertDetail () {
                       </TableCell>
                     </TableRow>
                     <TableRow>
-                      <TableCell className="th" align="center">경보확인일시</TableCell>
+                      {/* <TableCell className="th" align="center">경보확인일시</TableCell>
                       <TableCell align="center">2022-09-23 14:59</TableCell>
                       <TableCell className="th" align="center">경보확인자</TableCell>
-                      <TableCell align="center">홍길동</TableCell>
+                      <TableCell align="center">홍길동</TableCell> */}
                       <TableCell className="th" align="center">상태</TableCell>
-                      <TableCell align="center"><div className="condition4">현장점검</div></TableCell>
+                      <TableCell colspan="5"><div className="condition1" style={{margin:"unset",marginLeft:"8px"}}>경보발생</div></TableCell>
                     </TableRow>
                     <TableRow>
                       <TableCell className="th" align="center">현장확인일시</TableCell>
@@ -161,49 +170,7 @@ function AlertDetail () {
 
             <div className="btn_right">
               <InSpection />&nbsp;&nbsp;
-              <Button variant="contained">경보확인</Button>
-            </div>
-
-            <MainCard className="center_table" content={false}>
-              <Chip label="주의관찰" color="error" />
-              <TableContainer>
-                <Table sx={{ minWidth: 500 }} aria-label="simple table" className="same_width" style={{borderCollapse:"unset", borderSpacing:"revert"}}>
-                  <TableBody>
-                    <TableRow>
-                      <TableCell className="th" align="center">주의관찰 시작일</TableCell>
-                      <TableCell align="center">2022-09-19 08:02</TableCell>
-                      <TableCell className="th" align="center">주의관찰 종료일</TableCell>
-                      <TableCell align="center">진단IoT경보</TableCell>
-                      <TableCell className="th" align="center">주의관찰 기간</TableCell>
-                      <TableCell align="center">3개월</TableCell>
-                    </TableRow>
-                    <TableRow>
-                      <TableCell className="th" align="center">주의관찰 내용</TableCell>
-                      <TableCell className="pl" colSpan={5} style={{textAlign:"left"}}>
-                        특이점 없으나 간헐적 이상진동 발생<br />
-                        진동에 대한 주의관찰 빌표
-                      </TableCell>
-                    </TableRow>
-                    <TableRow>
-                      <TableCell className="th" align="center">등록처리자</TableCell>
-                      <TableCell colSpan={3} align="center">홍길동</TableCell>
-                      <TableCell className="th" align="center">상태</TableCell>
-                      <TableCell align="center"><div className="condition1">정지</div></TableCell>
-                    </TableRow>
-                    <TableRow>
-                      <TableCell className="th" align="center">주의관찰 정지일</TableCell>
-                      <TableCell colSpan={3} align="center">2022-09-19 08:02</TableCell>
-                      <TableCell className="th" align="center">정지처리자</TableCell>
-                      <TableCell align="center">홍길동</TableCell>
-                    </TableRow>
-                  </TableBody>
-                </Table>
-              </TableContainer>
-            </MainCard>
-
-            <div className="btn_right">
-              <Button variant="contained">수정</Button>&nbsp;&nbsp;
-              <Button variant="contained">정지</Button>
+              {/* <Button variant="contained">경보확인</Button> */}
             </div>
 
             <MainCard className="center_table" content={false}>

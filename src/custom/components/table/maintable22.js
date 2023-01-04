@@ -23,39 +23,37 @@ const columns = [
 // table data
 function createData1(time, equipname, alertype, division, cont, check) {
   let rowclass;
+  let spotdetail;
+
   if(check == '경보발생') {
     rowclass='condition1';
+    spotdetail='/spotdetail1';
   } else if(check == '경보확인') {
     rowclass='condition2';
   } else if(check == '현장점검') {
     rowclass='condition4';
+    spotdetail='/spotdetail2';
   } else {
     rowclass=''
   }
-  return { time, equipname, alertype, division, cont, check, rowclass };
+  return { time, equipname, alertype, division, cont, check, rowclass, spotdetail };
 }
 
 const rows1 = [
   createData1('2022-06-02 00:07', '좌대합실공조시-1', 'IoT경보', '결함발생', '직팽식공조기 (SF) 전동기 이상진동', '경보발생'),
-  createData1('2022-06-02 00:07', '좌대합실공조시-1', 'IoT경보', '결함발생', '직팽식공조기 (SF) 전동기 이상진동', '현장점검'),
   createData1('2022-06-02 00:07', '좌대합실공조시-1', 'IoT경보', '결함발생', '직팽식공조기 (SF) 전동기 이상진동', '경보발생'),
-  createData1('2022-06-02 00:07', '좌대합실공조시-1', 'IoT경보', '결함발생', '직팽식공조기 (SF) 전동기 이상진동', '경보확인'),
   createData1('2022-06-02 00:07', '좌대합실공조시-1', 'IoT경보', '결함발생', '직팽식공조기 (SF) 전동기 이상진동', '경보발생'),
-  createData1('2022-06-02 00:07', '좌대합실공조시-1', 'IoT경보', '결함발생', '직팽식공조기 (SF) 전동기 이상진동', '현장점검'),
   createData1('2022-06-02 00:07', '좌대합실공조시-1', 'IoT경보', '결함발생', '직팽식공조기 (SF) 전동기 이상진동', '경보발생'),
-  createData1('2022-06-02 00:07', '좌대합실공조시-1', 'IoT경보', '결함발생', '직팽식공조기 (SF) 전동기 이상진동', '경보확인'),
   createData1('2022-06-02 00:07', '좌대합실공조시-1', 'IoT경보', '결함발생', '직팽식공조기 (SF) 전동기 이상진동', '경보발생'),
-  createData1('2022-06-02 00:07', '좌대합실공조시-1', 'IoT경보', '결함발생', '직팽식공조기 (SF) 전동기 이상진동', '경보확인'),
+  createData1('2022-06-02 00:07', '좌대합실공조시-1', 'IoT경보', '결함발생', '직팽식공조기 (SF) 전동기 이상진동', '경보발생'),
   createData1('2022-06-02 00:07', '좌대합실공조시-1', 'IoT경보', '결함발생', '직팽식공조기 (SF) 전동기 이상진동', '경보발생'),
   createData1('2022-06-02 00:07', '좌대합실공조시-1', 'IoT경보', '결함발생', '직팽식공조기 (SF) 전동기 이상진동', '현장점검'),
-  createData1('2022-06-02 00:07', '좌대합실공조시-1', 'IoT경보', '결함발생', '직팽식공조기 (SF) 전동기 이상진동', '경보발생'),
-  createData1('2022-06-02 00:07', '좌대합실공조시-1', 'IoT경보', '결함발생', '직팽식공조기 (SF) 전동기 이상진동', '경보확인'),
-  createData1('2022-06-02 00:07', '좌대합실공조시-1', 'IoT경보', '결함발생', '직팽식공조기 (SF) 전동기 이상진동', '경보발생'),
   createData1('2022-06-02 00:07', '좌대합실공조시-1', 'IoT경보', '결함발생', '직팽식공조기 (SF) 전동기 이상진동', '현장점검'),
-  createData1('2022-06-02 00:07', '좌대합실공조시-1', 'IoT경보', '결함발생', '직팽식공조기 (SF) 전동기 이상진동', '경보발생'),
-  createData1('2022-06-02 00:07', '좌대합실공조시-1', 'IoT경보', '결함발생', '직팽식공조기 (SF) 전동기 이상진동', '경보확인'),
-  createData1('2022-06-02 00:07', '좌대합실공조시-1', 'IoT경보', '결함발생', '직팽식공조기 (SF) 전동기 이상진동', '경보발생'),
-  createData1('2022-06-02 00:07', '좌대합실공조시-1', 'IoT경보', '결함발생', '직팽식공조기 (SF) 전동기 이상진동', '경보확인')
+  createData1('2022-06-02 00:07', '좌대합실공조시-1', 'IoT경보', '결함발생', '직팽식공조기 (SF) 전동기 이상진동', '현장점검'),
+  createData1('2022-06-02 00:07', '좌대합실공조시-1', 'IoT경보', '결함발생', '직팽식공조기 (SF) 전동기 이상진동', '현장점검'),
+  createData1('2022-06-02 00:07', '좌대합실공조시-1', 'IoT경보', '결함발생', '직팽식공조기 (SF) 전동기 이상진동', '현장점검'),
+  createData1('2022-06-02 00:07', '좌대합실공조시-1', 'IoT경보', '결함발생', '직팽식공조기 (SF) 전동기 이상진동', '현장점검'),
+  createData1('2022-06-02 00:07', '좌대합실공조시-1', 'IoT경보', '결함발생', '직팽식공조기 (SF) 전동기 이상진동', '현장점검')
 ];
 
 function MainTable22() {
@@ -98,7 +96,7 @@ function MainTable22() {
                     if(column.id == 'check') {
                       return (
                         <TableCell key={column.id} align={column.align} className={row.rowclass}>
-                          <Link to="/alertdetail">
+                          <Link to={row.spotdetail}>
                             {column.format && typeof value === 'number' ? column.format(value) : value}
                           </Link>
                         </TableCell>
@@ -112,7 +110,7 @@ function MainTable22() {
                     } else {
                       return (
                         <TableCell key={column.id} align={column.align}>
-                          <Link to="/alertdetail">
+                          <Link to={row.spotdetail}>
                             {column.format && typeof value === 'number' ? column.format(value) : value}
                           </Link>
                         </TableCell>

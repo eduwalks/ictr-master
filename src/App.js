@@ -21,11 +21,16 @@ import 'custom/style.css'
 // import Logo from './logo.svg'
 import Main from 'custom/pages/main';
 import EquipList from 'custom/routes/equiplist';
-import EquipDetail from 'custom/routes/equipdetail';
+import EquipDetail1 from 'custom/routes/equipdetail1';
+import EquipDetail2 from 'custom/routes/equipdetail2';
+import EquipDetail3 from 'custom/routes/equipdetail3';
+import EquipDetail4 from 'custom/routes/equipdetail4';
 import AlertList from 'custom/routes/alertlist';
 import AlertDetail from 'custom/routes/alertdetail';
 import SpotList from 'custom/routes/spotlist';
-import SpotDetail from 'custom/routes/spotdetail';
+import SpotDetail1 from 'custom/routes/spotdetail1';
+import SpotDetail2 from 'custom/routes/spotdetail2';
+import SpotDetail3 from 'custom/routes/spotdetail3';
 import PartStation from 'custom/routes/partstation';
 import MainTenance from 'custom/routes/maintenance';
 import MroPartState from 'custom/routes/mro_partstate';
@@ -70,11 +75,16 @@ function App() {
                   {/* <Switch> */}
                     <Route exact path='/' component={Main}/>
                     <Route path='/equiplist' component={EquipList}/>
-                    <Route path='/equipdetail' component={EquipDetail}/>
+                    <Route path='/equipdetail1' component={EquipDetail1}/>
+                    <Route path='/equipdetail2' component={EquipDetail2}/>
+                    <Route path='/equipdetail3' component={EquipDetail3}/>
+                    <Route path='/equipdetail4' component={EquipDetail4}/>
                     <Route path='/alertlist' component={AlertList}/>
                     <Route path='/alertdetail' component={AlertDetail}/>
                     <Route path='/spotlist' component={SpotList}/>
-                    <Route path='/spotdetail' component={SpotDetail}/>
+                    <Route path='/SpotDetail1' component={SpotDetail1}/>
+                    <Route path='/SpotDetail2' component={SpotDetail2}/>
+                    <Route path='/SpotDetail3' component={SpotDetail3}/>
                     <Route path='/partstation' component={PartStation}/>
                     <Route path='/maintenance' component={MainTenance}/>
                     <Route path='/mro_partstate' component={MroPartState}/>

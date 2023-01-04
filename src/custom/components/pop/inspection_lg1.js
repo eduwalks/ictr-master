@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Button, Divider, Modal, CardContent, Stack, Table, TableBody, TableCell, TableContainer, TableRow, TextField } from '@mui/material';
 import MainCard from 'components/MainCard';
-// import InputLabel from '@mui/material/InputLabel';
+import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
@@ -129,12 +129,12 @@ export function InSpection() {
                     </TableCell>
                   </TableRow>
 
-                  <TableRow>
+                  {/* <TableRow>
                     <TableCell className="th">경보확인 일시</TableCell>
                     <TableCell colspan="3" className='pa10'><BasicDatePicker /></TableCell>
                     <TableCell className="th">경보확인자</TableCell>
                     <TableCell><TextField id="outlined-basic" sx={{ m: 1, minWidth: '90%' }} /></TableCell>
-                  </TableRow>
+                  </TableRow> */}
 
                   <TableRow>
                     <TableCell className="th">현장확인 일시</TableCell>
@@ -186,14 +186,8 @@ export function InSpection() {
                   </TableRow>
 
                   <TableRow>
-                    <TableCell className="th">고장(유지보수)<br />발생일</TableCell>
-                    <TableCell><div className="piker"><BasicDatePicker /></div></TableCell>
-                    <TableCell className="th">고장(유지보수)<br />발생시간</TableCell>
-                    <TableCell>
-                      <div className="piker"><BasicTimePicker /></div>
-                    </TableCell>
                     <TableCell className="th">고장(유지보수)<br />원인</TableCell>
-                    <TableCell>            
+                    <TableCell colspan="5">            
                       <FormControl sx={{ m: 1, minWidth: '90%' }}>
                         <Select defaultValue="" id="grouped-select">
                           {/* <MenuItem value="">None</MenuItem> */}
@@ -281,23 +275,35 @@ export function InSpection() {
                     <TableCell colspan="5">
                       <div className="plus">
                         <FormControl sx={{ m: 1, minWidth: 120 }}>
+                          <InputLabel id="demo-simple-select-label">자재유형</InputLabel>
+                          <Select defaultValue="" id="grouped-select">
+                            {/* <MenuItem value="">None</MenuItem> */}
+                            <MenuItem value={1}>자재유형</MenuItem>
+                          </Select>
+                        </FormControl>
+                        <FormControl sx={{ m: 1, minWidth: 120 }}>
+                          <InputLabel id="demo-simple-select-label">자재대분류</InputLabel>
                           <Select defaultValue="" id="grouped-select">
                             {/* <MenuItem value="">None</MenuItem> */}
                             <MenuItem value={1}></MenuItem>
                           </Select>
                         </FormControl>
                         <FormControl sx={{ m: 1, minWidth: 120 }}>
+                          <InputLabel id="demo-simple-select-label">자재중분류</InputLabel>
                           <Select defaultValue="" id="grouped-select">
                             {/* <MenuItem value="">None</MenuItem> */}
                             <MenuItem value={1}></MenuItem>
                           </Select>
                         </FormControl>
                         <FormControl sx={{ m: 1, minWidth: 120 }}>
+                          <InputLabel id="demo-simple-select-label">자재분류</InputLabel>
                           <Select defaultValue="" id="grouped-select">
                             {/* <MenuItem value="">None</MenuItem> */}
                             <MenuItem value={1}></MenuItem>
                           </Select>
                         </FormControl>
+                        <TextField id="outlined-basic" sx={{ m: 1, width: 50 }} />
+                        <div>규격</div>
                         <TextField id="outlined-basic" sx={{ m: 1, width: 50 }} />
                         <div>수량 ✚</div>
                       </div>
