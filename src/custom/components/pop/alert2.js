@@ -8,7 +8,7 @@ import Select from '@mui/material/Select';
 
 import BasicDatePicker from '../picker/DatePicker';
 
-export function Alert2() {
+export function Alert() {
 
   const [open, setOpen] = useState(false);
   const handleOpen = () => setOpen(true);
@@ -21,7 +21,7 @@ export function Alert2() {
       </Button>
 
       <Modal className="pop_box" open={open} onClose={handleClose} aria-labelledby="modal-modal-title" aria-describedby="modal-modal-description">
-        <MainCard title="경보" modal darkTitle content={false}>
+        <MainCard title="경보/고장신고/점검요청" modal darkTitle content={false}>
           <CardContent>
             <TableContainer>
               <Table sx={{ minWidth: 1000 }} aria-label="simple table" className="same_width pop_table">
@@ -104,7 +104,14 @@ export function Alert2() {
                     <TableCell className="th">경보일시</TableCell>
                     <TableCell colspan="3" className='pa10'><BasicDatePicker /></TableCell>
                     <TableCell className="th">경보유형</TableCell>
-                    <TableCell><TextField id="outlined-basic" sx={{ m: 1, minWidth: '90%' }} /></TableCell>
+                    <TableCell>
+                      <FormControl sx={{ m: 1, minWidth: '90%' }}>
+                        <Select defaultValue="" id="grouped-select">
+                          {/* <MenuItem value="">None</MenuItem> */}
+                          <MenuItem value={1}></MenuItem>
+                        </Select>
+                      </FormControl>
+                    </TableCell>
                   </TableRow>
 
                   <TableRow>
@@ -153,4 +160,4 @@ export function Alert2() {
   )
 }
 
-export default Alert2;
+export default Alert;

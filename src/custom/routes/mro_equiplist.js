@@ -6,7 +6,7 @@ import Navigationbar from "custom/components/navigationbarCe";
 import DialogSelectBase from "custom/components/search/mro_search";
 import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow } from '@mui/material';
 import Paging from 'custom/components/table/paging';
-import Mro from "custom/components/pop/mro";
+import Alert1 from 'custom/components/pop/alert1';
 
 function createData1(data1, data2, data3, data4, data5, data6, data7, data8, data9, data10, data11, data12, data13, data14, data15) {
   let rowclass;
@@ -151,7 +151,7 @@ function MroEquiplist () {
                     <TableCell><Link to="/mro_stationstate">{row.data13}</Link></TableCell>
                     <TableCell><Link to="/mro_stationstate">{row.data14}</Link></TableCell>
                     <TableCell className={row.rowclass}><Link to="/mro_stationstate">{row.data15}</Link></TableCell>
-                    <TableCell align="center"><Mro /></TableCell>
+                    <TableCell align="center"><Alert1 /></TableCell>
                   </TableRow>
                 ))}
               </TableBody>

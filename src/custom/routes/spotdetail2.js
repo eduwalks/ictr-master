@@ -10,7 +10,7 @@ import Video from 'custom/video/1.mp4'
 
 import Navigationbar from 'custom/components/navigationbar';
 import ChartTabCont from 'custom/components/chart/ChartTabCont';
-import InSpection from "custom/components/pop/inspection_lg1";
+import InSpection from "custom/components/pop/inspection1";
 import Paging from 'custom/components/table/paging';
 
 function AlertDetail () {

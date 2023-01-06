@@ -17,9 +17,10 @@ const Navigationbar = () => {
           <NavLink eventKey="2" as={Link} to="/" className="nav-link" exact={true}>대시보드</NavLink>
           <NavLink eventKey="3" as={Link} to="/equiplist" className="nav-link">설비목록</NavLink>
           <NavLink eventKey="4" as={Link} to="/alertlist" className="nav-link">경보목록</NavLink>
-          <NavLink eventKey="5" as={Link} to="/spotlist" className="nav-link">현장(상시)점검내역</NavLink>
-          <NavLink eventKey="6" as={Link} to="/test11" className="nav-link">통계/보고서</NavLink>
-          <NavLink eventKey="7" as={Link} to="/test12" className="nav-link">설정</NavLink>
+          <NavLink eventKey="5" as={Link} to="/alertrespitelist" className="nav-link">경보유예목록</NavLink>
+          <NavLink eventKey="6" as={Link} to="/spotlist" className="nav-link">현장(상시)점검내역</NavLink>
+          <NavLink eventKey="7" as={Link} to="/test11" className="nav-link">통계/보고서</NavLink>
+          <NavLink eventKey="8" as={Link} to="/test12" className="nav-link">설정</NavLink>
         </Nav>
         <Nav>
           <TodayAll />

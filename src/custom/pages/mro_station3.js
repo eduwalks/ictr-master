@@ -1,52 +1,48 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import DialogSelect from "custom/components/search/mro_station_search3";
+import DialogSelect from 'custom/components/search/alertsearch1';
 import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow } from '@mui/material';
 import Paging from 'custom/components/table/paging';
-import InSpection from "custom/components/pop/inspection_lg";
 
-function createData1(data1, data2, data3, data4, data5, data6, data7, data8, data9, data10, data11, data12) {
-  let rowclass;
-  if(data12 == '대기') {
-    rowclass='condition1';
-  } else if(data12 == '작업중') {
-    rowclass='condition3';
-  } else if(data12 == '종료') {
-    rowclass='condition5';
-  } else if(data12 == '확인') {
-    rowclass='condition6';
-  } else {
-    rowclass=''
-  }
-  return { data1, data2, data3, data4, data5, data6, data7, data8, data9, data10, data11, data12, rowclass };
-}
-
-const rows = [
-  createData1('유지보수(교체)','124-L-AHU01-RF1','2022-06-0200:00','공기조화설비','대합실공조기','좌 대합실공조기','좌측 공조실','EOCR','','고장 및 기능장애','홍길동','확인'),
-  createData1('유지보수(교체)','124-L-AHU01-RF1','2022-06-0200:00','공기조화설비','대합실공조기','좌 대합실공조기','좌측 공조실','EOCR','O','고장 및 기능장애','홍길동','종료'),
-  createData1('유지보수(교체)','124-L-AHU01-RF1','2022-06-0200:00','공기조화설비','대합실공조기','좌 대합실공조기','좌측 공조실','EOCR','','고장 및 기능장애','홍길동','작업중'),
-  createData1('유지보수(교체)','124-L-AHU01-RF1','2022-06-0200:00','공기조화설비','대합실공조기','좌 대합실공조기','좌측 공조실','','','','','대기'),
-  createData1('유지보수(교체)','124-L-AHU01-RF1','2022-06-0200:00','공기조화설비','대합실공조기','좌 대합실공조기','좌측 공조실','EOCR','','고장 및 기능장애','홍길동','확인'),
-  createData1('유지보수(교체)','124-L-AHU01-RF1','2022-06-0200:00','공기조화설비','대합실공조기','좌 대합실공조기','좌측 공조실','EOCR','O','고장 및 기능장애','홍길동','종료'),
-  createData1('유지보수(교체)','124-L-AHU01-RF1','2022-06-0200:00','공기조화설비','대합실공조기','좌 대합실공조기','좌측 공조실','EOCR','','고장 및 기능장애','홍길동','작업중'),
-  createData1('유지보수(교체)','124-L-AHU01-RF1','2022-06-0200:00','공기조화설비','대합실공조기','좌 대합실공조기','좌측 공조실','','','','','대기'),
-  createData1('유지보수(교체)','124-L-AHU01-RF1','2022-06-0200:00','공기조화설비','대합실공조기','좌 대합실공조기','좌측 공조실','EOCR','','고장 및 기능장애','홍길동','확인'),
-  createData1('유지보수(교체)','124-L-AHU01-RF1','2022-06-0200:00','공기조화설비','대합실공조기','좌 대합실공조기','좌측 공조실','EOCR','O','고장 및 기능장애','홍길동','확인'),
-  createData1('유지보수(교체)','124-L-AHU01-RF1','2022-06-0200:00','공기조화설비','대합실공조기','좌 대합실공조기','좌측 공조실','EOCR','','고장 및 기능장애','홍길동','작업중'),
-  createData1('유지보수(교체)','124-L-AHU01-RF1','2022-06-0200:00','공기조화설비','대합실공조기','좌 대합실공조기','좌측 공조실','','','','','대기')
-];
+import Alert1 from 'custom/components/pop/alert1';
 
 function MroStation3 () {
+  function createData(check, date, registrant, alertdate, alertype, alertcompo, equipnum, equipcompo, equipname) {
+    let rowclass;
+    let spotdetail;
+    
+    if(check == '유효') {
+      rowclass='condition1';
+      spotdetail='/mro_checkdetail';
+    } else if(check == '해제') {
+      rowclass='condition4';
+      spotdetail='/mro_checkdetail';
+    } else {
+      rowclass=''
+      spotdetail='';
+    }
+
+    return { check, date, registrant, alertdate, alertype, alertcompo, equipnum, equipcompo, equipname, rowclass, spotdetail };
+  }
+
+  const rows = [
+    createData('유효','2022-09-19','홍길동','2022-09-19 07:59','진단IoT경보','결함발생','118-R-PAC','직팽식공조기','우 직팽식공조기'),
+    createData('유효','2022-09-19','홍길동','2022-09-19 07:59','진단IoT경보','결함발생','118-R-PAC','직팽식공조기','우 직팽식공조기'),
+    createData('유효','2022-09-19','홍길동','2022-09-19 07:59','진단IoT경보','결함발생','118-R-PAC','직팽식공조기','우 직팽식공조기'),
+    createData('유효','2022-09-19','홍길동','2022-09-19 07:59','진단IoT경보','결함발생','118-R-PAC','직팽식공조기','우 직팽식공조기'),
+    createData('유효','2022-09-19','홍길동','2022-09-19 07:59','진단IoT경보','결함발생','118-R-PAC','직팽식공조기','우 직팽식공조기'),
+    createData('해제','2022-09-19','홍길동','2022-09-19 07:59','진단IoT경보','결함발생','118-R-PAC','직팽식공조기','우 직팽식공조기'),
+    createData('해제','2022-09-19','홍길동','2022-09-19 07:59','진단IoT경보','결함발생','118-R-PAC','직팽식공조기','우 직팽식공조기'),
+    createData('해제','2022-09-19','홍길동','2022-09-19 07:59','진단IoT경보','결함발생','118-R-PAC','직팽식공조기','우 직팽식공조기')
+  ];
 
   return (
     <>
       <div className="mro_search">
         <ul className='condition' style={{marginTop:"px"}}>
           <li className='sum'>전체: 00</li>
-          <li className='normal'>확인: 00</li>
-          <li className='fine'>종료: 00</li>
-          <li className='insuff'>작업중: 00</li>
-          <li className='bad'>대기: 00</li>
+          <li className='bad'>유효: 00</li>
+          <li className='communi'>해제: 00</li>
         </ul>
         <DialogSelect />
       </div>
@@ -88,48 +84,44 @@ function MroStation3 () {
       
       <br/>
       <TableContainer>
-        <Table sx={{ minWidth: 1200 }} aria-label="simple table" className="list_table1">
+        <Table sx={{ minWidth: 1250 }} aria-label="simple table" className="list_table">
           <TableHead>
             <TableRow>
-              <TableCell className="th" align="center">구분</TableCell>
-              <TableCell className="th" align="center">설비번호</TableCell>
-              <TableCell className="th" align="center">유지보수일시</TableCell>
-              <TableCell className="th" align="center">설비대분류</TableCell>
-              <TableCell className="th" align="center">설비분류</TableCell>
-              <TableCell className="th" align="center">설비명</TableCell>
-              <TableCell className="th" align="center">위치</TableCell>
-              <TableCell className="th" align="center">품명</TableCell>
-              <TableCell className="th" align="center">주요부품</TableCell>
-              <TableCell className="th" align="center">분석유형</TableCell>
-              <TableCell className="th" align="center">작업자</TableCell>
-              <TableCell className="th" align="center">작업상태</TableCell>
+              <TableCell align="center">상태</TableCell>
+              <TableCell align="center">경보유예기간</TableCell>
+              <TableCell align="center">경보유예 등록자</TableCell>
+              <TableCell align="center">경보일시</TableCell>
+              <TableCell align="center">경보유형</TableCell>
+              <TableCell align="center">경보분류</TableCell>
+              <TableCell align="center">설비번호</TableCell>
+              <TableCell align="center">설비분류</TableCell>
+              <TableCell align="center">설비명</TableCell>
+              <TableCell align="center"></TableCell>
             </TableRow>
           </TableHead>
           <TableBody>
             {rows.map((row) => (
               <TableRow hover key={row.name}
-                // component={Link} to="/equipdetail"
-                // onClick={click}
+                // component={Link} to="/alertdetail"
               >
-                <TableCell><Link to="/mro_checkdetail">{row.data1}</Link></TableCell>
-                <TableCell><Link to="/mro_checkdetail">{row.data2}</Link></TableCell>
-                <TableCell><Link to="/mro_checkdetail">{row.data3}</Link></TableCell>
-                <TableCell><Link to="/mro_checkdetail">{row.data4}</Link></TableCell>
-                <TableCell><Link to="/mro_checkdetail">{row.data5}</Link></TableCell>
-                <TableCell><Link to="/mro_checkdetail">{row.data6}</Link></TableCell>
-                <TableCell><Link to="/mro_checkdetail">{row.data7}</Link></TableCell>
-                <TableCell><Link to="/mro_checkdetail">{row.data8}</Link></TableCell>
-                <TableCell><Link to="/mro_checkdetail">{row.data9}</Link></TableCell>
-                <TableCell><Link to="/mro_checkdetail">{row.data10}</Link></TableCell>
-                <TableCell><Link to="/mro_checkdetail">{row.data11}</Link></TableCell>
-                <TableCell className={row.rowclass}><Link to="/mro_checkdetail">{row.data12}</Link></TableCell>
+                <TableCell align="center" className={row.rowclass}><Link to={row.spotdetail}>{row.check}</Link></TableCell>
+                <TableCell align="center"><Link to={row.spotdetail}>{row.date}</Link></TableCell>
+                <TableCell align="center"><Link to={row.spotdetail}>{row.registrant}</Link></TableCell>
+                <TableCell align="center"><Link to={row.spotdetail}>{row.alertdate}</Link></TableCell>
+                <TableCell align="center"><Link to={row.spotdetail}>{row.alertype}</Link></TableCell>
+                <TableCell align="center"><Link to={row.spotdetail}>{row.alertcompo}</Link></TableCell>
+                <TableCell align="center"><Link to={row.spotdetail}>{row.equipnum}</Link></TableCell>
+                <TableCell align="center"><Link to={row.spotdetail}>{row.equipcompo}</Link></TableCell>
+                <TableCell align="center"><Link to={row.spotdetail}>{row.equipname}</Link></TableCell>
+                <TableCell align="center">
+                  <Alert1 />
+                </TableCell>
               </TableRow>
             ))}
           </TableBody>
         </Table>
       </TableContainer>
 
-      <div className="btn_right"><InSpection /></div>
       <Paging />
     </>
   )

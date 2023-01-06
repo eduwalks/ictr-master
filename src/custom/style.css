@@ -127,6 +127,9 @@ div.condition1, div.condition2, div.condition3, div.condition4, div.condition5, 
 .white_modal .pop_table .MuiSvgIcon-root{fill: #ddd;}
 .white_modal .css-1c4wyd1-MuiOutlinedInput-notchedOutline{border-color: #ddd;}
 
+.view_table .view_td{padding:8px 0 !important;text-align: center;}
+.view_table .view_flex{display: flex;justify-content: space-around;}
+
 /* 테이블 설정 */
 .same_width{height: auto;text-align: center;table-layout: fixed;word-break: break-all;}
 .pagination{margin-top: 20px;}

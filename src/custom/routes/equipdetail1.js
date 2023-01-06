@@ -83,6 +83,22 @@ function EquipDetail () {
                 <Table sx={{ minWidth: 500 }} aria-label="simple table">
                   <TableBody>
                     <TableRow>
+                      <TableCell className="th" align="center">유지관리자</TableCell>
+                      <TableCell align="center">홍길동</TableCell>
+                      <TableCell className="th" align="center">소속</TableCell>
+                      <TableCell align="center">계산파트</TableCell>
+                      <TableCell className="th" align="center">직급</TableCell>
+                      <TableCell align="center">과장</TableCell>
+                    </TableRow>
+                    <TableRow>
+                      <TableCell className="th" align="center">선임일</TableCell>
+                      <TableCell align="center">2021-01-01</TableCell>
+                      <TableCell className="th" align="center">교육이수일</TableCell>
+                      <TableCell align="center">2021-01-01</TableCell>
+                      <TableCell className="th" align="center"></TableCell>
+                      <TableCell align="center"></TableCell>
+                    </TableRow>
+                    <TableRow>
                       <TableCell className="th" align="center">설비번호</TableCell>
                       <TableCell align="center">124-L-AHU01-RF1</TableCell>
                       <TableCell className="th" align="center">제작회사</TableCell>
@@ -96,7 +112,7 @@ function EquipDetail () {
                       <TableCell className="th" align="center">게이트웨이</TableCell>
                       <TableCell align="center">3C7AAA9223A7</TableCell>
                       <TableCell className="th" align="center">상태</TableCell>
-                      <TableCell align="center">Active</TableCell>
+                      <TableCell align="center"><div className="condition5" style={{margin:"unset",marginLeft:"8px",marginRight:"8px",width:"unset"}}>운용중</div></TableCell>
                     </TableRow>
                   </TableBody>
                 </Table>

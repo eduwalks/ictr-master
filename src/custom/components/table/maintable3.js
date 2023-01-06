@@ -8,28 +8,27 @@ import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow } from
 
 // project imports
 import MainCard from 'components/MainCard';
-import Mro from '../pop/mro';
+import Alert1 from 'custom/components/pop/alert1';
 
 // table columns
 const columns = [
-  { id: 'time', label: '일시', minWidth: 170 },
-  { id: 'division', label: '구분', minWidth: 170 },
+  { id: 'time', label: '경보유예기간', minWidth: 170 },
   { id: 'number', label: '호선', minWidth: 100 },
   { id: 'part', label: '파트', minWidth: 100 },
   { id: 'station', label: '역사명', minWidth: 100 },
-  { id: 'sort', label: '설비대분류', minWidth: 100 },
   { id: 'equipname', label: '설비명', minWidth: 100 },
-  { id: 'inspector', label: '점검자', minWidth: 100 },
-  { id: 'result', label: '결과', minWidth: 100 },
+  { id: 'sort', label: '경보유형', minWidth: 100 },
+  { id: 'result', label: '경보분류', minWidth: 100 },
+  { id: 'alertcont', label: '경보내용', minWidth: 100 },
   { id: 'view', label: '내용보기', minWidth: 100 }
 ];
 
 // table data
-function createData1(time, division, number, part, station, sort, equipname, inspector, result) {
+function createData1(time, number, part, station, equipname, sort, result, alertcont, view) {
   let rowclass;
   let spotdetail;
 
-  if(result == '대기') {
+  if(result == '결함발생') {
     rowclass='condition1';
     spotdetail='/';
   } else if(result == '유지보수') {
@@ -45,30 +44,30 @@ function createData1(time, division, number, part, station, sort, equipname, ins
     rowclass=''
   }
 
-  return { time, division, number, part, station, sort, equipname, inspector, result, rowclass, spotdetail };
+  return { time, number, part, station, equipname, sort, result, alertcont, view, rowclass, spotdetail };
 }
 
 const rows1 = [
-  createData1('　', '상시', '1호선', '예술회관', '부평', '승강장안전문설비', '좌대합실공조시-1', '　', '대기'),
-  createData1('　', '상시', '1호선', '예술회관', '부평', '승강장안전문설비', '좌대합실공조시-1', '　', '대기'),
-  createData1('　', '상시', '1호선', '예술회관', '부평', '승강장안전문설비', '좌대합실공조시-1', '　', '대기'),
-  createData1('　', '상시', '1호선', '예술회관', '부평', '승강장안전문설비', '좌대합실공조시-1', '　', '대기'),
-  createData1('　', '상시', '1호선', '예술회관', '부평', '승강장안전문설비', '좌대합실공조시-1', '　', '대기'),
-  createData1('　', '상시', '1호선', '예술회관', '부평', '승강장안전문설비', '좌대합실공조시-1', '　', '대기'),
-  createData1('2022-06-02 00:07', '상시', '1호선', '예술회관', '부평', '공기조화설비', '좌대합실공조시-1', '홍길동', '정상'),
-  createData1('2022-06-02 00:07', '상시', '1호선', '예술회관', '부평', '공기조화설비', '좌대합실공조시-1', '홍길동', '정상'),
-  createData1('2022-06-02 00:07', '상시', '1호선', '예술회관', '부평', '공기조화설비', '좌대합실공조시-1', '홍길동', '정상'),
-  createData1('2022-06-02 00:07', '상시', '1호선', '예술회관', '부평', '공기조화설비', '좌대합실공조시-1', '홍길동', '정상'),
-  createData1('2022-06-02 00:07', '일일', '1호선', '예술회관', '부평', '소방설비', '좌대합실공조시-1', '홍길동', '주의관찰'),
-  createData1('2022-06-02 00:07', '상시', '1호선', '예술회관', '부평', '소방설비', '좌대합실공조시-1', '홍길동', '주의관찰'),
-  createData1('2022-06-02 00:07', '일일', '1호선', '예술회관', '부평', '소방설비', '좌대합실공조시-1', '홍길동', '주의관찰'),
-  createData1('2022-06-02 00:07', '상시', '1호선', '예술회관', '부평', '소방설비', '좌대합실공조시-1', '홍길동', '주의관찰'),
-  createData1('2022-06-02 00:07', '상시', '1호선', '예술회관', '부평', '소방설비', '좌대합실공조시-1', '홍길동', '주의관찰'),
-  createData1('2022-06-02 00:07', '일일', '1호선', '예술회관', '부평', '소방설비', '좌대합실공조시-1', '홍길동', '유지보수'),
-  createData1('2022-06-02 00:07', '상시', '1호선', '예술회관', '부평', '소방설비', '좌대합실공조시-1', '홍길동', '유지보수'),
-  createData1('2022-06-02 00:07', '일일', '1호선', '예술회관', '부평', '소방설비', '좌대합실공조시-1', '홍길동', '유지보수'),
-  createData1('2022-06-02 00:07', '상시', '1호선', '예술회관', '부평', '소방설비', '좌대합실공조시-1', '홍길동', '유지보수'),
-  createData1('2022-06-02 00:07', '상시', '1호선', '예술회관', '부평', '소방설비', '좌대합실공조시-1', '홍길동', '유지보수')
+  createData1('2022-06-02', '1호선', '예술회관', '부평', '좌대합실공조시-1', 'IoT경보', '결함발생', '직팽식공조기 (SF) 전동기 이상진동'),
+  createData1('2022-06-02', '1호선', '예술회관', '부평', '좌대합실공조시-1', 'IoT경보', '결함발생', '직팽식공조기 (SF) 전동기 이상진동'),
+  createData1('2022-06-02', '1호선', '예술회관', '부평', '좌대합실공조시-1', 'IoT경보', '결함발생', '직팽식공조기 (SF) 전동기 이상진동'),
+  createData1('2022-06-02', '1호선', '예술회관', '부평', '좌대합실공조시-1', 'IoT경보', '결함발생', '직팽식공조기 (SF) 전동기 이상진동'),
+  createData1('2022-06-02', '1호선', '예술회관', '부평', '좌대합실공조시-1', 'IoT경보', '결함발생', '직팽식공조기 (SF) 전동기 이상진동'),
+  createData1('2022-06-02', '1호선', '예술회관', '부평', '좌대합실공조시-1', 'IoT경보', '결함발생', '직팽식공조기 (SF) 전동기 이상진동'),
+  createData1('2022-06-02', '1호선', '예술회관', '부평', '좌대합실공조시-1', 'IoT경보', '결함발생', '직팽식공조기 (SF) 전동기 이상진동'),
+  createData1('2022-06-02', '1호선', '예술회관', '부평', '좌대합실공조시-1', 'IoT경보', '결함발생', '직팽식공조기 (SF) 전동기 이상진동'),
+  createData1('2022-06-02', '1호선', '예술회관', '부평', '좌대합실공조시-1', 'IoT경보', '결함발생', '직팽식공조기 (SF) 전동기 이상진동'),
+  createData1('2022-06-02', '1호선', '예술회관', '부평', '좌대합실공조시-1', 'IoT경보', '결함발생', '직팽식공조기 (SF) 전동기 이상진동'),
+  createData1('2022-06-02', '1호선', '예술회관', '부평', '좌대합실공조시-1', 'IoT경보', '결함발생', '직팽식공조기 (SF) 전동기 이상진동'),
+  createData1('2022-06-02', '1호선', '예술회관', '부평', '좌대합실공조시-1', 'IoT경보', '결함발생', '직팽식공조기 (SF) 전동기 이상진동'),
+  createData1('2022-06-02', '1호선', '예술회관', '부평', '좌대합실공조시-1', 'IoT경보', '결함발생', '직팽식공조기 (SF) 전동기 이상진동'),
+  createData1('2022-06-02', '1호선', '예술회관', '부평', '좌대합실공조시-1', 'IoT경보', '결함발생', '직팽식공조기 (SF) 전동기 이상진동'),
+  createData1('2022-06-02', '1호선', '예술회관', '부평', '좌대합실공조시-1', 'IoT경보', '결함발생', '직팽식공조기 (SF) 전동기 이상진동'),
+  createData1('2022-06-02', '1호선', '예술회관', '부평', '좌대합실공조시-1', 'IoT경보', '결함발생', '직팽식공조기 (SF) 전동기 이상진동'),
+  createData1('2022-06-02', '1호선', '예술회관', '부평', '좌대합실공조시-1', 'IoT경보', '결함발생', '직팽식공조기 (SF) 전동기 이상진동'),
+  createData1('2022-06-02', '1호선', '예술회관', '부평', '좌대합실공조시-1', 'IoT경보', '결함발생', '직팽식공조기 (SF) 전동기 이상진동'),
+  createData1('2022-06-02', '1호선', '예술회관', '부평', '좌대합실공조시-1', 'IoT경보', '결함발생', '직팽식공조기 (SF) 전동기 이상진동'),
+  createData1('2022-06-02', '1호선', '예술회관', '부평', '좌대합실공조시-1', 'IoT경보', '결함발생', '직팽식공조기 (SF) 전동기 이상진동')
 ];
 
 function MainTable3() {
@@ -89,7 +88,7 @@ function MainTable3() {
       <MainCard content={false}>
         {/* table */}
         <div className='more'>
-          <Chip label="현장(상시)점검 내역" color="success" />
+          <Chip label="경보유예 대상" color="success" />
           <NavLink as={Link} to="/SpotList" className='more_btn'>더보기 +</NavLink>
         </div>
         <TableContainer sx={{ maxHeight: 180 }}>
@@ -119,7 +118,7 @@ function MainTable3() {
                     } else if(column.id == 'view') {
                       return (
                         <TableCell key={column.id} align="center">
-                          <Mro />
+                          <Alert1 />
                         </TableCell>
                       );
                     } else {

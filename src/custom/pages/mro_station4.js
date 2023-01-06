@@ -1,53 +1,52 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import DialogSelect from "custom/components/search/mro_station_search2";
+import DialogSelect from "custom/components/search/mro_station_search3";
 import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow } from '@mui/material';
 import Paging from 'custom/components/table/paging';
 import InSpection from "custom/components/pop/inspection_lg";
 
-function createData1(data1, data2, data3, data4, data5, data6, data7, data8, data9, data10) {
+function createData1(data1, data2, data3, data4, data5, data6, data7, data8, data9, data10, data11, data12) {
   let rowclass;
-  if(data2 == '대기') {
+  if(data12 == '대기') {
     rowclass='condition1';
-  } else if(data2 == '주의관찰') {
+  } else if(data12 == '작업중') {
     rowclass='condition3';
-  } else if(data2 == '유지보수') {
+  } else if(data12 == '종료') {
     rowclass='condition5';
-  } else if(data2 == '정상') {
+  } else if(data12 == '확인') {
     rowclass='condition6';
   } else {
     rowclass=''
   }
-  return { data1, data2, data3, data4, data5, data6, data7, data8, data9, data10, rowclass };
+  return { data1, data2, data3, data4, data5, data6, data7, data8, data9, data10, data11, data12, rowclass };
 }
 
 const rows = [
-  createData1('890','대기','　','상시','　','124-L-AHU01-RF1','대합실공조기','좌 대합실공조기','좌측 공조실','RF1(환기부)'),
-  createData1('890','대기','　','상시','　','124-L-AHU01-RF1','대합실공조기','좌 대합실공조기','좌측 공조실','RF1(환기부)'),
-  createData1('890','대기','　','상시','　','124-L-AHU01-RF1','대합실공조기','좌 대합실공조기','좌측 공조실','RF1(환기부)'),
-  createData1('890','주의관찰','　','일일','　','124-L-AHU01-RF1','대합실공조기','좌 대합실공조기','좌측 공조실','RF1(환기부)'),
-  createData1('890','주의관찰','　','상시','　','124-L-AHU01-RF1','대합실공조기','좌 대합실공조기','좌측 공조실','RF1(환기부)'),
-  createData1('890','유지보수','2022-06-0200:00','상시','홍길동 외 1','124-L-AHU01-RF1','대합실공조기','좌 대합실공조기','좌측 공조실','RF1(환기부)'),
-  createData1('890','유지보수','2022-06-0200:00','일일','홍길동','124-L-AHU01-RF1','대합실공조기','좌 대합실공조기','좌측 공조실','RF1(환기부)'),
-  createData1('890','유지보수','2022-06-0200:00','상시','홍길동','124-L-AHU01-RF1','대합실공조기','좌 대합실공조기','좌측 공조실','RF1(환기부)'),
-  createData1('890','유지보수','2022-06-0200:00','일일','홍길동','124-L-AHU01-RF1','대합실공조기','좌 대합실공조기','좌측 공조실','RF1(환기부)'),
-  createData1('890','정상','2022-06-0200:00','상시','홍길동','124-L-AHU01-RF1','대합실공조기','좌 대합실공조기','좌측 공조실','RF1(환기부)'),
-  createData1('890','정상','2022-06-0200:00','상시','홍길동','124-L-AHU01-RF1','대합실공조기','좌 대합실공조기','좌측 공조실','RF1(환기부)'),
-  createData1('890','정상','2022-06-0200:00','상시','홍길동','124-L-AHU01-RF1','대합실공조기','좌 대합실공조기','좌측 공조실','RF1(환기부)'),
-  createData1('890','정상','2022-06-0200:00','상시','홍길동','124-L-AHU01-RF1','대합실공조기','좌 대합실공조기','좌측 공조실','RF1(환기부)')
+  createData1('유지보수(교체)','124-L-AHU01-RF1','2022-06-0200:00','공기조화설비','대합실공조기','좌 대합실공조기','좌측 공조실','EOCR','','고장 및 기능장애','홍길동','확인'),
+  createData1('유지보수(교체)','124-L-AHU01-RF1','2022-06-0200:00','공기조화설비','대합실공조기','좌 대합실공조기','좌측 공조실','EOCR','O','고장 및 기능장애','홍길동','종료'),
+  createData1('유지보수(교체)','124-L-AHU01-RF1','2022-06-0200:00','공기조화설비','대합실공조기','좌 대합실공조기','좌측 공조실','EOCR','','고장 및 기능장애','홍길동','작업중'),
+  createData1('유지보수(교체)','124-L-AHU01-RF1','2022-06-0200:00','공기조화설비','대합실공조기','좌 대합실공조기','좌측 공조실','','','','','대기'),
+  createData1('유지보수(교체)','124-L-AHU01-RF1','2022-06-0200:00','공기조화설비','대합실공조기','좌 대합실공조기','좌측 공조실','EOCR','','고장 및 기능장애','홍길동','확인'),
+  createData1('유지보수(교체)','124-L-AHU01-RF1','2022-06-0200:00','공기조화설비','대합실공조기','좌 대합실공조기','좌측 공조실','EOCR','O','고장 및 기능장애','홍길동','종료'),
+  createData1('유지보수(교체)','124-L-AHU01-RF1','2022-06-0200:00','공기조화설비','대합실공조기','좌 대합실공조기','좌측 공조실','EOCR','','고장 및 기능장애','홍길동','작업중'),
+  createData1('유지보수(교체)','124-L-AHU01-RF1','2022-06-0200:00','공기조화설비','대합실공조기','좌 대합실공조기','좌측 공조실','','','','','대기'),
+  createData1('유지보수(교체)','124-L-AHU01-RF1','2022-06-0200:00','공기조화설비','대합실공조기','좌 대합실공조기','좌측 공조실','EOCR','','고장 및 기능장애','홍길동','확인'),
+  createData1('유지보수(교체)','124-L-AHU01-RF1','2022-06-0200:00','공기조화설비','대합실공조기','좌 대합실공조기','좌측 공조실','EOCR','O','고장 및 기능장애','홍길동','확인'),
+  createData1('유지보수(교체)','124-L-AHU01-RF1','2022-06-0200:00','공기조화설비','대합실공조기','좌 대합실공조기','좌측 공조실','EOCR','','고장 및 기능장애','홍길동','작업중'),
+  createData1('유지보수(교체)','124-L-AHU01-RF1','2022-06-0200:00','공기조화설비','대합실공조기','좌 대합실공조기','좌측 공조실','','','','','대기')
 ];
 
-function MroStation2 () {
+function MroStation4 () {
 
   return (
     <>
       <div className="mro_search">
         <ul className='condition' style={{marginTop:"px"}}>
           <li className='sum'>전체: 00</li>
+          <li className='normal'>확인: 00</li>
+          <li className='fine'>종료: 00</li>
+          <li className='insuff'>작업중: 00</li>
           <li className='bad'>대기: 00</li>
-          <li className='fine'>유지보수: 00</li>
-          <li className='insuff'>주의관찰: 00</li>
-          <li className='normal'>정상: 00</li>
         </ul>
         <DialogSelect />
       </div>
@@ -92,16 +91,18 @@ function MroStation2 () {
         <Table sx={{ minWidth: 1200 }} aria-label="simple table" className="list_table1">
           <TableHead>
             <TableRow>
-              <TableCell className="th" align="center">No.</TableCell>
-              <TableCell className="th" align="center">후속조치</TableCell>
-              <TableCell className="th" align="center">일시</TableCell>
               <TableCell className="th" align="center">구분</TableCell>
-              <TableCell className="th" align="center">점검자</TableCell>
               <TableCell className="th" align="center">설비번호</TableCell>
+              <TableCell className="th" align="center">유지보수일시</TableCell>
+              <TableCell className="th" align="center">설비대분류</TableCell>
               <TableCell className="th" align="center">설비분류</TableCell>
               <TableCell className="th" align="center">설비명</TableCell>
               <TableCell className="th" align="center">위치</TableCell>
-              <TableCell className="th" align="center">설비구성부</TableCell>
+              <TableCell className="th" align="center">품명</TableCell>
+              <TableCell className="th" align="center">주요부품</TableCell>
+              <TableCell className="th" align="center">분석유형</TableCell>
+              <TableCell className="th" align="center">작업자</TableCell>
+              <TableCell className="th" align="center">작업상태</TableCell>
             </TableRow>
           </TableHead>
           <TableBody>
@@ -111,7 +112,7 @@ function MroStation2 () {
                 // onClick={click}
               >
                 <TableCell><Link to="/mro_checkdetail">{row.data1}</Link></TableCell>
-                <TableCell className={row.rowclass}><Link to="/mro_checkdetail">{row.data2}</Link></TableCell>
+                <TableCell><Link to="/mro_checkdetail">{row.data2}</Link></TableCell>
                 <TableCell><Link to="/mro_checkdetail">{row.data3}</Link></TableCell>
                 <TableCell><Link to="/mro_checkdetail">{row.data4}</Link></TableCell>
                 <TableCell><Link to="/mro_checkdetail">{row.data5}</Link></TableCell>
@@ -120,16 +121,18 @@ function MroStation2 () {
                 <TableCell><Link to="/mro_checkdetail">{row.data8}</Link></TableCell>
                 <TableCell><Link to="/mro_checkdetail">{row.data9}</Link></TableCell>
                 <TableCell><Link to="/mro_checkdetail">{row.data10}</Link></TableCell>
+                <TableCell><Link to="/mro_checkdetail">{row.data11}</Link></TableCell>
+                <TableCell className={row.rowclass}><Link to="/mro_checkdetail">{row.data12}</Link></TableCell>
               </TableRow>
             ))}
           </TableBody>
         </Table>
       </TableContainer>
-      <Paging />
 
       <div className="btn_right"><InSpection /></div>
+      <Paging />
     </>
   )
 }
 
-export default MroStation2;
+export default MroStation4;

@@ -8,7 +8,7 @@ import MainCard from 'components/MainCard';
 import MroTable1 from "custom/components/table/mrotable1";
 import MroTable2 from "custom/components/table/mrotable2";
 import MroTable3 from "custom/components/table/mrotable3";
-import InSpection from "custom/components/pop/inspection_lg";
+import Alert2 from "custom/components/pop/alert2";
 
 function MainTenance () {
 
@@ -197,7 +197,7 @@ function MainTenance () {
               </TableContainer>
             </MainCard>
 
-            <div className="btn_right"><InSpection /></div>
+            <div className="btn_right"><Alert2 /></div>
           </Col>
           
           <Col sm={8} className="main_right">

@@ -10,7 +10,8 @@ import Video from 'custom/video/1.mp4'
 
 import Navigationbar from 'custom/components/navigationbar';
 import ChartTabCont from 'custom/components/chart/ChartTabCont';
-import InSpection from "custom/components/pop/inspection_lg1";
+import InSpection from "custom/components/pop/inspection1";
+import Mro from 'custom/components/pop/mro';
 import Paging from 'custom/components/table/paging';
 
 function AlertDetail () {
@@ -288,7 +289,7 @@ function AlertDetail () {
 
             <div className="btn_right">
               <Button variant="contained">수정</Button>&nbsp;&nbsp;
-              <Button variant="contained">유지보수확인</Button>
+              <Mro/>
             </div>
 
             <MainCard className="center_table" content={false}>

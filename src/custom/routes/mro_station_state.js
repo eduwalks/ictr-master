@@ -11,7 +11,7 @@ import Loadable from 'components/Loadable';
 
 import MroLg from "custom/components/pop/mro_lg2";
 import MroCheck from 'custom/components/pop/mro_check';
-import InSpection from "custom/components/pop/inspection_lg1";
+import InSpection from "custom/components/pop/inspection1";
 import Watch from "custom/components/pop/watch";
 
 const AppCalendar = Loadable(lazy(() => import('pages/apps/calendar')));
@@ -64,8 +64,8 @@ export function MroStationState() {
                       <TableCell>2021-01-01</TableCell>
                       <TableCell className="th">교육이수일</TableCell>
                       <TableCell>2021-01-01</TableCell>
-                      <TableCell className="th"></TableCell>
-                      <TableCell></TableCell>
+                      <TableCell className="th">상태</TableCell>
+                      <TableCell><div className="condition5" style={{margin:"unset",marginLeft:"8px",marginRight:"8px",width:"unset"}}>운용중</div></TableCell>
                     </TableRow>
                   </TableBody>
                 </Table>
@@ -101,7 +101,7 @@ export function MroStationState() {
               </TableContainer>
             </MainCard>
 
-            <MainCard content={false} style={{marginBottom:"10px"}}>
+            {/* <MainCard content={false} style={{marginBottom:"10px"}}>
               <TableContainer>
                 <Table aria-label="simple table" className="red_table maint_table">
                   <TableBody>
@@ -118,7 +118,7 @@ export function MroStationState() {
                   </TableBody>
                 </Table>
               </TableContainer>
-            </MainCard>
+            </MainCard> */}
 
             <MainCard content={false} style={{marginBottom:"10px"}}>
               <TableContainer>
@@ -133,7 +133,7 @@ export function MroStationState() {
                       <TableCell>
                         <div style={{display:"flex", alignItems:"center", justifyContent:"space-between"}}>
                           <div style={{marginLeft:"25px"}}>축정렬불량(편심)(00011)…</div>
-                          <div style={{marginRight:"5px"}}><Button variant="contained">경보확인</Button></div>
+                          <div style={{marginRight:"5px"}}><Button variant="contained">현장점검</Button></div>
                         </div>
                       </TableCell>
                     </TableRow>
@@ -142,7 +142,7 @@ export function MroStationState() {
               </TableContainer>
             </MainCard>
 
-            <MainCard content={false} style={{marginBottom:"10px"}}>
+            {/* <MainCard content={false} style={{marginBottom:"10px"}}>
               <TableContainer>
                 <Table aria-label="simple table" className="red_table maint_table">
                   <TableBody>
@@ -158,7 +158,7 @@ export function MroStationState() {
                   </TableBody>
                 </Table>
               </TableContainer>
-            </MainCard>
+            </MainCard> */}
 
             <IconTabs />    
           </Col>

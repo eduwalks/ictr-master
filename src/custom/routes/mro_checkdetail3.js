@@ -17,7 +17,7 @@ import Watch from "custom/components/pop/watch";
 
 const AppCalendar = Loadable(lazy(() => import('pages/apps/calendar')));
 
-export function MroCheckDetail() {
+export function MroCheckDetail1() {
 
   return (
     <div className="monitering cal">
@@ -95,47 +95,6 @@ export function MroCheckDetail() {
                       <TableCell>삼화에이스</TableCell>
                       <TableCell className="th">제작일</TableCell>
                       <TableCell>2020-12-01</TableCell>
-                    </TableRow>
-                  </TableBody>
-                </Table>
-              </TableContainer>
-            </MainCard>
-
-            <MainCard content={false} style={{marginBottom:"10px"}}>
-              <TableContainer>
-                <Table aria-label="simple table" className="red_table maint_table">
-                  <TableBody>
-                    <TableRow className='td_red'>
-                      <TableCell className="th" style={{width:"150px"}}>주의관찰</TableCell>
-                      <TableCell>2022-10-01~2022-12-31</TableCell>
-                      <TableCell>
-                        <div style={{display:"flex", alignItems:"center", justifyContent:"space-between"}}>
-                          <div>유지보수 조치 후 3개월간 주의관찰 필요</div>
-                          <div style={{marginRight:"5px"}}><Button variant="contained">주의관찰 해제</Button></div>
-                        </div>
-                      </TableCell>
-                    </TableRow>
-                  </TableBody>
-                </Table>
-              </TableContainer>
-            </MainCard>
-
-            <MainCard content={false} style={{marginBottom:"10px"}}>
-              <TableContainer>
-                <Table aria-label="simple table" className="red_table maint_table">
-                  <TableBody>
-                    <TableRow className='td_red'>
-                      <TableCell className="th" style={{width:"150px"}}>경보발생</TableCell>
-                      <TableCell style={{width:"200px"}}>2022-10-01~2022-12-31</TableCell>
-                      <TableCell className="th" style={{width:"150px"}}>경보유형</TableCell>
-                      <TableCell style={{width:"150px"}}>진단IoT경보</TableCell>
-                      <TableCell className="th" style={{width:"150px"}}>내용</TableCell>
-                      <TableCell>
-                        <div style={{display:"flex", alignItems:"center", justifyContent:"space-between"}}>
-                          <div style={{marginLeft:"25px"}}>축정렬불량(편심)(00011)…</div>
-                          <div style={{marginRight:"5px"}}><Button variant="contained">경보확인</Button></div>
-                        </div>
-                      </TableCell>
                     </TableRow>
                   </TableBody>
                 </Table>
@@ -247,48 +206,6 @@ export function MroCheckDetail() {
             <div className="btn_right">
               <InSpection />&nbsp;&nbsp;
               <Button variant="contained">경보확인</Button>
-            </div>
-
-            <MainCard className="center_table" content={false}>
-              <Chip label="주의관찰" color="error" />
-              <TableContainer>
-                <Table sx={{ minWidth: 500 }} aria-label="simple table" className="same_width" style={{borderCollapse:"unset", borderSpacing:"revert"}}>
-                  <TableBody>
-                    <TableRow>
-                      <TableCell className="th" align="center">주의관찰 시작일</TableCell>
-                      <TableCell align="center">2022-09-19 08:02</TableCell>
-                      <TableCell className="th" align="center">주의관찰 종료일</TableCell>
-                      <TableCell align="center">진단IoT경보</TableCell>
-                      <TableCell className="th" align="center">주의관찰 기간</TableCell>
-                      <TableCell align="center">3개월</TableCell>
-                    </TableRow>
-                    <TableRow>
-                      <TableCell className="th" align="center">주의관찰 내용</TableCell>
-                      <TableCell className="pl" colSpan={5} style={{textAlign:"left"}}>
-                        특이점 없으나 간헐적 이상진동 발생<br />
-                        진동에 대한 주의관찰 빌표
-                      </TableCell>
-                    </TableRow>
-                    <TableRow>
-                      <TableCell className="th" align="center">등록처리자</TableCell>
-                      <TableCell colSpan={3} align="center">홍길동</TableCell>
-                      <TableCell className="th" align="center">상태</TableCell>
-                      <TableCell align="center"><div className="condition1">정지</div></TableCell>
-                    </TableRow>
-                    <TableRow>
-                      <TableCell className="th" align="center">주의관찰 정지일</TableCell>
-                      <TableCell colSpan={3} align="center">2022-09-19 08:02</TableCell>
-                      <TableCell className="th" align="center">정지처리자</TableCell>
-                      <TableCell align="center">홍길동</TableCell>
-                    </TableRow>
-                  </TableBody>
-                </Table>
-              </TableContainer>
-            </MainCard>
-
-            <div className="btn_right">
-              <Button variant="contained">수정</Button>&nbsp;&nbsp;
-              <Button variant="contained">정지</Button>
             </div>
 
             <MainCard className="center_table" content={false}>
@@ -415,4 +332,4 @@ export function MroCheckDetail() {
   );
 }
 
-export default MroCheckDetail;
+export default MroCheckDetail1;

@@ -11,7 +11,7 @@ import Select from '@mui/material/Select';
 
 import Chip from '@mui/material/Chip';
 import MainCard from 'components/MainCard';
-import InSpection from "custom/components/pop/inspection_lg";
+import Alert2 from "custom/components/pop/alert2";
 import MroTable11 from "custom/components/table/mrotable11";
 import MroTable22 from "custom/components/table/mrotable22";
 import MroTable33 from "custom/components/table/mrotable33";
@@ -275,7 +275,7 @@ function MroPartState () {
               </TableContainer>
             </MainCard>
 
-            <div className="btn_right"><InSpection /></div>
+            <div className="btn_right"><Alert2 /></div>
           </Col>
           
           <Col sm={6} className="main_right">

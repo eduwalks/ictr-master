@@ -10,6 +10,7 @@ import { Table, TableBody, TableCell, TableContainer, TableRow } from '@mui/mate
 import MroStation1 from 'custom/pages/mro_station1';
 import MroStation2 from 'custom/pages/mro_station2';
 import MroStation3 from 'custom/pages/mro_station3';
+import MroStation4 from 'custom/pages/mro_station4';
 
 function MroStationEquipstate() {
   const [value, setValue] = React.useState('1');
@@ -56,12 +57,14 @@ function MroStationEquipstate() {
             <TabList onChange={handleChange} aria-label="lab API tabs example">
               <Tab label="설비목록" value="1" />
               <Tab label="점검내역" value="2" />
-              <Tab label="유지보수 내역" value="3" />
+              <Tab label="주의관찰목록" value="3" />
+              <Tab label="유지보수 내역" value="4" />
             </TabList>
           </Box>
           <TabPanel value="1"><MroStation1 /></TabPanel>
           <TabPanel value="2"><MroStation2 /></TabPanel>
           <TabPanel value="3"><MroStation3 /></TabPanel>
+          <TabPanel value="4"><MroStation4 /></TabPanel>
         </TabContext>
       </Box>
     </div>

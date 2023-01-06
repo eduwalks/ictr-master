@@ -26,6 +26,7 @@ import EquipDetail2 from 'custom/routes/equipdetail2';
 import EquipDetail3 from 'custom/routes/equipdetail3';
 import EquipDetail4 from 'custom/routes/equipdetail4';
 import AlertList from 'custom/routes/alertlist';
+import AlertRespiteList from 'custom/routes/alert_respite_list';
 import AlertDetail from 'custom/routes/alertdetail';
 import SpotList from 'custom/routes/spotlist';
 import SpotDetail1 from 'custom/routes/spotdetail1';
@@ -38,8 +39,12 @@ import MroPartState from 'custom/routes/mro_partstate';
 import MroStationEquipstate from 'custom/routes/mro_station_equipstate';
 import MroEquiplist from 'custom/routes/mro_equiplist';
 import MroChecklist from 'custom/routes/mro_checklist';
+import MroObservelist from 'custom/routes/mro_observelist';
 import MroList from 'custom/routes/mro_list';
 import MroCheckDetail from 'custom/routes/mro_checkdetail';
+import MroCheckDetail1 from 'custom/routes/mro_checkdetail1';
+import MroCheckDetail2 from 'custom/routes/mro_checkdetail2';
+import MroCheckDetail3 from 'custom/routes/mro_checkdetail3';
 import MroStationState from 'custom/routes/mro_station_state';
 import Test11 from 'custom/routes/test11';
 import Test12 from 'custom/routes/test12';
@@ -80,6 +85,7 @@ function App() {
                     <Route path='/equipdetail3' component={EquipDetail3}/>
                     <Route path='/equipdetail4' component={EquipDetail4}/>
                     <Route path='/alertlist' component={AlertList}/>
+                    <Route path='/alertrespitelist' component={AlertRespiteList}/>
                     <Route path='/alertdetail' component={AlertDetail}/>
                     <Route path='/spotlist' component={SpotList}/>
                     <Route path='/SpotDetail1' component={SpotDetail1}/>
@@ -92,7 +98,11 @@ function App() {
                     <Route path='/mro_station_equipstate' component={MroStationEquipstate}/>
                     <Route path='/mro_equiplist' component={MroEquiplist}/>
                     <Route path='/mro_checklist' component={MroChecklist}/>
+                    <Route path='/mro_observelist' component={MroObservelist}/>
                     <Route path='/mro_checkdetail' component={MroCheckDetail}/>
+                    <Route path='/mro_checkdetail1' component={MroCheckDetail1}/>
+                    <Route path='/mro_checkdetail2' component={MroCheckDetail2}/>
+                    <Route path='/mro_checkdetail3' component={MroCheckDetail3}/>
                     <Route path='/mro_list' component={MroList}/>
                     <Route path='/mro_stationstate' component={MroStationState}/>
                     <Route path='/test11' component={Test11}/>

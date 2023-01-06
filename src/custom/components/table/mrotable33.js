@@ -8,43 +8,63 @@ import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow } from
 
 // project imports
 import MainCard from 'components/MainCard';
+import Alert1 from 'custom/components/pop/alert1';
 
 // table columns
 const columns = [
-  { id: 'time', label: '일시', minWidth: 170 },
-  { id: 'station', label: '역사명', minWidth: 100 },
+  { id: 'time', label: '주의관찰 기간', minWidth: 170 },
   { id: 'equipname', label: '설비명', minWidth: 100 },
-  { id: 'product', label: '품명', minWidth: 100 },
-  { id: 'division', label: '구분', minWidth: 100 },
-  { id: 'analysis', label: '분석유형', minWidth: 100 }
+  { id: 'sort', label: '경보유형', minWidth: 100 },
+  { id: 'result', label: '경보분류', minWidth: 100 },
+  { id: 'alertcont', label: '주의관찰 내용', minWidth: 100 },
+  { id: 'view', label: '내용보기', minWidth: 100 }
 ];
 
 // table data
-function createData1(time,station, equipname, product, division, analysis) {
-  return { time, station, equipname, product, division, analysis };
+function createData1(time, equipname, sort, result, alertcont, view) {
+  let rowclass;
+  let spotdetail;
+
+  if(result == '결함발생') {
+    rowclass='condition1';
+    spotdetail='/mro_checkdetail';
+  } else if(result == '유지보수') {
+    rowclass='condition5';
+    spotdetail='/mro_checkdetail';
+  } else if(result == '정상') {
+    rowclass='condition6';
+    spotdetail='/';
+  } else if(result == '주의관찰') {
+    rowclass='condition2';
+    spotdetail='/mro_checkdetail';
+  } else {
+    rowclass=''
+  }
+
+  return { time, equipname, sort, result, alertcont, view, rowclass, spotdetail };
 }
 
 const rows1 = [
-  createData1('2022-06-02 00:07', '부평', '우 직팽식공조기', 'EOCR', '유지보수(교체)', '고장 및 기능장애'),
-  createData1('2022-06-02 00:07', '부평', '우 직팽식공조기', 'EOCR', '유지보수(교체)', '고장 및 기능장애'),
-  createData1('2022-06-02 00:07', '부평', '우 직팽식공조기', 'EOCR', '유지보수(교체)', '고장 및 기능장애'),
-  createData1('2022-06-02 00:07', '부평', '우 직팽식공조기', 'EOCR', '유지보수(교체)', '고장 및 기능장애'),
-  createData1('2022-06-02 00:07', '부평', '우 직팽식공조기', 'EOCR', '유지보수(교체)', '고장 및 기능장애'),
-  createData1('2022-06-02 00:07', '부평', '우 직팽식공조기', 'EOCR', '유지보수(교체)', '고장 및 기능장애'),
-  createData1('2022-06-02 00:07', '부평', '우 직팽식공조기', 'EOCR', '유지보수(교체)', '고장 및 기능장애'),
-  createData1('2022-06-02 00:07', '부평', '우 직팽식공조기', 'EOCR', '유지보수(교체)', '고장 및 기능장애'),
-  createData1('2022-06-02 00:07', '부평', '우 직팽식공조기', 'EOCR', '유지보수(교체)', '고장 및 기능장애'),
-  createData1('2022-06-02 00:07', '부평', '우 직팽식공조기', 'EOCR', '유지보수(교체)', '고장 및 기능장애'),
-  createData1('2022-06-02 00:07', '부평', '우 직팽식공조기', 'EOCR', '유지보수(교체)', '고장 및 기능장애'),
-  createData1('2022-06-02 00:07', '부평', '우 직팽식공조기', 'EOCR', '유지보수(교체)', '고장 및 기능장애'),
-  createData1('2022-06-02 00:07', '부평', '우 직팽식공조기', 'EOCR', '유지보수(교체)', '고장 및 기능장애'),
-  createData1('2022-06-02 00:07', '부평', '우 직팽식공조기', 'EOCR', '유지보수(교체)', '고장 및 기능장애'),
-  createData1('2022-06-02 00:07', '부평', '우 직팽식공조기', 'EOCR', '유지보수(교체)', '고장 및 기능장애'),
-  createData1('2022-06-02 00:07', '부평', '우 직팽식공조기', 'EOCR', '유지보수(교체)', '고장 및 기능장애'),
-  createData1('2022-06-02 00:07', '부평', '우 직팽식공조기', 'EOCR', '유지보수(교체)', '고장 및 기능장애'),
-  createData1('2022-06-02 00:07', '부평', '우 직팽식공조기', 'EOCR', '유지보수(교체)', '고장 및 기능장애'),
-  createData1('2022-06-02 00:07', '부평', '우 직팽식공조기', 'EOCR', '유지보수(교체)', '고장 및 기능장애'),
-  createData1('2022-06-02 00:07', '부평', '우 직팽식공조기', 'EOCR', '유지보수(교체)', '고장 및 기능장애'),
+  createData1('2022-06-02', '좌대합실공조시-1', 'IoT경보', '결함발생', '직팽식공조기 (SF) 전동기 이상진동'),
+  createData1('2022-06-02', '좌대합실공조시-1', 'IoT경보', '결함발생', '직팽식공조기 (SF) 전동기 이상진동'),
+  createData1('2022-06-02', '좌대합실공조시-1', 'IoT경보', '결함발생', '직팽식공조기 (SF) 전동기 이상진동'),
+  createData1('2022-06-02', '좌대합실공조시-1', 'IoT경보', '결함발생', '직팽식공조기 (SF) 전동기 이상진동'),
+  createData1('2022-06-02', '좌대합실공조시-1', 'IoT경보', '결함발생', '직팽식공조기 (SF) 전동기 이상진동'),
+  createData1('2022-06-02', '좌대합실공조시-1', 'IoT경보', '결함발생', '직팽식공조기 (SF) 전동기 이상진동'),
+  createData1('2022-06-02', '좌대합실공조시-1', 'IoT경보', '결함발생', '직팽식공조기 (SF) 전동기 이상진동'),
+  createData1('2022-06-02', '좌대합실공조시-1', 'IoT경보', '결함발생', '직팽식공조기 (SF) 전동기 이상진동'),
+  createData1('2022-06-02', '좌대합실공조시-1', 'IoT경보', '결함발생', '직팽식공조기 (SF) 전동기 이상진동'),
+  createData1('2022-06-02', '좌대합실공조시-1', 'IoT경보', '결함발생', '직팽식공조기 (SF) 전동기 이상진동'),
+  createData1('2022-06-02', '좌대합실공조시-1', 'IoT경보', '결함발생', '직팽식공조기 (SF) 전동기 이상진동'),
+  createData1('2022-06-02', '좌대합실공조시-1', 'IoT경보', '결함발생', '직팽식공조기 (SF) 전동기 이상진동'),
+  createData1('2022-06-02', '좌대합실공조시-1', 'IoT경보', '결함발생', '직팽식공조기 (SF) 전동기 이상진동'),
+  createData1('2022-06-02', '좌대합실공조시-1', 'IoT경보', '결함발생', '직팽식공조기 (SF) 전동기 이상진동'),
+  createData1('2022-06-02', '좌대합실공조시-1', 'IoT경보', '결함발생', '직팽식공조기 (SF) 전동기 이상진동'),
+  createData1('2022-06-02', '좌대합실공조시-1', 'IoT경보', '결함발생', '직팽식공조기 (SF) 전동기 이상진동'),
+  createData1('2022-06-02', '좌대합실공조시-1', 'IoT경보', '결함발생', '직팽식공조기 (SF) 전동기 이상진동'),
+  createData1('2022-06-02', '좌대합실공조시-1', 'IoT경보', '결함발생', '직팽식공조기 (SF) 전동기 이상진동'),
+  createData1('2022-06-02', '좌대합실공조시-1', 'IoT경보', '결함발생', '직팽식공조기 (SF) 전동기 이상진동'),
+  createData1('2022-06-02', '좌대합실공조시-1', 'IoT경보', '결함발생', '직팽식공조기 (SF) 전동기 이상진동')
 ];
 
 function MroTable33() {
@@ -65,10 +85,10 @@ function MroTable33() {
       <MainCard content={false} style={{marginTop:"10px"}}>
         {/* table */}
         <div className='more'>
-          <Chip label="최근 유지보수내역" color="success" />
-          <NavLink as={Link} to="/mro_list" className='more_btn'>더보기 +</NavLink>
+          <Chip label="경보유예 대상" color="success" />
+          <NavLink as={Link} to="/SpotList" className='more_btn'>더보기 +</NavLink>
         </div>
-        <TableContainer sx={{ maxHeight: 230 }}>
+        <TableContainer sx={{ maxHeight: 180 }}>
           <Table stickyHeader aria-label="sticky table" className="sticky_table">
             <TableHead>
               <TableRow>
@@ -84,14 +104,31 @@ function MroTable33() {
                 <TableRow sx={{ py: 3 }} hover role="checkbox" tabIndex={-1} key={row.code}>
                   {columns.map((column) => {
                     const value = row[column.id];
-
-                    return (
-                      <TableCell key={column.id} align={column.align} className="sticky_table_td">
-                        <Link to="/mro_checkdetail">
-                          {column.format && typeof value === 'number' ? column.format(value) : value}
-                        </Link>
-                      </TableCell>
-                    );
+                    if(column.id == 'result') {
+                      return (
+                        <TableCell key={column.id} align={column.align} className={row.rowclass}>
+                          <Link to={row.spotdetail}>
+                            {column.format && typeof value === 'number' ? column.format(value) : value}
+                          </Link>
+                        </TableCell>
+                      );
+                    } else if(column.id == 'view') {
+                      return (
+                        <TableCell key={column.id} align="center">
+                          <Alert1 />
+                        </TableCell>
+                      );
+                    } else {
+                      return (
+                        <TableCell key={column.id} align={column.align}>
+                          <Link to={row.spotdetail}>
+                            {column.format && typeof value === 'number' ? column.format(value) : value}
+                          </Link>
+                        </TableCell>
+                      );
+                    }
+                    
+                    
                   })}
                 </TableRow>
               ))}

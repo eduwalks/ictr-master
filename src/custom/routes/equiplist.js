@@ -5,7 +5,7 @@ import Navigationbar from 'custom/components/navigationbar';
 import Paging from 'custom/components/table/paging';
 import DialogSelect from 'custom/components/search/equipsearch';
 
-import Alert1 from 'custom/components/pop/alert1';
+import Alert from 'custom/components/pop/alert';
 
 function createData(condition, date, number, part, station, equipnum, equipcate, equipname, locate, equipcompo, grade, gate, flaw) {
   let rowclass1;
@@ -114,7 +114,7 @@ export function EquipList() {
                   <TableCell align="center"><Link to={row.equipdetail}>{row.gate}</Link></TableCell>
                   <TableCell align="center" className={row.rowclass2}><Link to={row.equipdetail}>{row.flaw}</Link></TableCell>
                   <TableCell align="center">
-                    <Alert1 />
+                    <Alert />
                   </TableCell>
                 </TableRow>
               ))}

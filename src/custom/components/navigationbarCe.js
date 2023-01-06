@@ -17,6 +17,7 @@ const Navigationbar = () => {
           <NavLink eventKey="2" as={Link} to="/maintenance" className="nav-link">대시보드</NavLink>
           <NavLink eventKey="3" as={Link} to="/mro_equiplist" className="nav-link">설비목록</NavLink>
           <NavLink eventKey="4" as={Link} to="/mro_checklist" className="nav-link">점검목록</NavLink>
+          <NavLink eventKey="4" as={Link} to="/mro_observelist" className="nav-link">주의관찰목록</NavLink>
           <NavLink eventKey="5" as={Link} to="/mro_list" className="nav-link">유지보수목록</NavLink>
           <NavLink eventKey="6" as={Link} to="/test21" className="nav-link">통계/보고서</NavLink>
           <NavLink eventKey="7" as={Link} to="/test22" className="nav-link">설정</NavLink>

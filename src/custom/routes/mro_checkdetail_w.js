@@ -10,7 +10,7 @@ import Video from 'custom/video/1.mp4'
 import { lazy } from 'react';
 import Loadable from 'components/Loadable';
 import MroLg from 'custom/components/pop/mro_lg2';
-import InSpection from "custom/components/pop/inspection_lg1";
+import InSpection from "custom/components/pop/inspection1";
 import Watch from "custom/components/pop/watch";
 
 const AppCalendar = Loadable(lazy(() => import('pages/apps/calendar')));

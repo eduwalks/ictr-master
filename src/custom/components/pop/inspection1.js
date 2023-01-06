@@ -9,7 +9,7 @@ import Select from '@mui/material/Select';
 import BasicDatePicker from '../picker/DatePicker';
 import BasicTimePicker from '../picker/TimePicker';
 
-export function InSpection() {
+export function InSpection1() {
 
   const [open, setOpen] = useState(false);
   const handleOpen = () => setOpen(true);
@@ -25,128 +25,59 @@ export function InSpection() {
         <MainCard title="현장(상시)점검" modal darkTitle content={false}>
           <CardContent>
             <TableContainer>
-              <Table sx={{ minWidth: 1000 }} aria-label="simple table" className="same_width pop_table">
+              <Table sx={{ minWidth: 1000 }} aria-label="simple table" className="same_width pop_table view_table">
                 <TableBody>
-                  <TableRow>
+                <TableRow>
                     <TableCell className="th">호선</TableCell>
-                    <TableCell>            
-                      <FormControl sx={{ m: 1, minWidth: '90%' }}>
-                        <Select defaultValue="" id="grouped-select">
-                          {/* <MenuItem value="">None</MenuItem> */}
-                          <MenuItem value={1}></MenuItem>
-                        </Select>
-                      </FormControl>
-                    </TableCell>
+                    <TableCell className="view_td">1호선</TableCell>
                     <TableCell className="th">파트</TableCell>
-                    <TableCell>            
-                      <FormControl sx={{ m: 1, minWidth: '90%' }}>
-                        <Select defaultValue="" id="grouped-select">
-                          {/* <MenuItem value="">None</MenuItem> */}
-                          <MenuItem value={1}></MenuItem>
-                        </Select>
-                      </FormControl>
-                    </TableCell>
+                    <TableCell className="view_td">계산</TableCell>
                     <TableCell className="th">역사</TableCell>
-                    <TableCell>            
-                      <FormControl sx={{ m: 1, minWidth: '90%' }}>
-                        <Select defaultValue="" id="grouped-select">
-                          {/* <MenuItem value="">None</MenuItem> */}
-                          <MenuItem value={1}></MenuItem>
-                        </Select>
-                      </FormControl>
-                    </TableCell>
+                    <TableCell className="view_td">작전</TableCell>
                   </TableRow>
 
                   <TableRow>
                     <TableCell className="th">설비대분류</TableCell>
-                    <TableCell>            
-                      <FormControl sx={{ m: 1, minWidth: '90%' }}>
-                        <Select defaultValue="" id="grouped-select">
-                          {/* <MenuItem value="">None</MenuItem> */}
-                          <MenuItem value={1}></MenuItem>
-                        </Select>
-                      </FormControl>
-                    </TableCell>
+                    <TableCell className="view_td">공기조화설비</TableCell>
                     <TableCell className="th">설비중분류</TableCell>
-                    <TableCell>            
-                      <FormControl sx={{ m: 1, minWidth: '90%' }}>
-                        <Select defaultValue="" id="grouped-select">
-                          {/* <MenuItem value="">None</MenuItem> */}
-                          <MenuItem value={1}></MenuItem>
-                        </Select>
-                      </FormControl>
-                    </TableCell>
+                    <TableCell className="view_td">공기조화기</TableCell>
                     <TableCell className="th">설비분류</TableCell>
-                    <TableCell>            
-                      <FormControl sx={{ m: 1, minWidth: '90%' }}>
-                        <Select defaultValue="" id="grouped-select">
-                          {/* <MenuItem value="">None</MenuItem> */}
-                          <MenuItem value={1}></MenuItem>
-                        </Select>
-                      </FormControl>
-                    </TableCell>
+                    <TableCell className="view_td">승강장공조기</TableCell>
                   </TableRow>
 
                   <TableRow>
                     <TableCell className="th">설비명</TableCell>
-                    <TableCell colspan="3">
-                      <FormControl sx={{ m: 1, minWidth: '90%' }}>
-                        <Select defaultValue="" id="grouped-select">
-                          {/* <MenuItem value="">None</MenuItem> */}
-                          <MenuItem value={1}></MenuItem>
-                        </Select>
-                      </FormControl>
-                    </TableCell>
+                    <TableCell colspan="3" className="view_td">좌대합실 공조기</TableCell>
                     <TableCell className="th">설비번호</TableCell>
-                    <TableCell><TextField id="outlined-basic" sx={{ m: 1, minWidth: '90%' }} /></TableCell>
+                    <TableCell className="view_td">124-L-AHU01-RF1</TableCell>
                   </TableRow>
 
                   <TableRow>
                     <TableCell className="th">경보일시</TableCell>
-                    <TableCell colspan="3" className='pa10'><BasicDatePicker /></TableCell>
+                    <TableCell colspan="3" className="view_td">2022-12-20 13:03</TableCell>
                     <TableCell className="th">경보유형</TableCell>
-                    <TableCell><TextField id="outlined-basic" sx={{ m: 1, minWidth: '90%' }} /></TableCell>
+                    <TableCell className="view_td">IoT경보</TableCell>
                   </TableRow>
 
                   <TableRow>
                     <TableCell className="th">경보분류</TableCell>
-                    <TableCell>
-                      <TextField
-                        id="outlined-multiline-static"
-                        multiline
-                        sx={{ m: 1, minWidth: '90%' }}
-                        rows={4}
-                      />
-                    </TableCell>
+                    <TableCell className="view_td">결함발생</TableCell>
                     <TableCell className="th">경보내용</TableCell>
-                    <TableCell colspan="3">
-                      <TextField
-                        id="outlined-multiline-static"
-                        multiline
-                        sx={{ m: 1, minWidth: '90%' }}
-                        rows={4}
-                      />
-                    </TableCell>
+                    <TableCell colspan="3" className="view_td">전동기 이상 진동</TableCell>
                   </TableRow>
-
-                  {/* <TableRow>
-                    <TableCell className="th">경보확인 일시</TableCell>
-                    <TableCell colspan="3" className='pa10'><BasicDatePicker /></TableCell>
-                    <TableCell className="th">경보확인자</TableCell>
-                    <TableCell><TextField id="outlined-basic" sx={{ m: 1, minWidth: '90%' }} /></TableCell>
-                  </TableRow> */}
 
                   <TableRow>
                     <TableCell className="th">현장확인 일시</TableCell>
-                    <TableCell colspan="3" className='pa10'><BasicDatePicker /></TableCell>
+                    <TableCell colspan="3"><div style={{width:"40%",marginLeft:"8px"}}><BasicDatePicker /></div></TableCell>
                     <TableCell className="th">현장확인자</TableCell>
-                    <TableCell><TextField id="outlined-basic" sx={{ m: 1, minWidth: '90%' }} /></TableCell>
+                    <TableCell className="view_td"></TableCell>
                   </TableRow>
 
                   <TableRow>
                     <TableCell className="th">후속조치</TableCell>
                     <TableCell colspan="5">
-                      <FormControl sx={{ m: 1, minWidth: '90%' }}>
+                      <FormControl sx={{ m: 1, minWidth: '200px' }}>
+                        <InputLabel id="demo-simple-select-label">주의관찰</InputLabel>
                         <Select defaultValue="" id="grouped-select">
                           {/* <MenuItem value="">None</MenuItem> */}
                           <MenuItem value={1}></MenuItem>
@@ -199,13 +130,9 @@ export function InSpection() {
 
                   <TableRow>
                     <TableCell className="th">작업시작일</TableCell>
-                    <TableCell>
-                      <div className="piker"><BasicDatePicker /></div>
-                    </TableCell>
+                    <TableCell className="view_td" style={{textAlign:"left"}}><div style={{width:"100%",marginLeft:"7px"}}><BasicDatePicker /></div></TableCell>
                     <TableCell className="th">작업시작시간</TableCell>
-                    <TableCell>
-                      <div className="piker"><BasicTimePicker /></div>
-                    </TableCell>
+                    <TableCell className="view_td"><BasicTimePicker /></TableCell>
                     <TableCell className="th">활용장비</TableCell>
                     <TableCell>            
                       <FormControl sx={{ m: 1, minWidth: '90%' }}>
@@ -219,11 +146,9 @@ export function InSpection() {
 
                   <TableRow>
                     <TableCell className="th">작업종료일</TableCell>
-                    <TableCell><div className="piker"><BasicDatePicker /></div></TableCell>
+                    <TableCell className="view_td" style={{textAlign:"left"}}><div style={{width:"100%",marginLeft:"7px"}}><BasicDatePicker /></div></TableCell>
                     <TableCell className="th">작업종료시간</TableCell>
-                    <TableCell>
-                      <div className="piker"><BasicTimePicker /></div>
-                    </TableCell>
+                    <TableCell className="view_td"><BasicTimePicker /></TableCell>
                     <TableCell className="th">조치유형</TableCell>
                     <TableCell>            
                       <FormControl sx={{ m: 1, minWidth: '90%' }}>
@@ -344,17 +269,34 @@ export function InSpection() {
                   </TableRow>
 
                   <TableRow>
-                    <TableCell className="th">상황보고일</TableCell>
-                    <TableCell><div className="piker"><BasicDatePicker /></div></TableCell>
+                    <TableCell className="th">상황보고내용</TableCell>
+                    <TableCell colspan="5">
+                      <TextField
+                        id="outlined-multiline-static"
+                        multiline
+                        sx={{ m: 1, minWidth: '90%' }}
+                        rows={4}
+                      />
+                    </TableCell>
+                  </TableRow>
+
+                  <TableRow>
                     <TableCell className="th">상황보고파일</TableCell>
-                    <TableCell colspan="3">
+                    <TableCell colspan="5">
                       <input
                         style={{marginLeft:"10px"}}
                         id="upload-photo"
                         name="upload-photo"
                         type="file"
                       />
-                    </TableCell>
+                      ✚</TableCell>
+                  </TableRow>
+
+                  <TableRow>
+                    <TableCell className="th">상황보고자</TableCell>
+                    <TableCell><TextField id="outlined-basic" sx={{ m: 1, minWidth: '90%' }} /></TableCell>
+                    <TableCell className="th">상황보고일</TableCell>
+                    <TableCell className="view_td" style={{textAlign:"left"}}><div style={{width:"100%",marginLeft:"7px"}}><BasicDatePicker /></div></TableCell>
                   </TableRow>
                 </TableBody>
               </Table>
@@ -375,4 +317,4 @@ export function InSpection() {
   )
 }
 
-export default InSpection;
+export default InSpection1;

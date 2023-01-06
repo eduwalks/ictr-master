@@ -17,11 +17,12 @@ const columns = [
   { id: 'alertype', label: '경보유형', minWidth: 100 },
   { id: 'division', label: '경보분류', minWidth: 100 },
   { id: 'cont', label: '내용', minWidth: 100 },
-  { id: 'check', label: '상태', minWidth: 100 }
+  { id: 'check', label: '상태', minWidth: 100 },
+  { id: 'view', label: '내용보기', minWidth: 100 }
 ];
 
 // table data
-function createData1(time, equipname, alertype, division, cont, check) {
+function createData1(time, equipname, alertype, division, cont, check, view) {
   let rowclass;
   let spotdetail;
 
@@ -36,7 +37,7 @@ function createData1(time, equipname, alertype, division, cont, check) {
   } else {
     rowclass=''
   }
-  return { time, equipname, alertype, division, cont, check, rowclass, spotdetail };
+  return { time, equipname, alertype, division, cont, check, view, rowclass, spotdetail };
 }
 
 const rows1 = [

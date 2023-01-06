@@ -9,7 +9,7 @@ import Navigationbar from "custom/components/navigationbarCe";
 import { Table, TableBody, TableCell, TableContainer, TableRow } from '@mui/material';
 import MroStation1 from 'custom/pages/mro_station1';
 import MroStation2 from 'custom/pages/mro_station2';
-import MroStation3 from 'custom/pages/mro_station3';
+import MroStation3 from 'custom/pages/mro_station4';
 
 function MroStationEquipstate() {
   const [value, setValue] = React.useState('1');
