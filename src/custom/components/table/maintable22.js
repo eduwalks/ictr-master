@@ -78,7 +78,7 @@ function MainTable22() {
           <Chip label="경보 내역" color="error" />
           <NavLink as={Link} to="/alertlist" className='more_btn'>더보기 +</NavLink>
         </div>
-        <TableContainer sx={{ maxHeight: 197 }}>
+        <TableContainer sx={{ maxHeight: 229 }}>
           <Table stickyHeader aria-label="sticky table" className='list_table2'>
             <TableHead>
               <TableRow>

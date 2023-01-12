@@ -33,6 +33,7 @@ import SpotDetail1 from 'custom/routes/spotdetail1';
 import SpotDetail2 from 'custom/routes/spotdetail2';
 import SpotDetail3 from 'custom/routes/spotdetail3';
 import PartStation from 'custom/routes/partstation';
+import SubwayStation from 'custom/routes/subwaystation';
 import MainTenance from 'custom/routes/maintenance';
 import MroPartState from 'custom/routes/mro_partstate';
 // import Page16 from 'custom/routes/Page16';
@@ -92,6 +93,7 @@ function App() {
                     <Route path='/SpotDetail2' component={SpotDetail2}/>
                     <Route path='/SpotDetail3' component={SpotDetail3}/>
                     <Route path='/partstation' component={PartStation}/>
+                    <Route path='/subwaystation' component={SubwayStation}/>
                     <Route path='/maintenance' component={MainTenance}/>
                     <Route path='/mro_partstate' component={MroPartState}/>
                     {/* <Route path='/page16' component={Page16}/> */}

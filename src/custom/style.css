@@ -279,10 +279,10 @@ table .pl {padding: 6px 0 6px 10px !important;text-align: center;}
 .inwidth3{width: 40px;}
 .inwidth4{width: 100px;}
 .inwidth5{width: 100px;}
-.circle1 span{margin:0 5px;padding:2px 5px; border-radius: 200px; background-color: #257DDC;}
-.circle2 span{margin:0 5px;padding:2px 5px; border-radius: 200px; background-color: #308a2a;}
-.circle3 span{margin:0 5px;padding:2px 5px; border-radius: 200px; background-color: #e7c748;}
-.circle4 span{margin:0 5px;padding:2px 5px;; border-radius: 200px; background-color: #ef710b;}
+.circle1 span{margin:0 5px;padding:2px 5px; border-radius: 200px; color: #257DDC; background-color: #fff; font-weight: bold;}
+.circle2 span{margin:0 5px;padding:2px 5px; border-radius: 200px; color: #308a2a; background-color: #fff; font-weight: bold;}
+.circle3 span{margin:0 5px;padding:2px 5px; border-radius: 200px; color: #e7c748; background-color: #fff; font-weight: bold;} 
+.circle4 span{margin:0 5px;padding:2px 5px;; border-radius: 200px; color: #ef710b; background-color: #fff; font-weight: bold;}
 
 .flaw1 a, .flaw1 th, .flaw1 td{color: red;}
 .flaw2 a, .flaw2 th, .flaw2 td{color: #ef710b;}
@@ -338,51 +338,63 @@ table .pl {padding: 6px 0 6px 10px !important;text-align: center;}
   background-color: #f5a251;
 }
 
-.bad th{
+.bad th, .part_station .bad{
   background-color: red;
 }
 
-.bad td{
+.bad td, .part_station td.bad{
+  background-color: unset;
   border: 2px solid red !important;
 }
 
-.error th{
+.error th, .part_station .error{
   background-color: #ef710b;
 }
 
-.error td{
+.error td, .part_station td.error{
+  background-color: unset;
   border: 2px solid #ef710b !important;
 }
 
-.insuff th {
+.part_station td.sum{
+  background-color: unset;
+  border: 2px solid #000 !important;
+}
+
+
+.insuff th, .part_station .insuff{
   background-color: #e7c748;
 }
 
-.insuff td {
+.insuff td, .part_station td.insuff{
+  background-color: unset;
   border: 2px solid #e7c748 !important;
 }
 
-.communi th {
+.communi th, .part_station .communi{
   background-color: #b2b2b2;
 }
 
-.communi td {
+.communi td, .part_station td.communi{
+  background-color: unset;
   border: 2px solid #b2b2b2 !important;
 }
 
-.normal th {
+.normal th, .part_station .normal{
   background-color: #2666ae;
 }
 
-.normal td {
+.normal td, .part_station td.normal{
+  background-color: unset;
   border: 2px solid #2666ae !important;
 }
 
-.fine th {
+.fine th, .part_station .fine{
   background-color: #308a2a;
 }
 
-.fine td {
+.fine td, .part_station td.fine {
+  background-color: unset;
   border: 2px solid #308a2a !important;
 }
 
@@ -409,6 +421,8 @@ table .pl {padding: 6px 0 6px 10px !important;text-align: center;}
   /* background-color: #fafafa; */
   font-weight: 700;
 }
+
+.train1 a, .train2 a{color: #fff;}
 
 /* 서브페이지 */
 /* 유지보수 */

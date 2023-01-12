@@ -12,10 +12,10 @@ import Alert1 from 'custom/components/pop/alert1';
 
 // table columns
 const columns = [
-  { id: 'time', label: '경보유예기간', minWidth: 170 },
+  { id: 'time', label: '경보유예기간', minWidth: 120 },
   { id: 'equipname', label: '설비명', minWidth: 100 },
-  { id: 'sort', label: '경보유형', minWidth: 100 },
-  { id: 'result', label: '경보분류', minWidth: 100 },
+  { id: 'sort', label: '경보유형', minWidth: 90 },
+  { id: 'result', label: '경보분류', minWidth: 90 },
   { id: 'alertcont', label: '경보내용', minWidth: 100 },
   { id: 'view', label: '내용보기', minWidth: 100 }
 ];
@@ -88,7 +88,7 @@ function MainTable33() {
           <Chip label="경보유예 대상" color="success" />
           <NavLink as={Link} to="/SpotList" className='more_btn'>더보기 +</NavLink>
         </div>
-        <TableContainer sx={{ maxHeight: 229 }}>
+        <TableContainer sx={{ maxHeight: 252 }}>
           <Table stickyHeader aria-label="sticky table" className="sticky_table list_table2">
             <TableHead>
               <TableRow>

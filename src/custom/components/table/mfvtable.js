@@ -82,7 +82,7 @@ const rows = [
 
 function MfvTable() {
     return (
-        <TableContainer sx={{ maxHeight: 383 }}>
+        <TableContainer sx={{ maxHeight: 675 }}>
             <Table stickyHeader aria-label="sticky table" sx={{ minWidth: 700 }} className="hov_non list_table2">
                 <TableHead style={{top: "0", position:"sticky", zIndex: "1"}}>
                     <TableRow>

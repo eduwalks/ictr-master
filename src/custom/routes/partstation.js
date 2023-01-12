@@ -1,6 +1,7 @@
 import { Row, Col } from 'react-bootstrap';
-import MainCard from 'components/MainCard';
+import { Link } from "react-router-dom";
 import Chip from '@mui/material/Chip';
+import MainCard from 'components/MainCard';
 import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow } from '@mui/material';
 
 import Box from '@mui/material/Box';
@@ -9,11 +10,12 @@ import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 
+import MainChart from 'custom/components/chart/mainchart';
+import MainTable11 from "custom/components/table/maintable11";
 import MainTable22 from "custom/components/table/maintable22";
 import MainTable33 from "custom/components/table/maintable33";
 import Navigationbar from 'custom/components/navigationbar';
 import Alert2 from "custom/components/pop/alert2";
-import MfvTable from "custom/components/table/mfvtable";
 
 function PartStation () {
   function createData1(station, sum, state1, state2, state3, state4, state5, state6) {
@@ -65,112 +67,119 @@ function PartStation () {
               </Button> */}
             </Box>
 
-            <MainCard content={false} /* title="파트별 상태 현황" */>
+            {/* <MainCard content={false}>
               <table className="part_status">
                 <thead>
                   <th></th>
-                  <th className="train1">계산</th>
-                  <th className="train1">예술회관</th>
-                  <th className="train1">동막</th>
-                  <th className="train2">검암</th>
-                  <th className="train2">가재울</th>
-                  <th className="train2">시청</th>
+                  <th className="train1"><Link to="/subwaystation">계산</Link></th>
+                  <th className="train1"><Link to="/subwaystation">예술회관</Link></th>
+                  <th className="train1"><Link to="/subwaystation">동막</Link></th>
+                  <th className="train2"><Link to="/subwaystation">검암</Link></th>
+                  <th className="train2"><Link to="/subwaystation">가재울</Link></th>
+                  <th className="train2"><Link to="/subwaystation">시청</Link></th>
                 </thead>
                 <tbody>
                   <tr className="bad">
-                    <th>불량</th>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
+                    <th><Link to="/subwaystation">불량</Link></th>
+                    <td><Link to="/subwaystation">0</Link></td>
+                    <td><Link to="/subwaystation">0</Link></td>
+                    <td><Link to="/subwaystation">0</Link></td>
+                    <td><Link to="/subwaystation">0</Link></td>
+                    <td><Link to="/subwaystation">0</Link></td>
+                    <td><Link to="/subwaystation">0</Link></td>
                   </tr>
                   <tr className="error">
-                    <th>결함</th>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
+                    <th><Link to="/subwaystation">결함</Link></th>
+                    <td><Link to="/subwaystation">0</Link></td>
+                    <td><Link to="/subwaystation">0</Link></td>
+                    <td><Link to="/subwaystation">0</Link></td>
+                    <td><Link to="/subwaystation">0</Link></td>
+                    <td><Link to="/subwaystation">0</Link></td>
+                    <td><Link to="/subwaystation">0</Link></td>
                   </tr>
                   <tr className="insuff">
-                    <th>미흡</th>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
+                    <th><Link to="/subwaystation">미흡</Link></th>
+                    <td><Link to="/subwaystation">0</Link></td>
+                    <td><Link to="/subwaystation">0</Link></td>
+                    <td><Link to="/subwaystation">0</Link></td>
+                    <td><Link to="/subwaystation">0</Link></td>
+                    <td><Link to="/subwaystation">0</Link></td>
+                    <td><Link to="/subwaystation">0</Link></td>
                   </tr>
                   <tr className="communi">
-                    <th>통신</th>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
+                    <th><Link to="/subwaystation">통신</Link></th>
+                    <td><Link to="/subwaystation">0</Link></td>
+                    <td><Link to="/subwaystation">0</Link></td>
+                    <td><Link to="/subwaystation">0</Link></td>
+                    <td><Link to="/subwaystation">0</Link></td>
+                    <td><Link to="/subwaystation">0</Link></td>
+                    <td><Link to="/subwaystation">0</Link></td>
                   </tr>
                   <tr className="normal">
-                    <th>보통</th>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
+                    <th><Link to="/subwaystation">보통</Link></th>
+                    <td><Link to="/subwaystation">0</Link></td>
+                    <td><Link to="/subwaystation">0</Link></td>
+                    <td><Link to="/subwaystation">0</Link></td>
+                    <td><Link to="/subwaystation">0</Link></td>
+                    <td><Link to="/subwaystation">0</Link></td>
+                    <td><Link to="/subwaystation">0</Link></td>
                   </tr>
                   <tr className="fine">
-                    <th>양호</th>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
+                    <th><Link to="/subwaystation">양호</Link></th>
+                    <td><Link to="/subwaystation">0</Link></td>
+                    <td><Link to="/subwaystation">0</Link></td>
+                    <td><Link to="/subwaystation">0</Link></td>
+                    <td><Link to="/subwaystation">0</Link></td>
+                    <td><Link to="/subwaystation">0</Link></td>
+                    <td><Link to="/subwaystation">0</Link></td>
                   </tr>
                   <tr className="sum">
-                    <th>합계</th>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
+                    <th><Link to="/subwaystation">합계</Link></th>
+                    <td><Link to="/subwaystation">0</Link></td>
+                    <td><Link to="/subwaystation">0</Link></td>
+                    <td><Link to="/subwaystation">0</Link></td>
+                    <td><Link to="/subwaystation">0</Link></td>
+                    <td><Link to="/subwaystation">0</Link></td>
+                    <td><Link to="/subwaystation">0</Link></td>
                   </tr>
                 </tbody>
               </table>
+            </MainCard> */}
+
+            <MainCard content={false}>
+              <Chip label="상태 현황" color="primary" />
+              <div className="charts_box">
+                <MainChart />
+              </div>
             </MainCard>
 
             <MainCard style={{marginTop:"10px"}} content={false} /* title="파트별 상태 현황" */>
               {/* table */}
               <TableContainer>
-                <Table className="same_cell list_table" sx={{ minWidth: 500 }} aria-label="simple table">
+                <Table className="same_cell list_table part_status part_station" sx={{ minWidth: 500 }} aria-label="simple table">
                   <TableHead>
                     <TableRow>
                       <TableCell align="center">역사</TableCell>
                       <TableCell align="center">합계</TableCell>
-                      <TableCell align="center">양호</TableCell>
-                      <TableCell align="center">보통</TableCell>
-                      <TableCell align="center">미흡</TableCell>
-                      <TableCell align="center">불량</TableCell>
-                      <TableCell align="center">결함</TableCell>
-                      <TableCell align="center">통신이상</TableCell>
+                      <TableCell className="fine" align="center">양호</TableCell>
+                      <TableCell className="normal" align="center">보통</TableCell>
+                      <TableCell className="insuff" align="center">미흡</TableCell>
+                      <TableCell className="bad" align="center">불량</TableCell>
+                      <TableCell className="error" align="center">결함</TableCell>
+                      <TableCell className="communi" align="center">통신이상</TableCell>
                     </TableRow>
                   </TableHead>
                   <TableBody>
                     {rows1.map((row1) => (
                       <TableRow hover key={row1.name}>
-                        <TableCell component="th" scope="row">{row1.station}</TableCell>
-                        <TableCell align="center">{row1.sum}</TableCell>
-                        <TableCell align="center">{row1.state1}</TableCell>
-                        <TableCell align="center">{row1.state2}</TableCell>
-                        <TableCell align="center">{row1.state3}</TableCell>
-                        <TableCell align="center">{row1.state4}</TableCell>
-                        <TableCell align="center">{row1.state5}</TableCell>
-                        <TableCell align="center">{row1.state6}</TableCell>
+                        <TableCell className="train1" component="th" scope="row"><Link to="/subwaystation">{row1.station}</Link></TableCell>
+                        <TableCell className="sum" align="center"><Link to="/subwaystation">{row1.sum}</Link></TableCell>
+                        <TableCell className="fine" align="center"><Link to="/subwaystation">{row1.state1}</Link></TableCell>
+                        <TableCell className="normal" align="center"><Link to="/subwaystation">{row1.state2}</Link></TableCell>
+                        <TableCell className="insuff" align="center"><Link to="/subwaystation">{row1.state3}</Link></TableCell>
+                        <TableCell className="bad" align="center"><Link to="/subwaystation">{row1.state4}</Link></TableCell>
+                        <TableCell className="error" align="center"><Link to="/subwaystation">{row1.state5}</Link></TableCell>
+                        <TableCell className="communi" align="center"><Link to="/subwaystation">{row1.state6}</Link></TableCell>
                       </TableRow>
                     ))}
                   </TableBody>
@@ -183,9 +192,8 @@ function PartStation () {
 
           <Col sm={8} className="sub_right">
             <MainCard className="mobile_top" content={false}>
-              <Chip label="계산 &gt; (124)인천시청" color="primary" />
               {/* table */}
-              <MfvTable />
+              <MainTable11></MainTable11>
             </MainCard>
 
             <MainCard className="center_table" content={false}>
